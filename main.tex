@@ -232,7 +232,7 @@ At the same interest rate, \$100 invested now plus \$120 invested at the end of 
 \text{c) Assuming the Banker’s Rule.}
 \]
 
-\bigskip
+    \bigskip
 
 
 \subsection*{Question 21, Chapter 2 (\cite{toi3rd})}
@@ -250,103 +250,828 @@ At the same interest rate, \$100 invested now plus \$120 invested at the end of 
 
 \section*{Solutions}
 
-\subsection*{Question 1, Section 2, Chapter 2  (\cite{toi3rd})}
+\subsection*{Question 19, Chapter 1  (\cite{toi3rd})}
 
-\noindent\textbf{Assigned to Dina Kalibekova}\\
-
-\noindent The number of ways that five cards are dealt from a standard 52-card deck is:
-$$
-    C=\frac{52!}{5!(52-5)!}= 2598960
-$$
-4 cards which contain the number 10 and one card which contains 9:
-$$
-    (1\times4)+(4\times6)+(4\times1)=32
-$$
-The probability that the sum of the faces on the five cards is 48 or more is:
-$$
-   P(Sum \ \ is \ \ 48 \ \ or \ \ more) = \frac{m}{n} = \frac{32}{2598960},$$
-\newline
-where m - The number of ways of selecting the sum of the faces and n - Total number of ways
-\newline
-Therefore, the probability that the sum of the faces on the five cards is 48 or more is:
-
-    $$\frac{32}{2598960}$$
-
-\subsection*{Question 2, Section 2, Chapter 2 (\cite{toi3rd})}
-
-\noindent\textbf{Assigned to Zhannur Kazenov}\\
-
-\noindent To get a flush, Dana needs to draw any 3 of the remaining 11 diamonds. Since only 47 cards are effectively left in the deck (others may already have been dealt, but their identities are unknown), 
-\newline P(Dana draws to flush) = P(A)
 \[
-    P(A) =\frac{\binom{11}{3}}{\binom{47}{3}}=0.0101758
+500(1+i)^{30} = 4000 \quad \Rightarrow \quad (1+i)^{30} = 8
 \]
-\subsection*{Question 3, Section 2, Chapter 2 (\cite{toi3rd})}
+\[
+PV = \frac{10000}{(1+i)^{20}} + \frac{10000}{(1+i)^{40}} + \frac{10000}{(1+i)^{60}}
+\]
+\[
+v = \frac{1}{1+i}, \quad v^{30} = \tfrac{1}{8}
+\]
+\[
+PV = 10000\left(v^{20} + v^{40} + v^{60}\right)
+\]
+\[
+= 10000\left(\left(\tfrac{1}{8}\right)^{2/3} + \left(\tfrac{1}{8}\right)^{4/3} + \tfrac{1}{64}\right)
+\]
+\[
+= 10000\left(\tfrac{1}{4} + \tfrac{1}{16} + \tfrac{1}{64}\right)
+\]
+\[
+= 10000\left(0.25 + 0.0625 + 0.015625\right) = 3281.25
+\]
+\[
+\boxed{3281.25}
+\]
 
-\noindent\textbf{Assigned to Alina Abdrakhmanova}\\
+\subsection*{Question 24, Chapter 1  (\cite{toi3rd})}
 
-\noindent Tim is dealt a 4 of a clubs, 8 of hearts, 9 of hearts, and king of diamonds. So, he has been dealt 5 cards and there are 47 cards remaining in the deck. To get a straight flush, Tim needs to have all the cards of the same suit and in sequence. He has 3 hearts in hand that can be made into sequence if 7 of hearts is added to it. Then another 1 card is needed (either 5 or 10 of hearts). \newline
-7 of hearts can be drawn in \begin{equation}
-    \binom{1}{1}
-\end{equation} ways. \newline
-Any of 5 or 10 of hearts can be drawn in \begin{equation}
-    \binom{2}{1}
-\end{equation} ways. \newline
-Let A be an event that a straight flush is drawn. \newline
-Then probability of it happening is: \begin{equation}
-    P(A) =\frac{\binom{1}{1}\binom{2}{1}}{\binom{47}{2}}
-\end{equation} \newline
-To get a flush, which is when all cards are of the same suit and not necessarily in sequence, Tim needs to choose 2 more cards from of hearts. He can do it in $\binom{10}{2}$ ways. It includes 2 cards that will make a sequence a \textbf{straight flush}. So total number of ways to get a flush is $\binom{10}{2}-2$. \newline
-Let B be an event that flush is drawn.
-Then probability of it happening is: \begin{equation}
-    P(A) =\frac{\binom{10}{2}-2}{\binom{47}{2}}
-\end{equation}
-\subsection*{Question 4, Section 2, Chapter 2 (\cite{toi3rd})}
+We want to show that
+\[
+\frac{d^3}{(1-d)^2} = \frac{(i-d)^2}{1-v}.
+\]
+Recall the standard relationships:
+\[
+d = \frac{i}{1+i}, \quad v = \frac{1}{1+i}, \quad 1-d = v.
+\]
+\textbf{LHS:}
+\[
+\frac{d^3}{(1-d)^2} = \frac{d^3}{v^2}.
+\]
+Since
+\[
+d = \frac{i}{1+i}, \quad d^3 = \frac{i^3}{(1+i)^3}, \quad v^2 = \frac{1}{(1+i)^2},
+\]
+we get
+\[
+\frac{d^3}{v^2} = \frac{\tfrac{i^3}{(1+i)^3}}{\tfrac{1}{(1+i)^2}}
+= \frac{i^3}{(1+i)^3}(1+i)^2 = \frac{i^3}{1+i}.
+\]
+\textbf{RHS:}
+\[
+\frac{(i-d)^2}{1-v}.
+\]
+Now
+\[
+i-d = i - \frac{i}{1+i} = \frac{i^2}{1+i},
+\]
+so
+\[
+(i-d)^2 = \frac{i^4}{(1+i)^2}.
+\]
+Also
+\[
+1-v = 1 - \frac{1}{1+i} = \frac{i}{1+i}.
+\]
+Thus
+\[
+\frac{(i-d)^2}{1-v} = \frac{\tfrac{i^4}{(1+i)^2}}{\tfrac{i}{1+i}}
+= \frac{i^4}{(1+i)^2}\cdot \frac{1+i}{i}
+= \frac{i^3}{1+i}.
+\]
+Since both sides equal \(\tfrac{i^3}{1+i}\), the identity is proven:
+\[
+\frac{d^3}{(1-d)^2} = \frac{(i-d)^2}{1-v}.
+\]
 
-\noindent\textbf{Assigned to Akbota Assainova}\\
+\subsection*{Question 26, Chapter 1  (\cite{toi3rd})}
 
-\noindent Firstly, let's discuss about the cases of full house or four-of-a-kind to solve this problem. 
-\newline 
-\textbf{Four of kind:} 
-a hand where four of the cards are with the same rank and another one with different rank. \textit{Example:} $K\varheartsuit, K\spadesuit, K\clubsuit, K\vardiamondsuit, A\vardiamondsuit$
-\newline
-\textbf{full house:} 
- a hand of 5 cards representing two cards with the same rank and another three cards with another same rank. \textit{Example:} $Q\varheartsuit, Q\spadesuit, Q\clubsuit, K\spadesuit, K\clubsuit$ 
-\newline
-Now, we can solve the problem itself.
-\newline
-There are 52 cards in a deck, 4 of each type.
-The poker playeralina.abdra16@gmail.com has 5 cards, leaving 47 in the deck.
-To get a full house he needs one more ace. there are 3 left in the deck.
-To get a 4 of a kind he needs one more queen. there is only one left in the deck.
-\newline
-There are 3 aces, so three of those circumstances. there are 47 cards remaining in the deck, so there is a total of 47 circumstances. the probability of a full house is $P_{full house}=\frac{3}{47}$.
-\newline
-The same thing applies to the four-of-a-kind. There is only 1 queen left, so just one of those circumstances, and there are 47 cards, so 47 possible circumstances. the probability of getting a four-of-a-kind is $P_{four-of-a-kind}=\frac{1}{47}$
-\newline
-Thus, the final probability is: 
-\newline 
-P(draws to full house or four-of-a-kind)$=P_{full-house} + P_{four-of-a-kind}$
-\newline
-P(draws to full house or four-of-a-kind)$=\frac{3}{47}+\frac{1}{47}=\frac{4}{47}$
+\textbf{(a)} We know
+\[
+d^{(m)} = 1 - (1+i)^{-1/m}, \quad 
+1+i^{(m)} = (1+i)^{1/m}.
+\]
+
+From \(i^{(3)}\):
+\[
+1+i^{(3)} = (1+i)^{1/3} \quad \Rightarrow \quad 1+i = (1+i^{(3)})^3.
+\]
+
+Thus
+\[
+d^{(4)} = 1 - (1+i)^{-1/4} = 1 - (1+i^{(3)})^{-3/4}.
+\]
+
+\[
+\boxed{d^{(4)} = 1 - (1+i^{(3)})^{-3/4}}
+\]
+
+\bigskip
+
+\textbf{(b)} From the discount relation:
+\[
+1-d^{(m)} = (1+i)^{-1/m}.
+\]
+
+For \(m=2\):
+\[
+1-d^{(2)} = (1+i)^{-1/2} \quad \Rightarrow \quad 1+i = \left(\frac{1}{1-d^{(2)}}\right)^2.
+\]
+
+Hence
+\[
+1+i^{(6)} = (1+i)^{1/6} = \left(\frac{1}{1-d^{(2)}}\right)^{1/3}.
+\]
+
+\[
+i^{(6)} = (1-d^{(2)})^{-1/3} - 1.
+\]
+
+\[
+\boxed{i^{(6)} = (1-d^{(2)})^{-1/3} - 1}
+\]
+
+\subsection*{Question 27, Chapter 1  (\cite{toi3rd})}
+
+\textbf{27(a)} Show that
+\[
+i^{(m)} = d^{(m)} (1+i)^{1/m}.
+\]
+
+We know
+\[
+i^{(m)} = m \big( (1+i)^{1/m} - 1 \big),
+\quad 
+d^{(m)} = m \big( 1 - (1+i)^{-1/m} \big).
+\]
+
+Thus
+\[
+d^{(m)} = m \cdot \frac{(1+i)^{1/m} - 1}{(1+i)^{1/m}}.
+\]
+
+Multiplying both sides by \((1+i)^{1/m}\):
+\[
+d^{(m)} (1+i)^{1/m} 
+= m \cdot \frac{(1+i)^{1/m} - 1}{(1+i)^{1/m}} \cdot (1+i)^{1/m}
+= m \big( (1+i)^{1/m} - 1 \big).
+\]
+
+\[
+\boxed{i^{(m)} = d^{(m)} (1+i)^{1/m}}
+\]
+
+\bigskip
+\textbf{27(b)} \\
+This result shows that the nominal interest rate convertible \(m\) times per year
+equals the nominal discount rate convertible \(m\) times per year,
+multiplied by the accumulation factor for a period of length \(1/m\) year.
+
+\subsection*{Question 28, Chapter 1  (\cite{toi3rd})}
+
+\textbf{28.}
+\textbf{(a)} Nominal annual rate of interest is 6\% convertible quarterly.  
+
+\[
+i^{(4)} = 0.06, 
+\quad i_{\text{quarter}} = \frac{0.06}{4} = 0.015
+\]
+
+Number of quarters in 2 years: \( 2 \times 4 = 8 \).  
+
+\[
+FV = 100(1+0.015)^8 \approx 100(1.12674) = 112.67
+\]
+
+\[
+\boxed{112.67}
+\]
+
+\bigskip
+\textbf{(b)} Nominal annual rate of discount is 6\% convertible once every 4 years.  
+
+\[
+d^{(1)} = 0.06, 
+\quad v_4 = 1-d = 0.94
+\]
+
+\[
+(1+i)^4 = \frac{1}{0.94}, 
+\quad 1+i = \left(\frac{1}{0.94}\right)^{1/4}
+\]
+
+After 2 years:
+\[
+FV = 100 (1+i)^2 = 100 \left(\frac{1}{0.94}\right)^{1/2} \approx 103.16
+\]
+
+\[
+\boxed{103.16}
+\]
+
+\subsection*{Question 34, Chapter 1  (\cite{toi3rd})}
+
+\textbf{34.} Fund A accumulates at a simple interest rate of 10\%.  
+Fund B accumulates at a simple discount rate of 5\%.  
+Find the point in time at which the forces of interest on the two funds are equal.
+
+\bigskip
+For Fund A (simple interest, \(i = 0.10\)):  
+\[
+a_A(t) = 1 + 0.10t, 
+\quad \delta_A(t) = \frac{a_A'(t)}{a_A(t)} 
+= \frac{0.10}{1+0.10t}.
+\]
+
+For Fund B (simple discount, \(d = 0.05\)):  
+\[
+a_B(t) = \frac{1}{1-0.05t}, 
+\quad \delta_B(t) = \frac{a_B'(t)}{a_B(t)} 
+= \frac{0.05}{1-0.05t}.
+\]
+
+Set equal:
+\[
+\frac{0.10}{1+0.10t} = \frac{0.05}{1-0.05t}.
+\]
+
+Cross multiply:
+\[
+0.10(1-0.05t) = 0.05(1+0.10t),
+\]
+\[
+0.10 - 0.005t = 0.05 + 0.005t,
+\]
+\[
+0.05 = 0.01t \quad \Rightarrow \quad t = 5.
+\]
+
+\[
+\boxed{t = 5 \text{ years}}
+\]
+
+\subsection*{Question 35, Chapter 1  (\cite{toi3rd})}
+
+\textbf{35.} An investment is made for one year in a fund whose accumulation function 
+is a second-degree polynomial. The nominal rate of interest earned during the first half 
+of the year is 5\% convertible semiannually. The effective rate of interest earned for the entire year is 7\%. Find \(\delta_s\).
+
+\bigskip
+Let the accumulation function be
+\[
+a(t) = 1 + \alpha t + \beta t^2.
+\]
+
+At \(t=0\), \(a(0)=1\).  
+At \(t=1\), effective interest = 7\%:
+\[
+a(1) = 1.07 = 1 + \alpha + \beta \quad \Rightarrow \quad \alpha + \beta = 0.07.
+\]
+
+At \(t=\tfrac{1}{2}\), the effective interest is 
+\[
+i^{(2)} = \frac{0.05}{2} = 0.025,
+\quad a\!\left(\tfrac{1}{2}\right) = 1.025.
+\]
+
+So:
+\[
+1 + \frac{\alpha}{2} + \frac{\beta}{4} = 1.025 
+\quad \Rightarrow \quad \frac{\alpha}{2} + \frac{\beta}{4} = 0.025.
+\]
+
+Multiply by 4:
+\[
+2\alpha + \beta = 0.1.
+\]
+
+Now system:
+\[
+\alpha + \beta = 0.07, \quad 2\alpha + \beta = 0.1.
+\]
+
+Subtract:
+\[
+\alpha = 0.03, \quad \beta = 0.04.
+\]
+
+Thus
+\[
+a(t) = 1 + 0.03t + 0.04t^2.
+\]
+
+Force of interest:
+\[
+\delta(t) = \frac{a'(t)}{a(t)} 
+= \frac{0.03 + 0.08t}{1+0.03t+0.04t^2}.
+\]
+
+At \(t=s\):
+\[
+\boxed{\delta_s = \frac{0.03 + 0.08s}{1+0.03s+0.04s^2}}
+\]
 
 
-\subsection*{Question 5, Section 2, Chapter 2 (\cite{toi3rd})}
+\subsection*{Question 37, Chapter 1  (\cite{toi3rd})}
 
-\noindent\textbf{Assigned to Dariya Kalymova}\\
+\textbf{37.} Find the level effective rate of interest over a three-year period 
+which is equivalent to an effective rate of discount of 8\% the first year, 
+7\% the second year, and 6\% the third year.
 
-\noindent A bridge hand (thirteen cards) is dealt from a stan dard 52-card deck. Let A be the event that the hand contains four aces; let B be the event that the hand contains four kings. Find
-\begin{math}
- P(A \cup B).
- \end{math}
-\newline
-\textit{\textbf{Solution:}}
-\begin{math}
- P(A) = \frac{\binom{4}{4} \binom{48}{9}}{\binom{52}{13}}.\newline 
-  P(B) = \frac{\binom{4}{4} \binom{48}{9}}{\binom{52}{13}}.\newline
-   P(A \cap B) = \frac{\binom{4}{4} \binom{4}{4} \binom{44}{5}}{\binom{52}{13}}.\newline
-  P(A \cup B) = P(A) + P(B)- P(A \cap B) = \frac{4 669 920}{1512}
-\end{math}
+\bigskip
+We use the relation between discount and interest:
+\[
+1-d = v = \frac{1}{1+i}, 
+\quad \Rightarrow \quad 1+i = \frac{1}{1-d}.
+\]
+
+For each year:
+\[
+1+i_1 = \frac{1}{1-0.08} = \frac{1}{0.92} = 1.086956,
+\]
+\[
+1+i_2 = \frac{1}{1-0.07} = \frac{1}{0.93} = 1.075269,
+\]
+\[
+1+i_3 = \frac{1}{1-0.06} = \frac{1}{0.94} = 1.063830.
+\]
+
+The three-year accumulation factor is
+\[
+A = (1+i_1)(1+i_2)(1+i_3) \approx 1.2477.
+\]
+
+We want a level effective annual rate \(i\) such that
+\[
+(1+i)^3 = A,
+\quad \Rightarrow \quad i = A^{1/3} - 1.
+\]
+
+\[
+i \approx (1.2477)^{1/3} - 1 \approx 0.0764.
+\]
+
+\[
+\boxed{i \approx 7.64\%}
+\]
+
+\subsection*{Question 46, Chapter 1  (\cite{toi3rd})}    
+
+\textbf{46.} You are given 
+\[
+\delta_t = \frac{2}{t-1}, \quad 2 \leq t \leq 10.
+\]
+
+For the interval \([n, n+1]\), the effective accumulation is
+\[
+1+i_n = \exp\!\left(\int_n^{n+1} \delta_t \, dt\right).
+\]
+
+\[
+\int_n^{n+1} \frac{2}{t-1} \, dt 
+= 2 \ln\!\left(\frac{n}{n-1}\right),
+\]
+\[
+1+i_n = \left(\frac{n}{n-1}\right)^2.
+\]
+
+Now, relation between effective interest and nominal discount:
+\[
+1+i_n = \left(\frac{1}{1-d^{(2)}/2}\right)^2.
+\]
+
+\[
+\sqrt{1+i_n} = \frac{1}{1-d^{(2)}/2},
+\quad d^{(2)} = 2\left(1 - \frac{1}{\sqrt{1+i_n}}\right).
+\]
+
+Since 
+\[
+1+i_n = \left(\frac{n}{n-1}\right)^2,
+\quad \sqrt{1+i_n} = \frac{n}{n-1},
+\]
+we get
+\[
+d^{(2)} = 2\left(1 - \frac{n-1}{n}\right) = \frac{2}{n}.
+\]
+
+\[
+\boxed{d^{(2)} = \tfrac{2}{n}, \quad n=2,3,\dots,9.}
+\]
+
+\subsection*{Question 49, Chapter 1  (\cite{toi3rd})}
+
+\textbf{49.} Find the following derivatives.
+
+\bigskip
+\textbf{(a)} 
+\[
+d = \frac{i}{1+i}, 
+\quad \frac{dd}{di} = \frac{1}{(1+i)^2}.
+\]
+
+\bigskip
+\textbf{(b)} 
+\[
+\delta = \ln(1+i),
+\quad \frac{d\delta}{di} = \frac{1}{1+i}.
+\]
+
+\textbf{(c)} 
+\[
+v = \frac{1}{1+i}, \quad 
+\delta = \ln(1+i) = -\ln v,
+\]
+\[
+\frac{d\delta}{dv} = -\frac{1}{v}.
+\]
+
+\textbf{(d)} 
+\[
+\frac{dd}{d\delta} 
+= \frac{\tfrac{dd}{di}}{\tfrac{d\delta}{di}}
+= \frac{\tfrac{1}{(1+i)^2}}{\tfrac{1}{1+i}}
+= \frac{1}{1+i} = v.
+\]
+
+\[
+\boxed{\frac{dd}{d\delta} = v}
+\]
+
+\subsection*{Question 2, Chapter 2 (\cite{toi3rd})}
+
+\textbf{2.} Outstanding debt: \$1000, monthly interest \(= 0.18/12 = 0.015\).  
+Payments: \$200 at month 1, \$300 at month 2, and \(X\) at month 3.
+
+\[
+1000(1.015)^3 = 200(1.015)^2 + 300(1.015) + X
+\]
+
+\[
+X = 1000(1.015)^3 - 200(1.015)^2 - 300(1.015)
+\]
+
+\[
+X \approx 535.13
+\]
+
+\[
+\boxed{X \approx 535.13}
+\]
+
+
+\subsection*{Question 3, Chapter 2 (\cite{toi3rd})}
+
+\textbf{3.} Equating present values:
+
+\[
+\frac{200}{(1+i)^5} + \frac{500}{(1+i)^{10}} 
+= \frac{400.94}{(1+i)^5}
+\]
+
+\[
+200(1+i)^5 + 500 = 400.94(1+i)^5
+\]
+
+\[
+200.94(1+i)^5 = 500, 
+\quad (1+i)^5 \approx 2.487, 
+\quad i \approx 20\%.
+\]
+
+Now,
+\[
+P = 100(1.2)^{10} + 120(1.2)^5
+\]
+
+\[
+P \approx 100(6.1917) + 120(2.4883) = 917.77
+\]
+
+\[
+\boxed{P \approx 917.77}
+\]
+
+
+\subsection*{Question 5, Chapter 2 (\cite{toi3rd})}
+
+\textbf{5.} Two payments of \$100: one at time 0 and one at time 5.  
+Simple interest rate: 5\%.
+
+\bigskip
+\textbf{(a) Comparison date: end of 10 years}
+
+First payment accumulated for 10 years:
+\[
+100(1+0.05 \times 10) = 150
+\]
+
+Second payment accumulated for 5 years:
+\[
+100(1+0.05 \times 5) = 125
+\]
+
+Total at year 10:
+\[
+150 + 125 = 275
+\]
+
+\[
+\boxed{275}
+\]
+
+\bigskip
+\textbf{(b) Comparison date: end of 15 years}
+
+First payment accumulated for 15 years:
+\[
+100(1+0.05 \times 15) = 175
+\]
+
+Second payment accumulated for 10 years:
+\[
+100(1+0.05 \times 10) = 150
+\]
+
+Total at year 15:
+\[
+175 + 150 = 325
+\]
+
+\[
+\boxed{325}
+\]
+
+
+\subsection*{Question 10, Chapter 2 (\cite{toi3rd})}
+
+\textbf{10.} Develop a rule of \(n\) to approximate how long it takes money to triple.
+
+We want
+\[
+(1+i)^n = 3.
+\]
+
+Taking logs:
+\[
+n = \frac{\ln 3}{\ln(1+i)}.
+\]
+
+Using the \emph{rule of \(n\)} approximation:
+\[
+n \approx \frac{\ln 3}{i}.
+\]
+
+Numerical constant:
+\[
+\ln 3 \approx 1.099.
+\]
+
+So:
+\[
+\boxed{n \approx \frac{1.099}{i}}
+\]
+
+\subsection*{Question 11, Chapter 2 (\cite{toi3rd})}
+
+\textbf{11.}  
+A deposits 10 at \(t=0\) and 30 at \(t=5\) into a fund paying simple interest of 11\%.  
+
+\bigskip
+\textbf{A’s deposits:}
+
+Value of 10 after 10 years:
+\[
+10 \left(1 + 0.11 \times 10\right) = 10(2.1) = 21.
+\]
+
+Value of 30 after 5 years (from \(t=5\) to \(t=10\)):
+\[
+30 \left(1 + 0.11 \times 5\right) = 30(1.55) = 46.5.
+\]
+
+Total at year 10:
+\[
+AV_A = 21 + 46.5 = 67.5.
+\]
+
+\bigskip
+\textbf{B’s deposits:}  
+10 deposited at \(t=n\), accumulates to:
+\[
+10(1.0915)^{10-n}.
+\]
+
+30 deposited at \(t=2n\), accumulates to:
+\[
+30(1.0915)^{10-2n}.
+\]
+
+Total at year 10:
+\[
+AV_B = 10(1.0915)^{10-n} + 30(1.0915)^{10-2n}.
+\]
+
+\bigskip
+\textbf{Equation:}
+\[
+10(1.0915)^{10-n} + 30(1.0915)^{10-2n} = 67.5.
+\]
+
+Solve numerically for \(n\):
+\[
+n \approx 7.
+\]
+
+\[
+\boxed{n \approx 7}
+\]
+
+\subsection*{Question 13, Chapter 2 (\cite{toi3rd})}
+
+\textbf{13.} Find the nominal rate of interest convertible semiannually at which 
+the accumulated value of \$1000 at the end of 15 years is \$3000.
+
+\bigskip
+We require
+\[
+1000(1+j^{(2)}/2)^{30} = 3000.
+\]
+
+\[
+(1+j^{(2)}/2)^{30} = 3,
+\quad 1+\frac{j^{(2)}}{2} = 3^{1/30}.
+\]
+
+\[
+j^{(2)} = 2\left(3^{1/30} - 1\right).
+\]
+
+Numerically,
+\[
+3^{1/30} \approx 1.03728,
+\quad j^{(2)} \approx 2(0.03728) = 0.07456.
+\]
+
+\[
+\boxed{j^{(2)} \approx 7.46\%}
+\]
+
+\subsection*{Question 16, Chapter 2 (\cite{toi3rd})}
+
+\textbf{16.} An investment of \$1000 accumulates to \$1825 at the end of 10 years.  
+It earns simple interest at rates \(i, 2i, \dots, 10i\) for each respective year.  
+
+\bigskip
+Total accumulated value:
+\[
+1000\left(1 + i + 2i + \cdots + 10i\right).
+\]
+
+\[
+= 1000\left(1 + i(1+2+\cdots+10)\right).
+\]
+
+\[
+= 1000\left(1 + i\cdot 55\right).
+\]
+
+Given:
+\[
+1000(1+55i) = 1825.
+\]
+
+\[
+1+55i = 1.825, \quad 55i = 0.825, \quad i = \frac{0.825}{55}.
+\]
+
+\[
+i = 0.015 \quad \Rightarrow \quad \boxed{1.5\%}
+\]
+
+\subsection*{Question 17, Chapter 2 (\cite{toi3rd})}
+
+\textbf{17.} An amount of money doubles in 10 years with varying force of interest 
+\(\delta_t = kt\).  
+
+\bigskip
+Accumulated value factor:
+\[
+\exp\!\left(\int_0^{10} kt \, dt \right).
+\]
+
+\[
+= \exp\!\left( k \cdot \frac{10^2}{2} \right) = \exp(50k).
+\]
+
+We need:
+\[
+\exp(50k) = 2.
+\]
+
+\[
+50k = \ln 2, \quad k = \frac{\ln 2}{50}.
+\]
+
+\[
+\boxed{k = \frac{\ln 2}{50}}
+\]
+
+\subsection*{Question 18, Chapter 2 (\cite{toi3rd})}
+
+\textbf{18.} The sum of accumulated value of 1 at the end of 3 years at effective rate \(i\) 
+and the present value of 1 due at end of 3 years at effective discount \(d=i\) is 2.0096.  
+
+\bigskip
+Accumulated value:
+\[
+(1+i)^3.
+\]
+
+Present value at discount rate \(d=i\):
+\[
+\frac{1}{1+3i}.
+\]
+
+Equation:
+\[
+(1+i)^3 + \frac{1}{1+3i} = 2.0096.
+\]
+
+Solve numerically:  
+Approximate solution:
+\[
+i \approx 0.02.
+\]
+
+\[
+\boxed{i \approx 2\%}
+\]
+
+\subsection*{Question 20, Chapter 2 (\cite{toi3rd})}
+
+\textbf{20.} A sum of \$10{,}000 is invested for the months of July and August at 6\% simple interest.  
+
+\bigskip
+\textbf{(a) Exact simple interest}  
+Exact time = 62 days (July 31 + August 31).  
+Year = 365 days.  
+
+\[
+I = P \cdot i \cdot \frac{t}{365}
+= 10000 \cdot 0.06 \cdot \frac{62}{365}.
+\]
+
+\[
+I \approx 101.92.
+\]
+
+\[
+\boxed{101.92}
+\]
+
+\bigskip
+\textbf{(b) Ordinary simple interest}  
+Ordinary year = 360 days.  
+\[
+I = 10000 \cdot 0.06 \cdot \frac{62}{360}.
+\]
+
+\[
+I \approx 103.33.
+\]
+
+\[
+\boxed{103.33}
+\]
+
+\bigskip
+\textbf{(c) Banker's Rule}  
+Use exact days with ordinary year:  
+
+\[
+I = 10000 \cdot 0.06 \cdot \frac{62}{360}.
+\]
+
+\[
+I \approx 103.33.
+\]
+
+\[
+\boxed{103.33}
+\]
+
+
+\subsection*{Question 21, Chapter 2 (\cite{toi3rd})}
+
+\textbf{21.}  
+
+\bigskip
+\textbf{(a)} Banker's Rule:  
+It uses exact days (larger numerator) but divides by 360 instead of 365 (smaller denominator).  
+Thus the fraction of the year is always larger than under exact simple interest.  
+Therefore Banker's Rule always yields more interest for the lender.  
+
+\[
+\frac{t}{360} > \frac{t}{365}.
+\]
+
+\bigskip
+\textbf{(b)} Compared to ordinary simple interest:  
+Ordinary uses 30 days per month and 360-day year.  
+Banker's Rule uses exact days (≥ ordinary days) with 360-day year.  
+Thus Banker's Rule is usually more favorable to the lender.  
+
+\bigskip
+\textbf{(c)} Counterexample:  
+Suppose investment spans February (28 days).  
+Ordinary simple interest counts this as 30 days,  
+while Banker's Rule counts 28 days.  
+Thus ordinary simple interest gives higher interest in this case.  
+
 
 \newpage
 \printbibliography
