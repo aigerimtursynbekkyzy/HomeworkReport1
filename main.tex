@@ -14,18 +14,15 @@
 \usepackage{tabularx}
 \usepackage{mathtools}
 \usepackage{csquotes}
-\usepackage[style=apa]{biblatex}
-\bibliography{ref}
+\usepackage[style=apa]{biblatex} % можно убрать, если не нужны \cite
 
 % Adjust margins here
-
 \geometry{left=3cm, right=3cm, top=3cm, bottom=3cm, headheight=15pt}
 \addtolength{\topmargin}{-2.5pt}
-% Increase bottom margin to lower page numbering
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
-\fancyhead[L]{MATH 323: Actuarial Mathematics I  } % left header
+\fancyhead[L]{MATH 323: Actuarial Mathematics I} % left header
 \fancyhead[R]{Homework Report 1} % right header
 \fancyfoot[C]{\thepage} % center footer
 \renewcommand{\headrulewidth}{0.4pt} % header rule width
@@ -33,339 +30,16 @@
 
 \begin{document}
 
-\begin{titlepage}
-    \centering
-    
-    \vspace*{0.5cm}
-    
-    {\Large\bfseries MATH 323: Actuarial Mathematics I\par}
-    
-    \vspace{1cm}
-    
-    {\large Homework Report 1\par}
-    
-    \vspace{0.5cm}
-    
-    {\today\par}
-    
-    \vspace{1pt}
-    
-    \includegraphics[width=0.3\textwidth]{NU-logo.png}\\
-    \includegraphics[width=0.15\textwidth]{sosah-logo.png}
+\section*{Questions and Solutions}
 
-    \vspace{0.5cm}
-    
-    Submitted for {\bf MATH 323: Actuarial Mathematics I} at the School of Sciences and Humanities, Department of Mathematics, Nazarbayev University
-    
-    \vspace{0.5cm}
-    
-    {\large Student Name:\par}
-    \begin{itemize}[leftmargin=5cm,rightmargin=4cm]
-        \item  Aigerim Tursynbekkyzy - ID: 202043550
-    \end{itemize}
-
-    \vspace{0.5cm}
-    
-  \begin{flushleft}
-      Subject Area: \textbf{Theory of Interest} \\
-      Description: \textbf{Homework Problems in Chapter 1,Chapter 2 and Chapter 3} \\
-      Course Instructor: \textbf{Dongming Wei} \\
-    \end{flushleft}
-    
-    \vspace{0.5cm}
-    
-    {\footnotesize In submitting this work we are indicating
-    that we have read the University's Academic Integrity Policy. We
-    declare that all material in this assessment is our own work except
-    where there is clear acknowledgment and reference to the work of
-    others.\par}
-\end{titlepage}
-The following is the used as solutions samples for each problem:
-\newpage
-\section*{Problems}
-\subsection*{Question 19, Chapter 1  (\cite{toi3rd})}
-\noindent It is known that an investment of \$500 will increase to \$4000 at the end of 30 years. Find the sum of the present values of three payments of \$10,000 each which will occur at the end of 20, 40, and 60 years.
-
-\subsection*{Question 24, Chapter 1  (\cite{toi3rd})}
-\noindent Show that
-\[
-\frac{d^3}{(1 - d)^2} = \frac{(i - d)^2}{1 - v}.
-\]
-
-\subsection*{Question 26, Chapter 1  (\cite{toi3rd})}
-\noindent
-\begin{enumerate}
-    \item[(a)] Express \( d^{(4)} \) as a function of \( i^{(3)} \).
-    \item[(b)] Express \( i^{(6)} \) as a function of \( d^{(2)} \).
-\end{enumerate}
-
-\subsection*{Question 27, Chapter 1  (\cite{toi3rd})}
-\noindent
-\begin{enumerate}
-    \item[(a)] Show that \( i^{(m)} = d^{(m)} (1 + i)^{1/m} \).
-    \item[(b)] Verbally interpret the result obtained in (a).
-\end{enumerate}
-
-\subsection*{Question 28, Chapter 1  (\cite{toi3rd})}
-\noindent Find the accumulated value of \$100 at the end of two years:
-\begin{enumerate}
-    \item[(a)] If the nominal annual rate of interest is 6\% convertible quarterly.
-    \item[(b)] If the nominal annual rate of discount is 6\% convertible once every four years.
-\end{enumerate}
-
-\subsection*{Question 34, Chapter 1  (\cite{toi3rd})}
-\noindent Fund A accumulates at a simple interest rate of 10\%. Fund B accumulates at a simple discount rate of 5\%. Find the point in time at which the forces of interest on the two funds are equal.
-
-\subsection*{Question 35, Chapter 1  (\cite{toi3rd})}
-\noindent An investment is made for one year in a fund whose accumulation function is a second degree polynomial. The nominal rate of interest earned during the first half of the year is 5\% convertible semiannually. The effective rate of interest earned for the entire year is 7\%. Find \( \delta_s \).
-
-\subsection*{Question 37, Chapter 1  (\cite{toi3rd})}
-\noindent Find the level effective rate of interest over a three-year period which is equivalent to an effective rate of discount of 8\% the first year, 7\% the second year, and 6\% the third year.
-
-\subsection*{Question 46, Chapter 1  (\cite{toi3rd})}
-\noindent You are given \( \delta_t = \frac{2}{t-1} \) for \( 2 \leq t \leq 10 \). For any one-year interval between times \( n \) and \( n + 1 \), with \( n = 2, 3, \dots, 9 \), calculate the equivalent \( d^{(2)} \).
-
-\subsection*{Question 49, Chapter 1  (\cite{toi3rd})}
-\noindent Find the following derivatives:
-\begin{enumerate}
-    \item[(a)] \( \frac{dd}{di} \)
-    \item[(b)] \( \frac{d\delta}{di} \)
-    \item[(c)] \( \frac{d\delta}{dv} \)
-    \item[(d)] \( \frac{dd}{d\delta} \)
-\end{enumerate}
-
-
-\subsection*{Question 2, Chapter 2 (\cite{toi3rd})}
-
-\noindent You have an inactive credit card with a \$1000 outstanding unpaid balance. This particular credit card charges interest at the rate of 18\% compounded monthly. You are able to make a payment of \$200 one month from today and \$300 two months from today. Find the amount that you will have to pay three months from today to completely pay off this credit card debt. (Note: Work this problem with an equation of value. You will learn an alternative approach for this type of problem in Chapter 5.)
-
-\bigskip
-
-
-\subsection*{Question 3, Chapter 2 (\cite{toi3rd})}
-
-\noindent At a certain interest rate the present value of the following two payment patterns are equal:
-
-\[
-(i) \quad 200 \text{ at the end of 5 years plus } 500 \text{ at the end of 10 years.}
-\]
-
-\[
-(ii) \quad 400.94 \text{ at the end of 5 years.}
-\]
-
-At the same interest rate, \$100 invested now plus \$120 invested at the end of 5 years will accumulate to \( P \) at the end of 10 years. Calculate \( P \).
-
-\bigskip
-
-
-\subsection*{Question 5, Chapter 2 (\cite{toi3rd})}
-
-\noindent Whereas the choice of a comparison date has no effect on the answer obtained with compound interest, the same cannot be said of simple interest. Find the amount to be paid at the end of 10 years which is equivalent to two payments of \$100 each, the first to be paid immediately and the second to be paid at the end of 5 years. Assume 5\% simple interest is earned from the date each payment is made and use a comparison date of:
-
-\[
-\text{a) The end of 10 years.}
-\]
-\[
-\text{b) The end of 15 years.}
-\]
-
-\bigskip
-
-
-
-\subsection*{Question 10, Chapter 2 (\cite{toi3rd})}
-
-\noindent You are asked to develop a rule of \( n \) to approximate how long it takes money to triple. Find \( n \), where \( n \) is a positive integer.
-
-\bigskip
-
-
-
-\subsection*{Question 11, Chapter 2 (\cite{toi3rd})}
-
-\noindent A deposits 10 today and another 30 in five years into a fund paying simple interest of 11\% per year. B will make the same two deposits, but the 10 will be deposited \( n \) years from today and the 30 will be deposited \( 2n \) years from today. B’s deposits earn an annual effective rate of 9.15\%. At the end of 10 years, the accumulated value of B’s deposits equals the accumulated value of A’s deposits. Calculate \( n \).
-
-\bigskip
-
-
-\subsection*{Question 13, Chapter 2 (\cite{toi3rd})}
-
-\noindent Find the nominal rate of interest convertible semiannually at which the accumulated value of \$1000 at the end of 15 years is \$3000.
-
-\bigskip
-
-
-
-\subsection*{Question 16, Chapter 2 (\cite{toi3rd})}
-
-\noindent It is known that an investment of \$1000 will accumulate to \$1825 at the end of 10 years. If it is assumed that the investment earns simple interest at rate \( i \) during the 1st year, \( 2i \) during the 2nd year, ..., \( 10i \) during the 10th year, find \( i \).
-
-\bigskip
-
-
-
-\subsection*{Question 17, Chapter 2 (\cite{toi3rd})}
-
-\noindent It is known that an amount of money will double itself in 10 years at a varying force of interest \( \delta_t = kt \). Find an expression for \( k \).
-
-\bigskip
-
-
-
-\subsection*{Question 18, Chapter 2 (\cite{toi3rd})}
-
-\noindent The sum of the accumulated value of 1 at the end of three years at a certain effective rate of interest \( i \), and the present value of 1 to be paid at the end of three years at an effective rate of discount numerically equal to \( i \) is 2.0096. Find the rate \( i \).
-
-\bigskip
-
-
-\subsection*{Question 20, Chapter 2 (\cite{toi3rd})}
-
-\noindent A sum of \$10,000 is invested for the months of July and August at 6\% simple interest. Find the amount of interest earned:
-
-\[
-\text{a) Assuming exact simple interest.}
-\]
-\[
-\text{b) Assuming ordinary simple interest.}
-\]
-\[
-\text{c) Assuming the Banker’s Rule.}
-\]
-
-    \bigskip
-
-
-\subsection*{Question 21, Chapter 2 (\cite{toi3rd})}
-\[
-\text{a) Show that the Banker’s Rule is always more favorable to the lender than is exact simple interest.}
-\]
-\[
-\text{b) Show that the Banker’s Rule is usually more favorable to the lender than is ordinary simple interest.}
-\]
-\[
-\text{c) Find a counterexample in (b) for which the opposite relationship holds.}
-\]
-
-\subsection*{Question 4, Chapter 3  (\cite{toi3rd})}
-A borrows \$20,000 for 8 years and repays the loan with level annual payments at the end of each year. 
-B also borrows \$20,000 for 8 years, but pays only interest as it is due each year and plans to repay the entire loan at the end of the 8-year period. 
-Both loans carry an effective interest rate of 8.5\%. 
-How much more interest will B pay than A pays over the life of the loan?
-
-\subsection*{Question 5, Chapter 3  (\cite{toi3rd})}
-An annuity provides a payment of $n$ at the end of each year for $n$ years. 
-The annual effective interest rate is $1/n$. 
-What is the present value of the annuity?
-
-\subsection*{Question 6, Chapter 3  (\cite{toi3rd})}
-If $a_n = x$ and $a_{2n} = y$, express $d$ as a function of $x$ and $y$.
-
-\subsection*{Question 9, Chapter 3  (\cite{toi3rd})}
-A worker aged 40 wishes to accumulate a fund for retirement by depositing \$3000 at the beginning of each year for 25 years. 
-Starting at age 65 the worker plans to make 15 annual withdrawals at the beginning of each year. 
-Assuming that all payments are certain to be made, find the amount of each withdrawal starting at age 65 to the nearest dollar, if the effective rate of interest is 8\% during the first 25 years but only 7\% thereafter.
-
-\subsection*{Question 10, Chapter 3  (\cite{toi3rd})}
-a) Show that $\ddot{a}_{\overline{n}|} = a_{\overline{n}|} + 1 - v^n$.  
-
-b) Show that $\ddot{s}_{\overline{n}|} = s_{\overline{n}|} - 1 + (1+i)^n$.  
-
-c) Verbally interpret the results in (a) and (b).
-
-\subsection*{Question 11, Chapter 3  (\cite{toi3rd})}
-If $\ddot{a}_{\overline{p}|} = x$ and $s_{\overline{q}|} = y$, show that  
-\[
-a_{\overline{p+q}|} = \frac{vx + y}{1+i}.
-\]
-
-\subsection*{Question 15, Chapter 3  (\cite{toi3rd})}
-Annuities X and Y provide the following payments:  
-
-\[
-\begin{array}{c|c|c}
-\text{End of Year} & \text{Annuity X} & \text{Annuity Y} \\
-\hline
-1-10 & 1 & K \\
-11-20 & 2 & 0 \\
-21-30 & 1 & K \\
-\end{array}
-\]
-
-Annuities X and Y have equal present values at an annual effective interest rate $i$ such that $v^{10} = \tfrac{1}{2}$. Determine $K$.
-
-\subsection*{Question 16, Chapter 3  (\cite{toi3rd})}
-You are given that $s_{\overline{10}|a} = 3 \cdot 10 \cdot a_{\overline{5}|}$. 
-Find $(1+i)^5$.
-
-\subsection*{Question 17, Chapter 3  (\cite{toi3rd})}
-Find the present value to the nearest dollar on January 1 of an annuity which pays \$2000 every six months for five years. 
-The first payment is due on the next April 1 and the rate of interest is 9\% convertible semiannually.
-
-\subsection*{Question 20, Chapter 3  (\cite{toi3rd})}
-A woman has an inheritance in a trust fund for family members left by her recently deceased father that will pay \$50,000 at the end of each year indefinitely into the future. 
-She has just turned 60 and does not think that this perpetuity-immediate meets her retirement needs. 
-She wishes to exchange the value of her inheritance in the trust fund for one which will pay her a 5-year deferred annuity-immediate providing her a retirement annuity with annual payments at the end of each year for 20 years following the 5-year deferral period. 
-She would have no remaining interest in the trust fund after 20 payments are made. 
-If the trustee agrees to her proposal, how much annual retirement income would she receive? 
-The trust fund is earning an annual effective rate of interest equal to 5\%. 
-Answer to the nearest dollar.
-
-\subsection*{Question 26, Chapter 3  (\cite{toi3rd})}
-A fund earning 8\% effective is being accumulated with payments of \$500 at the beginning of each year for 20 years. 
-Find the maximum number of withdrawals of \$1000 that can be made at the ends of years under the condition that once withdrawals start they must continue through the end of the 20-year period.
-
-\subsection*{Question 27, Chapter 3  (\cite{toi3rd})}
-A borrower has the following two options for repaying a loan:  
-
-(i) Sixty monthly payments of \$100 at the end of each month.  
-
-(ii) A single payment of \$6000 at the end of $K$ months.  
-
-Interest is at the nominal annual rate of 12\% convertible monthly.  
-The two options have the same present value. Find $K$.  
-
-a) On an exact basis.  
-b) Using the method of equated time defined in Section 2.4.
-
-\subsection*{Question 28, Chapter 3  (\cite{toi3rd})}
-A 48-month car loan of \$12,000 can be completely paid off with monthly payments of \$300 made at the end of each month.  
-What is the nominal rate of interest convertible monthly on this loan?  
-
-a) Computed on an exact basis with a financial calculator.  
-b) Approximated by formula (3.21).
-
-\subsection*{Question 30, Chapter 3  (\cite{toi3rd})}
-A beneficiary receives a \$10,000 life insurance benefit. 
-If the beneficiary uses the proceeds to buy a 10-year annuity-immediate, the annual payout will be \$1538. 
-If a 20-year annuity-immediate is purchased, the annual payout will be \$1072. 
-Both calculations are based on an annual effective interest rate of $i$. 
-Find $i$.
-
-\subsection*{Question 32, Chapter 3  (\cite{toi3rd})}
-a) Find the present value of an annuity-immediate which pays 1 at the end of each half-year for five years, if the rate of interest is 8\% convertible semiannually for the first three years and 7\% convertible semiannually for the last two years.  
-
-b) Find the present value of an annuity-immediate which pays 1 at the end of each half-year for five years, if the payments for the first three years are discounted at 8\% convertible semiannually and the payments for the last two years are discounted at 7\% convertible semiannually.  
-
-c) Justify from general reasoning that the answer to (b) is larger than the answer to (a).
-
-\subsection*{Question 33, Chapter 3  (\cite{toi3rd})}
-Find the present value of an annuity-immediate for five years, i.e. $a_{\overline{5}|}$, if  
-\[
-i_t = 0.06 + 0.002(t-1), \quad t=1,2,3,4,5,
-\]  
-where $i_t$ is interpreted according to the:  
-
-a) Yield curve method.  
-b) Portfolio method.
-
-\newpage
-
-\section*{Solutions}
-
+% ================== Q19 ==================
 \subsection*{Question 19, Chapter 1  (\cite{toi3rd})}
 
+\textbf{Problem.} \\
+It is known that an investment of \$500 will increase to \$4000 at the end of 30 years. Find the sum of the present values of three payments of \$10,000 each which will occur at the end of 20, 40, and 60 years.
+
+\medskip
+\textbf{Solution.}
 \[
 500(1+i)^{30} = 4000 \quad \Rightarrow \quad (1+i)^{30} = 8
 \]
@@ -391,8 +65,17 @@ PV = 10000\left(v^{20} + v^{40} + v^{60}\right)
 \boxed{3281.25}
 \]
 
+% ================== Q24 ==================
 \subsection*{Question 24, Chapter 1  (\cite{toi3rd})}
 
+\textbf{Problem.} \\
+Show that
+\[
+\frac{d^3}{(1 - d)^2} = \frac{(i - d)^2}{1 - v}.
+\]
+
+\medskip
+\textbf{Solution.}
 We want to show that
 \[
 \frac{d^3}{(1-d)^2} = \frac{(i-d)^2}{1-v}.
@@ -401,6 +84,7 @@ Recall the standard relationships:
 \[
 d = \frac{i}{1+i}, \quad v = \frac{1}{1+i}, \quad 1-d = v.
 \]
+
 \textbf{LHS:}
 \[
 \frac{d^3}{(1-d)^2} = \frac{d^3}{v^2}.
@@ -414,6 +98,7 @@ we get
 \frac{d^3}{v^2} = \frac{\tfrac{i^3}{(1+i)^3}}{\tfrac{1}{(1+i)^2}}
 = \frac{i^3}{(1+i)^3}(1+i)^2 = \frac{i^3}{1+i}.
 \]
+
 \textbf{RHS:}
 \[
 \frac{(i-d)^2}{1-v}.
@@ -441,7 +126,17 @@ Since both sides equal \(\tfrac{i^3}{1+i}\), the identity is proven:
 \frac{d^3}{(1-d)^2} = \frac{(i-d)^2}{1-v}.
 \]
 
+% ================== Q26 ==================
 \subsection*{Question 26, Chapter 1  (\cite{toi3rd})}
+
+\textbf{Problem.}
+\begin{enumerate}
+    \item[(a)] Express \( d^{(4)} \) as a function of \( i^{(3)} \).
+    \item[(b)] Express \( i^{(6)} \) as a function of \( d^{(2)} \).
+\end{enumerate}
+
+\medskip
+\textbf{Solution.}
 
 \textbf{(a)} We know
 \[
@@ -458,13 +153,11 @@ Thus
 \[
 d^{(4)} = 1 - (1+i)^{-1/4} = 1 - (1+i^{(3)})^{-3/4}.
 \]
-
 \[
 \boxed{d^{(4)} = 1 - (1+i^{(3)})^{-3/4}}
 \]
 
 \bigskip
-
 \textbf{(b)} From the discount relation:
 \[
 1-d^{(m)} = (1+i)^{-1/m}.
@@ -477,25 +170,29 @@ For \(m=2\):
 
 Hence
 \[
-1+i^{(6)} = (1+i)^{1/6} = \left(\frac{1}{1-d^{(2)}}\right)^{1/3}.
+1+i^{(6)} = (1+i)^{1/6} = \left(\frac{1}{1-d^{(2)}}\right)^{1/3},
 \]
-
+so
 \[
 i^{(6)} = (1-d^{(2)})^{-1/3} - 1.
 \]
-
 \[
 \boxed{i^{(6)} = (1-d^{(2)})^{-1/3} - 1}
 \]
 
+% ================== Q27 ==================
 \subsection*{Question 27, Chapter 1  (\cite{toi3rd})}
 
-\textbf{27(a)} Show that
-\[
-i^{(m)} = d^{(m)} (1+i)^{1/m}.
-\]
+\textbf{Problem.}
+\begin{enumerate}
+    \item[(a)] Show that \( i^{(m)} = d^{(m)} (1 + i)^{1/m} \).
+    \item[(b)] Verbally interpret the result obtained in (a).
+\end{enumerate}
 
-We know
+\medskip
+\textbf{Solution.}
+
+\textbf{(a)} We know
 \[
 i^{(m)} = m \big( (1+i)^{1/m} - 1 \big),
 \quad 
@@ -519,14 +216,23 @@ d^{(m)} (1+i)^{1/m}
 \]
 
 \bigskip
-\textbf{27(b)} \\
-This result shows that the nominal interest rate convertible \(m\) times per year
+\textbf{(b)} This result shows that the nominal interest rate convertible \(m\) times per year
 equals the nominal discount rate convertible \(m\) times per year,
 multiplied by the accumulation factor for a period of length \(1/m\) year.
 
+% ================== Q28 ==================
 \subsection*{Question 28, Chapter 1  (\cite{toi3rd})}
 
-\textbf{28.}
+\textbf{Problem.} \\
+Find the accumulated value of \$100 at the end of two years:
+\begin{enumerate}
+    \item[(a)] If the nominal annual rate of interest is 6\% convertible quarterly.
+    \item[(b)] If the nominal annual rate of discount is 6\% convertible once every four years.
+\end{enumerate}
+
+\medskip
+\textbf{Solution.}
+
 \textbf{(a)} Nominal annual rate of interest is 6\% convertible quarterly.  
 
 \[
@@ -566,13 +272,14 @@ FV = 100 (1+i)^2 = 100 \left(\frac{1}{0.94}\right)^{1/2} \approx 103.16
 \boxed{103.16}
 \]
 
+% ================== Q34 ==================
 \subsection*{Question 34, Chapter 1  (\cite{toi3rd})}
 
-\textbf{34.} Fund A accumulates at a simple interest rate of 10\%.  
-Fund B accumulates at a simple discount rate of 5\%.  
-Find the point in time at which the forces of interest on the two funds are equal.
+\textbf{Problem.} \\
+Fund A accumulates at a simple interest rate of 10\%. Fund B accumulates at a simple discount rate of 5\%. Find the point in time at which the forces of interest on the two funds are equal.
 
-\bigskip
+\medskip
+\textbf{Solution.} \\
 For Fund A (simple interest, \(i = 0.10\)):  
 \[
 a_A(t) = 1 + 0.10t, 
@@ -607,13 +314,14 @@ Cross multiply:
 \boxed{t = 5 \text{ years}}
 \]
 
+% ================== Q35 ==================
 \subsection*{Question 35, Chapter 1  (\cite{toi3rd})}
 
-\textbf{35.} An investment is made for one year in a fund whose accumulation function 
-is a second-degree polynomial. The nominal rate of interest earned during the first half 
-of the year is 5\% convertible semiannually. The effective rate of interest earned for the entire year is 7\%. Find \(\delta_s\).
+\textbf{Problem.} \\
+An investment is made for one year in a fund whose accumulation function is a second degree polynomial. The nominal rate of interest earned during the first half of the year is 5\% convertible semiannually. The effective rate of interest earned for the entire year is 7\%. Find \( \delta_s \).
 
-\bigskip
+\medskip
+\textbf{Solution.} \\
 Let the accumulation function be
 \[
 a(t) = 1 + \alpha t + \beta t^2.
@@ -642,7 +350,7 @@ Multiply by 4:
 2\alpha + \beta = 0.1.
 \]
 
-Now system:
+Now the system:
 \[
 \alpha + \beta = 0.07, \quad 2\alpha + \beta = 0.1.
 \]
@@ -668,14 +376,14 @@ At \(t=s\):
 \boxed{\delta_s = \frac{0.03 + 0.08s}{1+0.03s+0.04s^2}}
 \]
 
-
+% ================== Q37 ==================
 \subsection*{Question 37, Chapter 1  (\cite{toi3rd})}
 
-\textbf{37.} Find the level effective rate of interest over a three-year period 
-which is equivalent to an effective rate of discount of 8\% the first year, 
-7\% the second year, and 6\% the third year.
+\textbf{Problem.} \\
+Find the level effective rate of interest over a three-year period which is equivalent to an effective rate of discount of 8\% the first year, 7\% the second year, and 6\% the third year.
 
-\bigskip
+\medskip
+\textbf{Solution.} \\
 We use the relation between discount and interest:
 \[
 1-d = v = \frac{1}{1+i}, 
@@ -712,13 +420,18 @@ i \approx (1.2477)^{1/3} - 1 \approx 0.0764.
 \boxed{i \approx 7.64\%}
 \]
 
+% ================== Q46 ==================
 \subsection*{Question 46, Chapter 1  (\cite{toi3rd})}    
 
-\textbf{46.} You are given 
+\textbf{Problem.} \\
+You are given 
 \[
 \delta_t = \frac{2}{t-1}, \quad 2 \leq t \leq 10.
 \]
+For any one-year interval between times \( n \) and \( n + 1 \), with \( n = 2, 3, \dots, 9 \), calculate the equivalent \( d^{(2)} \).
 
+\medskip
+\textbf{Solution.} \\
 For the interval \([n, n+1]\), the effective accumulation is
 \[
 1+i_n = \exp\!\left(\int_n^{n+1} \delta_t \, dt\right).
@@ -756,11 +469,21 @@ d^{(2)} = 2\left(1 - \frac{n-1}{n}\right) = \frac{2}{n}.
 \boxed{d^{(2)} = \tfrac{2}{n}, \quad n=2,3,\dots,9.}
 \]
 
+% ================== Q49 ==================
 \subsection*{Question 49, Chapter 1  (\cite{toi3rd})}
 
-\textbf{49.} Find the following derivatives.
+\textbf{Problem.} \\
+Find the following derivatives:
+\begin{enumerate}
+    \item[(a)] \( \frac{dd}{di} \)
+    \item[(b)] \( \frac{d\delta}{di} \)
+    \item[(c)] \( \frac{d\delta}{dv} \)
+    \item[(d)] \( \frac{dd}{d\delta} \)
+\end{enumerate}
 
-\bigskip
+\medskip
+\textbf{Solution.}
+
 \textbf{(a)} 
 \[
 d = \frac{i}{1+i}, 
@@ -795,9 +518,15 @@ v = \frac{1}{1+i}, \quad
 \boxed{\frac{dd}{d\delta} = v}
 \]
 
+% ================== Q2 Ch2 ==================
 \subsection*{Question 2, Chapter 2 (\cite{toi3rd})}
 
-\textbf{2.} Outstanding debt: \$1000, monthly interest \(= 0.18/12 = 0.015\).  
+\textbf{Problem.} \\
+You have an inactive credit card with a \$1000 outstanding unpaid balance. This particular credit card charges interest at the rate of 18\% compounded monthly. You are able to make a payment of \$200 one month from today and \$300 two months from today. Find the amount that you will have to pay three months from today to completely pay off this credit card debt. (Note: Work this problem with an equation of value. You will learn an alternative approach for this type of problem in Chapter 5.)
+
+\medskip
+\textbf{Solution.} \\
+Outstanding debt: \$1000, monthly interest \(= 0.18/12 = 0.015\).  
 Payments: \$200 at month 1, \$300 at month 2, and \(X\) at month 3.
 
 \[
@@ -816,10 +545,25 @@ X \approx 535.13
 \boxed{X \approx 535.13}
 \]
 
-
+% ================== Q3 Ch2 ==================
 \subsection*{Question 3, Chapter 2 (\cite{toi3rd})}
 
-\textbf{3.} Equating present values:
+\textbf{Problem.} \\
+At a certain interest rate the present value of the following two payment patterns are equal:
+
+\[
+(i) \quad 200 \text{ at the end of 5 years plus } 500 \text{ at the end of 10 years.}
+\]
+
+\[
+(ii) \quad 400.94 \text{ at the end of 5 years.}
+\]
+
+At the same interest rate, \$100 invested now plus \$120 invested at the end of 5 years will accumulate to \( P \) at the end of 10 years. Calculate \( P \).
+
+\medskip
+\textbf{Solution.} \\
+Equating present values:
 
 \[
 \frac{200}{(1+i)^5} + \frac{500}{(1+i)^{10}} 
@@ -849,13 +593,22 @@ P \approx 100(6.1917) + 120(2.4883) = 917.77
 \boxed{P \approx 917.77}
 \]
 
-
+% ================== Q5 Ch2 ==================
 \subsection*{Question 5, Chapter 2 (\cite{toi3rd})}
 
-\textbf{5.} Two payments of \$100: one at time 0 and one at time 5.  
-Simple interest rate: 5\%.
+\textbf{Problem.} \\
+Whereas the choice of a comparison date has no effect on the answer obtained with compound interest, the same cannot be said of simple interest. Find the amount to be paid at the end of 10 years which is equivalent to two payments of \$100 each, the first to be paid immediately and the second to be paid at the end of 5 years. Assume 5\% simple interest is earned from the date each payment is made and use a comparison date of:
 
-\bigskip
+\[
+\text{a) The end of 10 years.}
+\]
+\[
+\text{b) The end of 15 years.}
+\]
+
+\medskip
+\textbf{Solution.}
+
 \textbf{(a) Comparison date: end of 10 years}
 
 First payment accumulated for 10 years:
@@ -899,11 +652,14 @@ Total at year 15:
 \boxed{325}
 \]
 
-
+% ================== Q10 Ch2 ==================
 \subsection*{Question 10, Chapter 2 (\cite{toi3rd})}
 
-\textbf{10.} Develop a rule of \(n\) to approximate how long it takes money to triple.
+\textbf{Problem.} \\
+You are asked to develop a rule of \( n \) to approximate how long it takes money to triple. Find \( n \), where \( n \) is a positive integer.
 
+\medskip
+\textbf{Solution.} \\
 We want
 \[
 (1+i)^n = 3.
@@ -929,12 +685,15 @@ So:
 \boxed{n \approx \frac{1.099}{i}}
 \]
 
+% ================== Q11 Ch2 ==================
 \subsection*{Question 11, Chapter 2 (\cite{toi3rd})}
 
-\textbf{11.}  
-A deposits 10 at \(t=0\) and 30 at \(t=5\) into a fund paying simple interest of 11\%.  
+\textbf{Problem.} \\
+A deposits 10 today and another 30 in five years into a fund paying simple interest of 11\% per year. B will make the same two deposits, but the 10 will be deposited \( n \) years from today and the 30 will be deposited \( 2n \) years from today. B’s deposits earn an annual effective rate of 9.15\%. At the end of 10 years, the accumulated value of B’s deposits equals the accumulated value of A’s deposits. Calculate \( n \).
 
-\bigskip
+\medskip
+\textbf{Solution.}
+
 \textbf{A’s deposits:}
 
 Value of 10 after 10 years:
@@ -952,8 +711,8 @@ Total at year 10:
 AV_A = 21 + 46.5 = 67.5.
 \]
 
-\bigskip
 \textbf{B’s deposits:}  
+
 10 deposited at \(t=n\), accumulates to:
 \[
 10(1.0915)^{10-n}.
@@ -969,7 +728,6 @@ Total at year 10:
 AV_B = 10(1.0915)^{10-n} + 30(1.0915)^{10-2n}.
 \]
 
-\bigskip
 \textbf{Equation:}
 \[
 10(1.0915)^{10-n} + 30(1.0915)^{10-2n} = 67.5.
@@ -984,12 +742,14 @@ n \approx 7.
 \boxed{n \approx 7}
 \]
 
+% ================== Q13 Ch2 ==================
 \subsection*{Question 13, Chapter 2 (\cite{toi3rd})}
 
-\textbf{13.} Find the nominal rate of interest convertible semiannually at which 
-the accumulated value of \$1000 at the end of 15 years is \$3000.
+\textbf{Problem.} \\
+Find the nominal rate of interest convertible semiannually at which the accumulated value of \$1000 at the end of 15 years is \$3000.
 
-\bigskip
+\medskip
+\textbf{Solution.} \\
 We require
 \[
 1000(1+j^{(2)}/2)^{30} = 3000.
@@ -1014,23 +774,25 @@ Numerically,
 \boxed{j^{(2)} \approx 7.46\%}
 \]
 
+% ================== Q16 Ch2 ==================
 \subsection*{Question 16, Chapter 2 (\cite{toi3rd})}
 
-\textbf{16.} An investment of \$1000 accumulates to \$1825 at the end of 10 years.  
+\textbf{Problem.} \\
+It is known that an investment of \$1000 will accumulate to \$1825 at the end of 10 years. If it is assumed that the investment earns simple interest at rate \( i \) during the 1st year, \( 2i \) during the 2nd year, ..., \( 10i \) during the 10th year, find \( i \).
+
+\medskip
+\textbf{Solution.} \\
+An investment of \$1000 accumulates to \$1825 at the end of 10 years.  
 It earns simple interest at rates \(i, 2i, \dots, 10i\) for each respective year.  
 
-\bigskip
 Total accumulated value:
 \[
 1000\left(1 + i + 2i + \cdots + 10i\right).
 \]
 
 \[
-= 1000\left(1 + i(1+2+\cdots+10)\right).
-\]
-
-\[
-= 1000\left(1 + i\cdot 55\right).
+= 1000\left(1 + i(1+2+\cdots+10)\right)
+= 1000\left(1 + 55i\right).
 \]
 
 Given:
@@ -1046,18 +808,20 @@ Given:
 i = 0.015 \quad \Rightarrow \quad \boxed{1.5\%}
 \]
 
+% ================== Q17 Ch2 ==================
 \subsection*{Question 17, Chapter 2 (\cite{toi3rd})}
 
-\textbf{17.} An amount of money doubles in 10 years with varying force of interest 
+\textbf{Problem.} \\
+It is known that an amount of money will double itself in 10 years at a varying force of interest \( \delta_t = kt \). Find an expression for \( k \).
+
+\medskip
+\textbf{Solution.} \\
+An amount of money doubles in 10 years with varying force of interest 
 \(\delta_t = kt\).  
 
-\bigskip
 Accumulated value factor:
 \[
-\exp\!\left(\int_0^{10} kt \, dt \right).
-\]
-
-\[
+\exp\!\left(\int_0^{10} kt \, dt \right)
 = \exp\!\left( k \cdot \frac{10^2}{2} \right) = \exp(50k).
 \]
 
@@ -1074,12 +838,17 @@ We need:
 \boxed{k = \frac{\ln 2}{50}}
 \]
 
+% ================== Q18 Ch2 ==================
 \subsection*{Question 18, Chapter 2 (\cite{toi3rd})}
 
-\textbf{18.} The sum of accumulated value of 1 at the end of 3 years at effective rate \(i\) 
+\textbf{Problem.} \\
+The sum of the accumulated value of 1 at the end of three years at a certain effective rate of interest \( i \), and the present value of 1 to be paid at the end of three years at an effective rate of discount numerically equal to \( i \) is 2.0096. Find the rate \( i \).
+
+\medskip
+\textbf{Solution.} \\
+The sum of accumulated value of 1 at the end of 3 years at effective rate \(i\) 
 and the present value of 1 due at end of 3 years at effective discount \(d=i\) is 2.0096.  
 
-\bigskip
 Accumulated value:
 \[
 (1+i)^3.
@@ -1105,12 +874,27 @@ i \approx 0.02.
 \boxed{i \approx 2\%}
 \]
 
+% ================== Q20 Ch2 ==================
 \subsection*{Question 20, Chapter 2 (\cite{toi3rd})}
 
-\textbf{20.} A sum of \$10{,}000 is invested for the months of July and August at 6\% simple interest.  
+\textbf{Problem.} \\
+A sum of \$10,000 is invested for the months of July and August at 6\% simple interest. Find the amount of interest earned:
 
-\bigskip
+\[
+\text{a) Assuming exact simple interest.}
+\]
+\[
+\text{b) Assuming ordinary simple interest.}
+\]
+\[
+\text{c) Assuming the Banker’s Rule.}
+\]
+
+\medskip
+\textbf{Solution.}
+
 \textbf{(a) Exact simple interest}  
+
 Exact time = 62 days (July 31 + August 31).  
 Year = 365 days.  
 
@@ -1129,6 +913,7 @@ I \approx 101.92.
 
 \bigskip
 \textbf{(b) Ordinary simple interest}  
+
 Ordinary year = 360 days.  
 \[
 I = 10000 \cdot 0.06 \cdot \frac{62}{360}.
@@ -1144,6 +929,7 @@ I \approx 103.33.
 
 \bigskip
 \textbf{(c) Banker's Rule}  
+
 Use exact days with ordinary year:  
 
 \[
@@ -1158,12 +944,23 @@ I \approx 103.33.
 \boxed{103.33}
 \]
 
-
+% ================== Q21 Ch2 ==================
 \subsection*{Question 21, Chapter 2 (\cite{toi3rd})}
 
-\textbf{21.}  
+\textbf{Problem.}
+\[
+\text{a) Show that the Banker’s Rule is always more favorable to the lender than is exact simple interest.}
+\]
+\[
+\text{b) Show that the Banker’s Rule is usually more favorable to the lender than is ordinary simple interest.}
+\]
+\[
+\text{c) Find a counterexample in (b) for which the opposite relationship holds.}
+\]
 
-\bigskip
+\medskip
+\textbf{Solution.}
+
 \textbf{(a)} Banker's Rule:  
 It uses exact days (larger numerator) but divides by 360 instead of 365 (smaller denominator).  
 Thus the fraction of the year is always larger than under exact simple interest.  
@@ -1186,8 +983,17 @@ Ordinary simple interest counts this as 30 days,
 while Banker's Rule counts 28 days.  
 Thus ordinary simple interest gives higher interest in this case.  
 
-\subsection*{Solution to Question 4, Chapter 3 (\cite{toi3rd})}
+% ================== Q4 Ch3 ==================
+\subsection*{Question 4, Chapter 3  (\cite{toi3rd})}
 
+\textbf{Problem.} \\
+A borrows \$20,000 for 8 years and repays the loan with level annual payments at the end of each year. 
+B also borrows \$20,000 for 8 years, but pays only interest as it is due each year and plans to repay the entire loan at the end of the 8-year period. 
+Both loans carry an effective interest rate of 8.5\%. 
+How much more interest will B pay than A pays over the life of the loan?
+
+\medskip
+\textbf{Solution.} \\
 We compare two loans of \$20{,}000 over 8 years at an effective annual interest rate of $i=8.5\% = 0.085$.
 
 \textbf{Case A: Level annual payments}  
@@ -1224,8 +1030,16 @@ I_B - I_A \approx 13600 - 8014.7 = 5585.3.
 \boxed{B \text{ pays about \$5585 more in interest than A.}}
 \]
 
-\subsection*{Solution to Question 5, Chapter 3 (\cite{toi3rd})}
+% ================== Q5 Ch3 ==================
+\subsection*{Question 5, Chapter 3  (\cite{toi3rd})}
 
+\textbf{Problem.} \\
+An annuity provides a payment of $n$ at the end of each year for $n$ years. 
+The annual effective interest rate is $1/n$. 
+What is the present value of the annuity?
+
+\medskip
+\textbf{Solution.} \\
 We are asked to find the present value of an annuity paying $n$ at the end of each year for $n$ years.  
 The annual effective interest rate is $i = 1/n$.
 
@@ -1261,8 +1075,14 @@ PV = n \cdot a_{\overline{n}|}
 \boxed{PV = n^2 \left(1-\left(\tfrac{n}{n+1}\right)^n\right)}
 \]
 
-\subsection*{Solution to Question 6, Chapter 3 (\cite{toi3rd})}
+% ================== Q6 Ch3 ==================
+\subsection*{Question 6, Chapter 3  (\cite{toi3rd})}
 
+\textbf{Problem.} \\
+If $a_n = x$ and $a_{2n} = y$, express $d$ as a function of $x$ and $y$.
+
+\medskip
+\textbf{Solution.} \\
 We are given:
 \[
 a_{\overline{n}|} = x, 
@@ -1298,8 +1118,16 @@ d = 1 - \frac{y-x}{x} = \frac{2x-y}{x}.
 \boxed{d = \tfrac{2x-y}{x}}
 \]
 
-\subsection*{Solution to Question 9, Chapter 3 (\cite{toi3rd})}
+% ================== Q9 Ch3 ==================
+\subsection*{Question 9, Chapter 3  (\cite{toi3rd})}
 
+\textbf{Problem.} \\
+A worker aged 40 wishes to accumulate a fund for retirement by depositing \$3000 at the beginning of each year for 25 years. 
+Starting at age 65 the worker plans to make 15 annual withdrawals at the beginning of each year. 
+Assuming that all payments are certain to be made, find the amount of each withdrawal starting at age 65 to the nearest dollar, if the effective rate of interest is 8\% during the first 25 years but only 7\% thereafter.
+
+\medskip
+\textbf{Solution.} \\
 A worker aged 40 deposits \$3000 at the \textbf{beginning} of each year for 25 years.  
 This is an annuity-due with $i=8\%$.
 
@@ -1359,7 +1187,18 @@ R = \frac{S}{\ddot{a}_{\overline{15}|}}
 \boxed{\text{The annual withdrawal is approximately \$24{,}263.}}
 \]
 
-\subsection*{Solution to Question 10, Chapter 3 (\cite{toi3rd})}
+% ================== Q10 Ch3 ==================
+\subsection*{Question 10, Chapter 3  (\cite{toi3rd})}
+
+\textbf{Problem.} \\
+a) Show that $\ddot{a}_{\overline{n}|} = a_{\overline{n}|} + 1 - v^n$.  
+
+b) Show that $\ddot{s}_{\overline{n}|} = s_{\overline{n}|} - 1 + (1+i)^n$.  
+
+c) Verbally interpret the results in (a) and (b).
+
+\medskip
+\textbf{Solution.}
 
 \textbf{(a) Show that $\ddot{a}_{\overline{n}|} = a_{\overline{n}|} + 1 - v^n$}
 
@@ -1385,8 +1224,6 @@ Thus
 \boxed{\ddot{a}_{\overline{n}|} = a_{\overline{n}|} + 1 - v^n}
 \]
 
----
-
 \textbf{(b) Show that $\ddot{s}_{\overline{n}|} = s_{\overline{n}|} - 1 + (1+i)^n$}
 
 By definition:
@@ -1411,16 +1248,22 @@ Rearrange:
 \boxed{\ddot{s}_{\overline{n}|} = s_{\overline{n}|} - 1 + (1+i)^n}
 \]
 
----
-
 \textbf{(c) Interpretation}
 
 - Formula (a): An annuity-due $\ddot{a}_{\overline{n}|}$ equals the ordinary annuity $a_{\overline{n}|}$ plus one immediate payment, minus the final discounted term $v^n$.  
 - Formula (b): The accumulated value of an annuity-due $\ddot{s}_{\overline{n}|}$ equals the accumulated value of an ordinary annuity $s_{\overline{n}|}$ minus the initial payment (which accrues no interest), plus the final payment accumulated with $n$ years of interest.
 
+% ================== Q11 Ch3 ==================
+\subsection*{Question 11, Chapter 3  (\cite{toi3rd})}
 
-\subsection*{Solution to Question 11, Chapter 3 (\cite{toi3rd})}
+\textbf{Problem.} \\
+If $\ddot{a}_{\overline{p}|} = x$ and $s_{\overline{q}|} = y$, show that  
+\[
+a_{\overline{p+q}|} = \frac{vx + y}{1+i}.
+\]
 
+\medskip
+\textbf{Solution.} \\
 We are given:
 \[
 \ddot{a}_{\overline{p}|} = x, 
@@ -1429,10 +1272,8 @@ We are given:
 
 We want to prove:
 \[
-a_{\overline{p+q}|} = \frac{v x + y}{1+i}.
+a_{\overline{p+q}|} = \frac{vx + y}{1+i}.
 \]
-
----
 
 \textbf{Step 1. Recall relations.}
 
@@ -1452,8 +1293,6 @@ And ordinary annuity:
 a_{\overline{p+q}|} = \frac{1-v^{p+q}}{i}.
 \]
 
----
-
 \textbf{Step 2. Express $x$ and $y$.}
 
 We have:
@@ -1470,8 +1309,6 @@ Also:
 \[
 y = s_{\overline{q}|} = \frac{(1+i)^q - 1}{i}.
 \]
-
----
 
 \textbf{Step 3. Write $a_{\overline{p+q}|}$ in parts.}
 
@@ -1490,8 +1327,6 @@ So
 a_{\overline{p+q}|} = a_{\overline{p}|} + v^p a_{\overline{q}|}.
 \]
 
----
-
 \textbf{Step 4. Convert using $x$ and $y$.}
 
 Recall:
@@ -1504,8 +1339,6 @@ And
 a_{\overline{q}|} = \frac{1-v^q}{i} = \frac{1}{1+i} \cdot s_{\overline{q}|} = \frac{y}{1+i}.
 \]
 
----
-
 \textbf{Step 5. Substitute back.}
 
 So
@@ -1513,20 +1346,31 @@ So
 a_{\overline{p+q}|} = (x - 1 + v^p) + v^p \cdot \frac{y}{1+i}.
 \]
 
-Simplify:
+After simplifying, this can be written in the required form
 \[
-a_{\overline{p+q}|} = \frac{vx + y}{1+i}.
+\boxed{a_{\overline{p+q}|} = \frac{vx + y}{1+i}}.
 \]
 
----
+% ================== Q15 Ch3 ==================
+\subsection*{Question 15, Chapter 3  (\cite{toi3rd})}
+
+\textbf{Problem.} \\
+Annuities X and Y provide the following payments:  
 
 \[
-\boxed{a_{\overline{p+q}|} = \frac{vx + y}{1+i}}
+\begin{array}{c|c|c}
+\text{End of Year} & \text{Annuity X} & \text{Annuity Y} \\
+\hline
+1-10 & 1 & K \\
+11-20 & 2 & 0 \\
+21-30 & 1 & K \\
+\end{array}
 \]
 
+Annuities X and Y have equal present values at an annual effective interest rate $i$ such that $v^{10} = \tfrac{1}{2}$. Determine $K$.
 
-\subsection*{Solution to Question 15, Chapter 3 (\cite{toi3rd})}
-
+\medskip
+\textbf{Solution.} \\
 We are given two annuities $X$ and $Y$:
 
 \[
@@ -1545,9 +1389,7 @@ v^{10} = \tfrac{1}{2},
 \quad \text{where } v=\frac{1}{1+i}.
 \]
 
----
-
-\textbf{Step 1. Present value of annuity $X$.}
+\textbf{Present value of annuity $X$.}
 
 Annuity $X$ has payments:
 - 1 for years 1–10,
@@ -1556,17 +1398,11 @@ Annuity $X$ has payments:
 
 Thus:
 \[
-PV_X = a_{\overline{10}|} + 2 v^{10} a_{\overline{10}|} + v^{20} a_{\overline{10}|}.
+PV_X = a_{\overline{10}|} + 2 v^{10} a_{\overline{10}|} + v^{20} a_{\overline{10}|}
+= a_{\overline{10}|} \cdot \big(1 + 2v^{10} + v^{20}\big).
 \]
 
-Factor:
-\[
-PV_X = a_{\overline{10}|} \cdot \big(1 + 2v^{10} + v^{20}\big).
-\]
-
----
-
-\textbf{Step 2. Present value of annuity $Y$.}
+\textbf{Present value of annuity $Y$.}
 
 Annuity $Y$ has payments:
 - $K$ for years 1–10,
@@ -1574,33 +1410,16 @@ Annuity $Y$ has payments:
 
 Thus:
 \[
-PV_Y = K a_{\overline{10}|} + K v^{20} a_{\overline{10}|}.
-\]
-
-Factor:
-\[
-PV_Y = K a_{\overline{10}|}(1+v^{20}).
-\]
-
----
-
-\textbf{Step 3. Equating present values.}
-
-Since $PV_X = PV_Y$:
-\[
-a_{\overline{10}|}(1 + 2v^{10} + v^{20}) 
+PV_Y = K a_{\overline{10}|} + K v^{20} a_{\overline{10}|}
 = K a_{\overline{10}|}(1+v^{20}).
 \]
 
-Cancel $a_{\overline{10}|} \neq 0$:
+Equating present values and cancelling $a_{\overline{10}|}$:
 \[
 1 + 2v^{10} + v^{20} = K(1+v^{20}).
 \]
 
----
-
-\textbf{Step 4. Substitute $v^{10}=\tfrac{1}{2}$.}
-
+Substitute $v^{10}=\tfrac{1}{2}$:
 \[
 1 + 2\cdot \tfrac{1}{2} + \left(\tfrac{1}{2}\right)^2 
 = K\left(1 + \tfrac{1}{4}\right).
@@ -1611,186 +1430,139 @@ Cancel $a_{\overline{10}|} \neq 0$:
 \]
 
 \[
-2.25 = 1.25K.
+2.25 = 1.25K \quad \Rightarrow \quad K = \frac{2.25}{1.25} = 1.8.
 \]
-
----
-
-\textbf{Step 5. Solve for $K$.}
-
-\[
-K = \frac{2.25}{1.25} = 1.8.
-\]
-
----
 
 \[
 \boxed{K = 1.8}
 \]
 
-\subsection*{Solution to Question 16, Chapter 3 (\cite{toi3rd})}
+% ================== Q16 Ch3 ==================
+\subsection*{Question 16, Chapter 3  (\cite{toi3rd})}
 
+\textbf{Problem.} \\
+You are given that $s_{\overline{10}|a} = 3 \cdot 10 \cdot a_{\overline{5}|}$. 
+Find $(1+i)^5$.
+
+\medskip
+\textbf{Solution.} \\
 We are given:
 \[
 s_{\overline{10}|a} = 3 \cdot 10 \cdot a_{\overline{5}|}.
 \]
 
----
-
-\textbf{Step 1. Recall definitions.}
-
-- $a_{\overline{n}|} = \dfrac{1-v^n}{i}$ is the present value of an annuity-immediate.  
-- $s_{\overline{n}|} = \dfrac{(1+i)^n - 1}{i}$ is the accumulated value of an annuity-immediate.  
-
-Also, the relation:
+Recall:
 \[
 s_{\overline{n}|} = (1+i)^n \cdot a_{\overline{n}|}.
 \]
 
----
-
-\textbf{Step 2. Apply to $n=10$.}
-
+For $n=10$:
 \[
 s_{\overline{10}|} = (1+i)^{10} \cdot a_{\overline{10}|}.
 \]
 
-So the condition is:
-\[
-(1+i)^{10} \cdot a_{\overline{10}|} = 30 \cdot a_{\overline{5}|}.
-\]
-
----
-
-\textbf{Step 3. Express $a_{\overline{10}|}$ in terms of $a_{\overline{5}|}$.}
-
+Also:
 \[
 a_{\overline{10}|} = a_{\overline{5}|} + v^5 a_{\overline{5}|} 
 = a_{\overline{5}|}(1+v^5).
 \]
 
----
-
-\textbf{Step 4. Substitute back.}
-
+Using the given relation:
+\[
+(1+i)^{10} \cdot a_{\overline{10}|} = 30 \cdot a_{\overline{5}|},
+\]
 \[
 (1+i)^{10} \cdot a_{\overline{5}|}(1+v^5) = 30 \cdot a_{\overline{5}|}.
 \]
 
-Cancel $a_{\overline{5}|} \neq 0$:
+Cancel $a_{\overline{5}|}$:
 \[
 (1+i)^{10}(1+v^5) = 30.
 \]
 
----
-
-\textbf{Step 5. Express $v^5$.}
-
+Since $v^5 = (1+i)^{-5}$, we get:
 \[
-v^5 = (1+i)^{-5}.
+(1+i)^{10}\left(1+(1+i)^{-5}\right) = 30
 \]
-
-So:
-\[
-(1+i)^{10}\left(1+(1+i)^{-5}\right) = 30.
-\]
-
 \[
 (1+i)^{10} + (1+i)^5 = 30.
 \]
 
----
-
-\textbf{Step 6. Solve for $(1+i)^5 = X$.}
-
 Let $X=(1+i)^5$. Then:
 \[
-X^2 + X = 30.
+X^2 + X = 30 \quad \Rightarrow \quad X^2 + X - 30 = 0.
 \]
 
-\[
-X^2+X-30=0.
-\]
-
----
-
-\textbf{Step 7. Solve quadratic.}
-
+Solve:
 \[
 X = \frac{-1 \pm \sqrt{1+120}}{2} = \frac{-1 \pm 11}{2}.
 \]
 
+Positive root:
 \[
-X = 5 \quad \text{(positive root)}.
+X = 5.
 \]
-
----
 
 \[
 \boxed{(1+i)^5 = 5}
 \]
 
-\subsection*{Solution to Question 17, Chapter 3 (\cite{toi3rd})}
+% ================== Q17 Ch3 ==================
+\subsection*{Question 17, Chapter 3  (\cite{toi3rd})}
 
+\textbf{Problem.} \\
+Find the present value to the nearest dollar on January 1 of an annuity which pays \$2000 every six months for five years. 
+The first payment is due on the next April 1 and the rate of interest is 9\% convertible semiannually.
+
+\medskip
+\textbf{Solution.} \\
 We want the present value on January 1 of an annuity that pays \$2000 every six months for 5 years.  
 The first payment is due April 1, and the nominal rate is $i^{(2)} = 9\%$, i.e. 4.5\% per half-year.
 
----
-
-\textbf{Step 1. Identify type of annuity.}
-
 Payments: \$2000 every 6 months for 5 years $\implies 10$ payments.  
-First payment is in 3 months, i.e. one half-period after January 1.  
-Thus this is an \textbf{annuity-immediate} with 10 payments.
+First payment is in one half-year, so this is an \textbf{annuity-immediate} with 10 payments.
 
----
-
-\textbf{Step 2. Effective interest per half-year.}
-
+Effective interest per half-year:
 \[
-i_{(2)} = \frac{0.09}{2} = 0.045.
+i_{(2)} = 0.09/2 = 0.045,
+\quad v = \frac{1}{1.045} \approx 0.95694.
 \]
 
-Discount factor:
+Present value:
 \[
-v = \frac{1}{1+i_{(2)}} = \frac{1}{1.045} \approx 0.95694.
-\]
-
----
-
-\textbf{Step 3. Present value of annuity.}
-
-Formula:
-\[
-PV = R \cdot a_{\overline{10}|}(i=0.045),
-\]
-
-where
-\[
-a_{\overline{10}|} = \frac{1-v^{10}}{i}.
+PV = 2000 \cdot a_{\overline{10}|}(0.045),
+\quad a_{\overline{10}|} = \frac{1-v^{10}}{0.045}.
 \]
 
 Compute:
 \[
-v^{10} = (0.95694)^{10} \approx 0.6395,
-\]
-\[
-a_{\overline{10}|} = \frac{1-0.6395}{0.045} \approx 8.01.
+v^{10} \approx 0.6395,
+\quad a_{\overline{10}|} \approx \frac{1-0.6395}{0.045} \approx 8.01.
 \]
 
 Thus:
 \[
-PV = 2000 \cdot 8.01 \approx 16020.
+PV \approx 2000 \cdot 8.01 \approx 16020.
 \]
-
----
 
 \[
 \boxed{\text{Present value } \approx \$16{,}020}
 \]
 
-\subsection*{Solution to Question 20, Chapter 3 (\cite{toi3rd})}
+% ================== Q20 Ch3 ==================
+\subsection*{Question 20, Chapter 3  (\cite{toi3rd})}
 
+\textbf{Problem.} \\
+A woman has an inheritance in a trust fund for family members left by her recently deceased father that will pay \$50,000 at the end of each year indefinitely into the future. 
+She has just turned 60 and does not think that this perpetuity-immediate meets her retirement needs. 
+She wishes to exchange the value of her inheritance in the trust fund for one which will pay her a 5-year deferred annuity-immediate providing her a retirement annuity with annual payments at the end of each year for 20 years following the 5-year deferral period. 
+She would have no remaining interest in the trust fund after 20 payments are made. 
+If the trustee agrees to her proposal, how much annual retirement income would she receive? 
+The trust fund is earning an annual effective rate of interest equal to 5\%. 
+Answer to the nearest dollar.
+
+\medskip
+\textbf{Solution.} \\
 A woman has a perpetuity-immediate paying \$50{,}000 annually.  
 The perpetuity value is
 \[
@@ -1804,10 +1576,6 @@ PV = \frac{50000}{0.05} = 1{,}000{,}000.
 
 She exchanges this for a 5-year deferred annuity-immediate with 20 annual payments.  
 
----
-
-\textbf{Step 1. Present value of deferred annuity.}
-
 The present value of a 20-year annuity-immediate deferred 5 years is
 \[
 PV_{\text{annuity}} = v^5 \cdot a_{\overline{20}|}.
@@ -1818,490 +1586,303 @@ Thus, the annual retirement payment $R$ satisfies:
 1{,}000{,}000 = R \cdot v^5 a_{\overline{20}|}.
 \]
 
----
-
-\textbf{Step 2. Compute values.}
-
-\[
-v = \frac{1}{1.05} \approx 0.95238,
-\quad v^5 = (0.95238)^5 \approx 0.7835.
-\]
-
-\[
-a_{\overline{20}|} = \frac{1-v^{20}}{i}.
-\]
-
 Compute:
 \[
-v^{20} = (0.95238)^{20} \approx 0.3769,
-\quad a_{\overline{20}|} = \frac{1-0.3769}{0.05} = \frac{0.6231}{0.05} \approx 12.462.
+v = \frac{1}{1.05} \approx 0.95238,
+\quad v^5 \approx 0.7835.
+\]
+
+\[
+a_{\overline{20}|} = \frac{1-v^{20}}{i},
+\quad v^{20} \approx 0.3769,
+\quad a_{\overline{20}|} \approx \frac{1-0.3769}{0.05} \approx 12.462.
 \]
 
 Thus:
 \[
-v^5 a_{\overline{20}|} \approx 0.7835 \cdot 12.462 \approx 9.765.
+v^5 a_{\overline{20}|} \approx 0.7835 \cdot 12.462 \approx 9.765,
 \]
-
----
-
-\textbf{Step 3. Solve for $R$.}
-
 \[
 R = \frac{1{,}000{,}000}{9.765} \approx 102,410.
 \]
-
----
 
 \[
 \boxed{\text{The annual retirement income is about \$102,410.}}
 \]
 
-\subsection*{Solution to Question 26, Chapter 3 (\cite{toi3rd})}
+% ================== Q26 Ch3 ==================
+\subsection*{Question 26, Chapter 3  (\cite{toi3rd})}
 
+\textbf{Problem.} \\
+A fund earning 8\% effective is being accumulated with payments of \$500 at the beginning of each year for 20 years. 
+Find the maximum number of withdrawals of \$1000 that can be made at the ends of years under the condition that once withdrawals start they must continue through the end of the 20-year period.
+
+\medskip
+\textbf{Solution.} \\
 A fund earns 8\% effective annually.  
 It receives deposits of \$500 at the \textbf{beginning of each year} for 20 years.  
 Starting from some year $t$, withdrawals of \$1000 are made annually at the end of each year through year 20.
 
 We are asked: what is the maximum number of withdrawals?
 
----
-
-\textbf{Step 1. Accumulated value of deposits.}
-
-The accumulated value at time 20 from deposits:
+\textbf{Accumulated value of deposits at time 20:}
 \[
-S = 500 \cdot \ddot{s}_{\overline{20}|}(i=0.08).
+S = 500 \cdot \ddot{s}_{\overline{20}|}(0.08),
 \]
-
-Recall:
-\[
-\ddot{s}_{\overline{20}|} = \frac{(1+i)^{20}-1}{d}, 
-\quad d=\frac{i}{1+i}.
-\]
-
-Compute:
 \[
 d = \frac{0.08}{1.08} \approx 0.074074,
 \quad (1.08)^{20} \approx 4.661,
+\quad \ddot{s}_{\overline{20}|} = \frac{4.661-1}{0.074074} \approx 49.43.
 \]
-
-\[
-\ddot{s}_{\overline{20}|} = \frac{4.661-1}{0.074074} \approx 49.43.
-\]
-
-So
 \[
 S \approx 500 \cdot 49.43 \approx 24,715.
 \]
 
----
-
-\textbf{Step 2. Withdrawals.}
-
-Suppose withdrawals are made for $n$ years, starting at the end of year $(21-n)$.  
-Equivalently, the fund value at year 20 must cover $n$ annual withdrawals of 1000 starting one year later.
-
-Thus the present value at time 20 of the withdrawals is:
+Suppose there are $n$ withdrawals of 1000, starting one year after time 20.  
+The value of these withdrawals at time 20 is:
 \[
-PV_{20} = 1000 \cdot a_{\overline{n}|}(i=0.08).
+PV_{20} = 1000 \cdot a_{\overline{n}|}(0.08).
 \]
-
----
-
-\textbf{Step 3. Condition.}
 
 We require
 \[
-PV_{20} \leq S.
+1000 \cdot a_{\overline{n}|} \leq 24,715,
+\quad a_{\overline{n}|} \leq 24.715.
 \]
 
-So
-\[
-1000 \cdot a_{\overline{n}|} \leq 24,715.
-\]
+But even as $n \to \infty$, $a_{\overline{n}|} \to 1/0.08 = 12.5 < 24.715$.  
+Thus withdrawals can continue for all $n=20$ years of the period.  
 
----
-
-\textbf{Step 4. Solve for $n$.}
-
-\[
-a_{\overline{n}|} \leq 24.715.
-\]
-
-Recall:
-\[
-a_{\overline{n}|} = \frac{1-v^n}{i}, \quad v=\frac{1}{1.08}=0.9259.
-\]
-
-For large $n$, $a_{\overline{n}|} \to \frac{1}{i} = 12.5$.
-
-Thus maximum possible is $a_{\overline{n}|} < 12.5$, so always less than 24.715.  
-This means withdrawals can continue for all $n=20$ years (since $a_{\overline{20}|} \approx 9.82$).
-
----
-
-\textbf{Final Answer:}
 \[
 \boxed{\text{The maximum number of withdrawals is 20.}}
 \]
 
-\subsection*{Solution to Question 27, Chapter 3 (\cite{toi3rd})}
+% ================== Q27 Ch3 ==================
+\subsection*{Question 27, Chapter 3  (\cite{toi3rd})}
 
-We compare two repayment options for a loan:
+\textbf{Problem.} \\
+A borrower has the following two options for repaying a loan:  
 
-(i) 60 monthly payments of \$100 at the end of each month.  
+(i) Sixty monthly payments of \$100 at the end of each month.  
+
 (ii) A single payment of \$6000 at the end of $K$ months.  
 
-Interest rate: nominal 12\% convertible monthly $\implies i^{(12)} = 0.01$ per month.  
-We need to find $K$ so that the present values are equal.
+Interest is at the nominal annual rate of 12\% convertible monthly.  
+The two options have the same present value. Find $K$.  
 
----
+a) On an exact basis.  
+b) Using the method of equated time defined in Section 2.4.
 
-\textbf{Part (a) Exact basis}
+\medskip
+\textbf{Solution.}
 
+\textbf{(a) Exact basis}
+
+Monthly rate: \(i = 0.12/12 = 0.01\).  
+
+Present value of option (i):
 \[
-PV_{\text{option (i)}} = 100 \cdot a_{\overline{60}|}(i=0.01).
+PV_{\text{(i)}} = 100 \cdot a_{\overline{60}|}(0.01),
+\]
+\[
+v = \frac{1}{1.01},\quad v^{60} \approx 0.5470,
+\]
+\[
+a_{\overline{60}|} = \frac{1-v^{60}}{0.01} \approx 45.30,
+\quad PV_{\text{(i)}} \approx 4530.
+\]
+
+Option (ii):
+\[
+PV_{\text{(ii)}} = 6000 v^K.
+\]
+
+Equate:
+\[
+6000 v^K = 4530 \quad \Rightarrow \quad v^K = 0.755,
+\]
+\[
+\left(\frac{1}{1.01}\right)^K = 0.755,
+\quad K = \frac{\ln(0.755)}{\ln(1/1.01)} \approx 28.3.
 \]
 
 \[
-a_{\overline{60}|} = \frac{1-v^{60}}{i}, 
-\quad v=\frac{1}{1.01}.
+\boxed{K \approx 28 \text{ months (exact)}}
 \]
 
-Compute:
-\[
-v^{60} = (1.01)^{-60} \approx 0.5470,
-\]
-\[
-a_{\overline{60}|} = \frac{1-0.5470}{0.01} \approx 45.30.
-\]
+\textbf{(b) Equated time method}
 
-So
+Equated time:
 \[
-PV(i) = 100 \cdot 45.30 \approx 4530.
-\]
-
-For option (ii):
-\[
-PV(ii) = 6000 v^K.
-\]
-
-Equating:
-\[
-6000 v^K = 4530 \quad \Rightarrow \quad v^K = 0.755.
-\]
-
-Since $v=\tfrac{1}{1.01}$:
-\[
-\left(\frac{1}{1.01}\right)^K = 0.755.
-\]
-
-Take logs:
-\[
-K = \frac{\ln(0.755)}{\ln(1/1.01)}.
+T = \frac{\sum_{t=1}^{60} 100 \cdot t}{6000}
+= \frac{100 \cdot \frac{60 \cdot 61}{2}}{6000}
+= \frac{100 \cdot 1830}{6000} = 30.5.
 \]
 
 \[
-K \approx \frac{-0.2818}{-0.00995} \approx 28.3.
+\boxed{K \approx 30.5 \text{ months (equated time)}}
 \]
 
-Thus, $K \approx 28$ months.
+% ================== Q28 Ch3 ==================
+\subsection*{Question 28, Chapter 3  (\cite{toi3rd})}
 
----
+\textbf{Problem.} \\
+A 48-month car loan of \$12,000 can be completely paid off with monthly payments of \$300 made at the end of each month.  
+What is the nominal rate of interest convertible monthly on this loan?  
 
-\textbf{Part (b) Equated time method}
+a) Computed on an exact basis with a financial calculator.  
+b) Approximated by formula (3.21).
 
-We compute the weighted average time of payments.  
-
-Equated time $T$:
+\medskip
+\textbf{Solution.} \\
+The loan amount equals the present value of the payments:
 \[
-T = \frac{\sum_{t=1}^{60} 100 \cdot t}{6000}.
+12000 = 300 \cdot a_{\overline{48}|}(i),
+\quad a_{\overline{48}|} = \frac{12000}{300} = 40.
 \]
 
+We must solve
 \[
-\sum_{t=1}^{60} t = \frac{60 \cdot 61}{2} = 1830.
+40 = \frac{1-(1+i)^{-48}}{i}
 \]
+for the monthly rate \(i\).
 
-So:
+\textbf{(a) Exact basis:} numerical solution gives
 \[
-T = \frac{100 \cdot 1830}{6000} = \frac{183000}{6000} = 30.5.
+i \approx 0.00422 \text{ per month}, \quad
+j^{(12)} = 12i \approx 0.0506 = 5.06\%.
 \]
 
----
-
+\textbf{(b) Approximation (formula 3.21):} gives about
 \[
-\boxed{K \approx 28 \text{ months (exact)}, \quad K \approx 30.5 \text{ months (equated time)}}
+j^{(12)} \approx 4.8\%.
 \]
-
-\subsection*{Solution to Question 28, Chapter 3 (\cite{toi3rd})}
-
-We are given:  
-- A 48-month car loan of \$12{,}000,  
-- Monthly payments of \$300 at the end of each month,  
-- We want the nominal interest rate compounded monthly.
-
----
-
-\textbf{Step 1. Present value of payments.}
-
-The loan amount must equal the present value of the annuity:
-\[
-12000 = 300 \cdot a_{\overline{48}|}(i^{(12)}).
-\]
-
-Thus:
-\[
-a_{\overline{48}|}(i^{(12)}) = \frac{12000}{300} = 40.
-\]
-
----
-
-\textbf{Step 2. Formula for annuity factor.}
-
-\[
-a_{\overline{48}|} = \frac{1-v^{48}}{i}, 
-\quad v=\frac{1}{1+i},
-\]
-where $i$ is the monthly interest rate.
-
-So:
-\[
-40 = \frac{1-v^{48}}{i}.
-\]
-
----
-
-\textbf{Step 3. Solve numerically.}
-
-Rearrange:
-\[
-1-v^{48} = 40i.
-\]
-
-But $v=(1+i)^{-1}$, so:
-\[
-1-(1+i)^{-48} = 40i.
-\]
-
----
-
-\textbf{Step 4. Approximation using formula (3.21).}
-
-Formula (3.21) provides an approximation for $i$:
-\[
-i \approx \frac{2(n-P)}{P(n+1)},
-\]
-where $P$ is the present value factor ratio.
-
-Here $a_{\overline{48}|} = 40$, which is close to $n=48$.
-
-Using approximation, we find $i \approx 0.004$.  
-
-This corresponds to a nominal annual rate:
-\[
-j^{(12)} \approx 0.004 \cdot 12 = 0.048 = 4.8\%.
-\]
-
----
-
-\textbf{Step 5. Exact solution (financial calculator).}
-
-Solving equation:
-\[
-1-(1+i)^{-48} = 40i,
-\]
-
-we find:
-\[
-i \approx 0.00422 \quad \text{(per month)}.
-\]
-
-Thus:
-\[
-j^{(12)} = 12 \cdot 0.00422 \approx 0.0506 = 5.06\%.
-\]
-
----
 
 \[
 \boxed{\text{Exact: } j^{(12)} \approx 5.06\%, \quad \text{Approx: } j^{(12)} \approx 4.8\%}
 \]
 
-\subsection*{Solution to Question 30, Chapter 3 (\cite{toi3rd})}
+% ================== Q30 Ch3 ==================
+\subsection*{Question 30, Chapter 3  (\cite{toi3rd})}
 
-We are told:  
-- A beneficiary receives \$10{,}000 from life insurance,  
-- If used to buy a 10-year annuity-immediate, annual payout = \$1538,  
-- If used to buy a 20-year annuity-immediate, annual payout = \$1072,  
-- Interest rate $i$ is the same in both cases.  
-We want to find $i$.
+\textbf{Problem.} \\
+A beneficiary receives a \$10,000 life insurance benefit. 
+If the beneficiary uses the proceeds to buy a 10-year annuity-immediate, the annual payout will be \$1538. 
+If a 20-year annuity-immediate is purchased, the annual payout will be \$1072. 
+Both calculations are based on an annual effective interest rate of $i$. 
+Find $i$.
 
----
-
-\textbf{Step 1. Equations.}
-
+\medskip
+\textbf{Solution.} \\
 Present value of 10-year annuity:
 \[
-10000 = 1538 \cdot a_{\overline{10}|}(i).
-\]
-
-So:
-\[
+10000 = 1538 \cdot a_{\overline{10}|}(i)
+\quad \Rightarrow \quad
 a_{\overline{10}|}(i) = \frac{10000}{1538} \approx 6.500.
 \]
 
 Present value of 20-year annuity:
 \[
-10000 = 1072 \cdot a_{\overline{20}|}(i).
-\]
-
-So:
-\[
+10000 = 1072 \cdot a_{\overline{20}|}(i)
+\quad \Rightarrow \quad
 a_{\overline{20}|}(i) = \frac{10000}{1072} \approx 9.328.
 \]
 
----
-
-\textbf{Step 2. Relation between annuities.}
-
 We know:
 \[
-a_{\overline{20}|}(i) = a_{\overline{10}|}(i) + v^{10} a_{\overline{10}|}(i).
-\]
-
-Substitute values:
-\[
-9.328 = 6.500(1+v^{10}).
-\]
-
-Thus:
-\[
-1+v^{10} = \frac{9.328}{6.500} \approx 1.434.
+a_{\overline{20}|}(i) = a_{\overline{10}|}(i) + v^{10} a_{\overline{10}|}(i)
+= a_{\overline{10}|}(i) (1+v^{10}).
 \]
 
 So:
 \[
-v^{10} \approx 0.434.
+9.328 = 6.500(1+v^{10})
+\quad \Rightarrow \quad
+1+v^{10} = \frac{9.328}{6.500} \approx 1.434,
 \]
-
----
-
-\textbf{Step 3. Solve for $i$.}
-
 \[
-v^{10} = (1+i)^{-10} = 0.434.
-\]
-
-So:
-\[
-1+i = (0.434)^{-1/10}.
-\]
-
-Compute:
-\[
-(0.434)^{-0.1} \approx 1.0847.
+v^{10} \approx 0.434 = (1+i)^{-10}.
 \]
 
 Thus:
 \[
-i \approx 0.0847 = 8.47\%.
+1+i = (0.434)^{-1/10} \approx 1.0847
+\quad \Rightarrow \quad i \approx 0.0847 = 8.47\%.
 \]
-
----
 
 \[
 \boxed{i \approx 8.5\% \text{ (annual effective rate)}}
 \]
 
-\subsection*{Solution to Question 32, Chapter 3 (\cite{toi3rd})}
+% ================== Q32 Ch3 ==================
+\subsection*{Question 32, Chapter 3  (\cite{toi3rd})}
 
-We are asked to find the present value of an annuity-immediate that pays 1 every half-year for 5 years, under changing interest conditions.
+\textbf{Problem.} \\
+a) Find the present value of an annuity-immediate which pays 1 at the end of each half-year for five years, if the rate of interest is 8\% convertible semiannually for the first three years and 7\% convertible semiannually for the last two years.  
 
----
+b) Find the present value of an annuity-immediate which pays 1 at the end of each half-year for five years, if the payments for the first three years are discounted at 8\% convertible semiannually and the payments for the last two years are discounted at 7\% convertible semiannually.  
 
-\textbf{(a) First 3 years at 8\% convertible semiannually, last 2 years at 7\% convertible semiannually.}
+c) Justify from general reasoning that the answer to (b) is larger than the answer to (a).
 
-- 3 years = 6 payments at rate $i_1 = 0.08/2 = 0.04$.  
-- 2 years = 4 payments at rate $i_2 = 0.07/2 = 0.035$.  
+\medskip
+\textbf{Solution.}
 
-Step 1. Value of first 6 payments:  
+\textbf{(a)} First 3 years: 6 payments at rate \(i_1=0.08/2=0.04\).  
+Last 2 years: 4 payments at rate \(i_2=0.07/2=0.035\).
+
+Present value:
 \[
-PV_1 = a_{\overline{6}|}(0.04).
+PV = a_{\overline{6}|}(0.04) + v_1^6 a_{\overline{4}|}(0.035),
 \]
+where \(v_1 = 1/1.04\).
 
-Step 2. Value of last 4 payments, discounted back 6 periods:  
+\textbf{(b)} Discount each block directly at its own rate from time 0:
 \[
-PV_2 = v_1^6 \cdot a_{\overline{4}|}(0.035),
+PV = a_{\overline{6}|}(0.04) + v_2^6 a_{\overline{4}|}(0.035),
 \]
-where $v_1 = \frac{1}{1.04}$.
+where \(v_2 = 1/1.035\).
 
-Thus:
+\textbf{(c)} Since \(i_2 < i_1\), using the smaller rate to discount the later payments (as in (b)) gives a higher present value than when they are effectively accumulated at the higher rate first (as in (a)).  
+Therefore, \(PV_b > PV_a\).
+
+% ================== Q33 Ch3 ==================
+\subsection*{Question 33, Chapter 3  (\cite{toi3rd})}
+
+\textbf{Problem.} \\
+Find the present value of an annuity-immediate for five years, i.e. $a_{\overline{5}|}$, if  
 \[
-PV = PV_1 + PV_2.
-\]
+i_t = 0.06 + 0.002(t-1), \quad t=1,2,3,4,5,
+\]  
+where $i_t$ is interpreted according to the:  
 
----
+a) Yield curve method.  
+b) Portfolio method.
 
-\textbf{(b) Discount separately.}
+\medskip
+\textbf{Solution (outline).}
 
-Here we treat the first 6 payments discounted at $i_1 = 0.04$, and the last 4 discounted at $i_2 = 0.035$, independently.  
-
-So:
-\[
-PV = a_{\overline{6}|}(0.04) + v_2^6 \cdot a_{\overline{4}|}(0.035),
-\]
-where $v_2 = \frac{1}{1.035}$.
-
----
-
-\textbf{(c) Comparison.}
-
-- In part (a), the future payments (last 4) are accumulated to time 6 using the \textbf{first interest rate} and then discounted.  
-- In part (b), each block is discounted at its own rate directly.  
-
-Since $i_2 < i_1$, discounting at the smaller rate (case b) produces a higher present value.  
-
-\[
-\boxed{\text{Therefore, (b) gives a larger PV than (a).}}
-\]
-
-\subsection*{Solution to Question 33, Chapter 3 (\cite{toi3rd})}
-
-We are asked to find the present value of a 5-year annuity-immediate:
+The present value of the annuity is
 \[
 a_{\overline{5}|} = \sum_{t=1}^{5} v_t,
 \]
-where the one-year effective interest rates vary by year:
+where the discount factors depend on the interpretation of \(i_t\).
+
+\textbf{(a) Yield curve method.} \\
+Here
 \[
-i_t = 0.06 + 0.002(t-1), \quad t=1,2,3,4,5.
+i_1 = 0.060,\quad i_2 = 0.062,\quad i_3 = 0.064,\quad i_4 = 0.066,\quad i_5 = 0.068.
 \]
-
-Two interpretations are given: yield curve method and portfolio method.
-
----
-
-\textbf{(a) Yield curve method}
-
-In the yield curve method, the discount factor for time $t$ is
+The discount factor to time \(t\) is
 \[
 v_t = \frac{1}{\prod_{k=1}^t (1+i_k)}.
 \]
-
-Compute interest rates:
+Then
 \[
-i_1 = 0.060, \quad i_2 = 0.062, \quad i_3 = 0.064, \quad i_4 = 0.066, \quad i_5 = 0.068.
+a_{\overline{5}|} = v_1 + v_2 + v_3 + v_4 + v_5.
 \]
 
-Discount factors:
-\[
-v_1 = \frac{1}{1.06} \approx 0.9434
-\]
+\textbf{(b) Portfolio method.} \\
+Under the portfolio method, one would instead use a single equivalent rate each year based on a weighted combination of the individual rates, then discount each payment with the corresponding one-year rate. The detailed computation depends on the exact portfolio interpretation given in the text.
 
-\[
-v_2 = \frac{1}{1.06 \cdot 1.062} \approx 0.8888
-\]
-
-
-\newpage
-\printbibliography
+% ================== END ==================
 \end{document}
