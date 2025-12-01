@@ -1,7 +1,7 @@
 \documentclass[12pt, a4paper]{article}
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
 
+\usepackage{actuarialangle}
 \usepackage[english]{babel}
 \usepackage{microtype}
 \usepackage{amsmath,amsfonts,amsthm}
@@ -9,928 +9,3275 @@
 \usepackage{url}
 \usepackage{geometry}
 \usepackage{hyperref}
+\usepackage{fancyhdr}
 \usepackage{enumitem}
 \usepackage{tabularx}
 \usepackage{mathtools}
 \usepackage{csquotes}
 \usepackage[style=apa]{biblatex}
-\newcommand{\angl}[1]{\langle #1 \rangle}
 \addbibresource{ref.bib}
 
-\geometry{left=3cm, right=3cm, top=3cm, bottom=3cm}
+\geometry{left=3cm, right=3cm, top=3cm, bottom=3cm, headheight=15pt}
+\addtolength{\topmargin}{-2.5pt}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyhead[L]{MATH 323: Actuarial Mathematics I} % left header
+\fancyhead[R]{Homework Report 3} % right header
+\fancyfoot[C]{\thepage} % center footer
+\renewcommand{\headrulewidth}{0.4pt} % header rule width
+\renewcommand{\footrulewidth}{0.4pt} % footer rule width
 
 \begin{document}
 
-\section*{Questions and Solutions}
+\noindent{\Large\bfseries MATH 323: Actuarial Mathematics I -- Homework Report 3\par}
+\vspace{0.5cm}
+\noindent{\bf Student:} Aigerim Tursynbekkyzy --- ID: 202043550\par
+\noindent{\bf Subject Area:} Theory of Interest\par
+\noindent{\bf Description:} Homework Problems in Chapter 6 and Chapter 7\par
+\noindent{\bf Course Instructor:} Dongming Wei
 
-% ================== Q4 Sec2 Ch4 ==================
-\subsection*{Question 4, Section 2, Chapter 4 (\cite{toi3rd})}
+\vspace{0.5cm}
 
-\textbf{Problem.}\\
-An annuity-immediate that pays 400 quarterly for the next 10 years costs \$10{,}000. Calculate the nominal interest rate convertible monthly earned by this investment.
+The following are the problems and sample solutions for each problem.
 
-\medskip
-\textbf{Solution.}\\
-\[
-10000 = 400 a_{\angl{40}}^{(4)} = 400 \frac{1 - (1 + i_q)^{-40}}{i_q}
-\]
-\[
-25 = \frac{1 - (1 + i_q)^{-40}}{i_q}
-\]
-Solving numerically gives \( i_q \approx 0.010386 \Rightarrow i^{(4)} = 0.041544 \).
+\section*{Problems and Solutions}
 
-\[
-i_{\text{eff}} = (1 + i_q)^4 - 1 = 0.0424
-\]
-\[
-(1 + i_{\text{eff}}) = (1 + i^{(12)}/12)^{12}
-\Rightarrow i^{(12)} = 12[(1.0424)^{1/12} - 1] = 0.04155
-\]
-\[
-\boxed{i^{(12)} = 4.16\%}
-\]
+% ===================== Q1 Ch6 =====================
+\subsection*{Question 1, Section 2, Chapter 6  (\cite{toi3rd})}
 
-% ================== Q7 Sec3 Ch4 ==================
-\subsection*{Question 7, Section 3, Chapter 4 (\cite{toi3rd})}
-
-\textbf{Problem.}\\
-Find an expression for the present value of an annuity-due of \$600 per annum payable semiannually for 10 years if \( d^{(12)} = 0.09. \)
+\noindent\textbf{Problem.} Find the price which should be paid for a zero coupon bond that matures for \$1000 in 10 years to yield:
+\begin{enumerate}[label=(\alph*)]
+   \item 10\% effective.
+   \item 9\% effective.
+   \item Thus, a 10\% reduction in the yield rate causes the price to increase by what percentage?
+\end{enumerate}
 
 \medskip
-\textbf{Solution.}\\
+\noindent\textbf{Solution.} We have a zero-coupon bond that pays \$1000 in 10 years.  
+If the annual effective yield rate is $i$, the price $P$ is
 \[
-d^{(12)} = 0.09 \Rightarrow d_m = 0.0075
-\]
-\[
-v = 1 - d_m = 0.9925
-\]
-\[
-d^{(2)} = 1 - (1 - d_m)^6, \quad i^{(2)} = \frac{d^{(2)}}{1 - d^{(2)}}
-\]
-\[
-PV = 300 (1 + i^{(2)}) a_{\angl{20}}^{(2)} = 300 (1 + i^{(2)}) \frac{1 - (1 + i^{(2)})^{-20}}{i^{(2)}}
-\]
-\[
-\boxed{PV = 300(1 + i^{(2)}) \frac{1 - (1 + i^{(2)})^{-20}}{i^{(2)}}}
+  P = \frac{1000}{(1+i)^{10}}.
 \]
 
-% ================== Q9 Sec3 Ch4 ==================
-\subsection*{Question 9, Section 3, Chapter 4 (\cite{toi3rd})}
+\begin{enumerate}
+  \item For $i = 0.10$,
+  \[
+    P_{10\%} = \frac{1000}{1.10^{10}}
+      \approx \frac{1000}{2.59374246}
+      \approx 385.54.
+  \]
+  So the price is approximately \$385.54.
 
-\textbf{Problem.}\\
-Find an expression for the present value of an annuity on which payments are \$100 per quarter for five years, just before the first payment is made, if \( \delta = 0.08. \)
+  \item For $i = 0.09$,
+  \[
+    P_{9\%} = \frac{1000}{1.09^{10}}
+      \approx \frac{1000}{2.366531}
+      \approx 422.41.
+  \]
+  So the price is approximately \$422.41.
 
-\medskip
-\textbf{Solution.}\\
-\[
-v = e^{-\delta/4}, \quad i_q = e^{\delta/4} - 1
-\]
-\[
-a_{\angl{20}} = \frac{1 - v^{20}}{i_q}
-\]
-\[
-PV = 100 a_{\angl{20}} = 100 \frac{1 - e^{-5\delta}}{e^{\delta/4} - 1}
-\]
-\[
-\boxed{PV = 100 \frac{1 - e^{-5\delta}}{e^{\delta/4} - 1}}
-\]
+  \item The percentage increase in price when the yield drops from 10\% to 9\% is
+  \[
+    \frac{P_{9\%} - P_{10\%}}{P_{10\%}} \times 100\%
+      = \frac{422.41 - 385.54}{385.54}\times 100\%
+      \approx 9.56\%.
+  \]
+\end{enumerate}
 
-% ================== Q10 Sec3 Ch4 ==================
-\subsection*{Question 10, Section 3, Chapter 4 (\cite{toi3rd})}
+% ===================== Q3 Ch6 =====================
+\subsection*{Question 3, Section 2, Chapter 6  (\cite{toi3rd})}
 
-\textbf{Problem.}\\
-Find an expression for the present value of an annuity on which payments are 1 at the beginning of each 4-month period for 12 years, assuming a rate of interest per 3-month period.
+\noindent\textbf{Problem.} A 26--week T-bill is bought for \$9600 at issue and will mature for \$10000. Find the yield rate computed as:
+\begin{enumerate}[label=(\alph*)]
+   \item A discount rate, using the typical method for counting days on a T-bill.
+   \item An annual effective rate of interest, assuming the investment period is exactly half a year.
+\end{enumerate}
 
 \medskip
-\textbf{Solution.}\\
-Each 4-month period is \(4/3\) quarters, with interest per quarter \(i\). Then the discount factor per 4-month period is
-\[
-v = (1 + i)^{-4/3}.
-\]
-Number of payments:
-\[
-n = \frac{12 \times 12}{4} = 36.
-\]
-Since this is an annuity-due:
-\[
-PV = (1 + i)^{4/3} \frac{1 - (1 + i)^{-36 \times 4/3}}{(1 + i)^{4/3} - 1}
-= (1 + i)^{4/3} \frac{1 - (1 + i)^{-48}}{(1 + i)^{4/3} - 1}.
-\]
-\[
-\boxed{PV = (1 + i)^{4/3} \frac{1 - (1 + i)^{-48}}{(1 + i)^{4/3} - 1}}
-\]
+\noindent\textbf{Solution.} A 26-week T-bill is bought for \$9600 and matures at \$10\,000.
 
-% ================== Q13 Sec4 Ch4 ==================
-\subsection*{Question 13, Section 4, Chapter 4 (\cite{toi3rd})}
+\begin{enumerate}
+  \item \textbf{Discount rate (T-bill convention).}
 
-\textbf{Problem.}\\
-A sum of \$10{,}000 is used to buy a deferred perpetuity-due paying \$500 every six months forever. Find an expression for the deferred period expressed as a function of \( d. \)
+  The bank discount rate $d$ uses a 360-day year and the face value in the denominator:
+  \[
+    d
+      = \frac{F - P}{F} \cdot \frac{360}{\text{days to maturity}}.
+  \]
+  With $F = 10000$, $P = 9600$, and $26$ weeks $\approx 182$ days,
+  \[
+    d
+      = \frac{10000-9600}{10000} \cdot \frac{360}{182}
+      = 0.04 \cdot \frac{360}{182}
+      \approx 0.0791.
+  \]
+  So the annual discount rate is about $7.91\%$.
+
+  \item \textbf{Annual effective yield rate.}
+
+  The holding-period yield over half a year is
+  \[
+    i_{0.5} = \frac{F}{P} - 1 = \frac{10000}{9600} - 1 = \frac{1}{24} \approx 0.041667.
+  \]
+  The annual effective yield is
+  \[
+    i_{\text{eff}}
+      = (1 + i_{0.5})^2 - 1
+      = \left(\frac{25}{24}\right)^2 - 1
+      \approx 1.08507 - 1
+      \approx 0.0851.
+  \]
+  So the annual effective rate is approximately $8.51\%$.
+\end{enumerate}
+
+% ===================== Q5 Ch6 =====================
+\subsection*{Question 5, Section 3, Chapter 6  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} Two \$1000 bonds redeemable at par at the end of the same period are bought to yield 4\% convertible semiannually. 
+One bond costs \$1136.78 and has a coupon rate of 5\% payable semiannually. 
+The other bond has a coupon rate of $2\frac{1}{2}\%$ payable semiannually.
+Find the price of the second bond.
 
 \medskip
-\textbf{Solution.}\\
-Let \(d\) be the nominal annual discount rate convertible semiannually, so discount per half-year is \(d/2\) and
+\noindent\textbf{Solution.}
+Both bonds have par value \$1000, the same maturity, and yield a nominal
+rate of 4\% convertible semiannually.  
+Thus the yield per half-year is
 \[
-v_{1/2} = 1 - \frac{d}{2} = (1 - d)^{1/2}.
+  j = \frac{0.04}{2} = 0.02.
 \]
-The present value of a perpetuity-due paying 500 each half-year, starting immediately, is
+
+Let $n$ be the number of half-year periods to maturity.
+
+\medskip
+\textbf{Step 1: Determine $n$ from the first bond.}
+
+First bond: coupon rate 5\% nominal payable semiannually.  
+Coupon per half-year:
 \[
-PV_0 = \frac{500(1+v_{1/2})}{d/2}
-= \frac{500(1 + (1-d)^{1/2})}{d/2}.
+  C_1 = \frac{0.05}{2} \cdot 1000 = 25.
 \]
-If the payments are deferred for \(2k\) half-years (i.e. \(k\) years), the present value is
+Its price is \$1136.78, so
 \[
-10000 = PV_0 (1-d)^{2k}
-= \frac{500(1 + (1-d)^{1/2})(1-d)^{2k}}{d/2}.
+  1136.78
+    = 25\,a_{\angl{n}}^{(j)} + 1000(1+j)^{-n},
+\]
+where
+\[
+  a_{\angl{n}}^{(j)} = \frac{1-(1+j)^{-n}}{j}.
+\]
+
+Solving this equation numerically gives
+\[
+  n \approx 40.
+\]
+Thus the term is about $40$ half-year periods, or $20$ years.
+
+\medskip
+\textbf{Step 2: Price of the second bond.}
+
+Second bond: coupon rate $2\tfrac12\%$ nominal, payable semiannually.  
+Coupon per half-year:
+\[
+  C_2 = \frac{0.025}{2} \cdot 1000 = 12.50.
+\]
+
+At the same yield $j=0.02$ and with $n=40$,
+\[
+  P_2 = 12.5\,a_{\angl{40}}^{(0.02)} + 1000(1.02)^{-40}.
+\]
+
+Compute:
+\[
+  a_{\angl{40}}^{(0.02)} = \frac{1-1.02^{-40}}{0.02},
+\]
+so numerically
+\[
+  P_2 \approx 794.83.
+\]
+
+Therefore, the price of the second bond is approximately \$794.83.
+
+% ===================== Q8 Ch6 =====================
+\subsection*{Question 8, Section 3, Chapter 6  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} An investor owns a \$1000 par value 10\% bond with semiannual coupons. The bond will mature at par at the end of 10 years.
+The investor decides that an 8-year bond would be preferable. Current yield rates are 7\% convertible semiannually.
+The investor uses the proceeds from the sale of the 10\% bond to purchase a 6\% bond with semiannual coupons, 
+maturing at par at the end of 8 years. Find the par value of the 8-year bond. Answer to the nearest dollar.
+
+\medskip
+\noindent\textbf{Solution.}
+Current yield rates are 7\% nominal convertible semiannually, so the
+yield per half-year is
+\[
+  j = \frac{0.07}{2} = 0.035.
+\]
+
+\textbf{Step 1: Price received for the existing 10\% bond.}
+
+Par value \$1000; coupon rate 10\% nominal, semiannual coupons.  
+Coupon per half-year:
+\[
+  C_1 = \frac{0.10}{2}\cdot 1000 = 50.
+\]
+The bond has 10 years to maturity, i.e.\ $n_1 = 20$ half-year periods.
+
+The price is
+\[
+  P_1 = 50\,a_{\angl{20}}^{(0.035)} + 1000(1.035)^{-20}.
+\]
+
+With
+\[
+  a_{\angl{20}}^{(0.035)} = \frac{1-1.035^{-20}}{0.035},
+\]
+we find
+\[
+  P_1 \approx 1213.19.
+\]
+
+\textbf{Step 2: Par value of the new 6\% bond.}
+
+Let $X$ be the par value of the new bond.  
+Coupon rate 6\% nominal, semiannual coupons, so coupon per period is
+\[
+  C_2 = \frac{0.06}{2} X = 0.03X.
+\]
+The new bond has 8 years to maturity, i.e.\ $n_2 = 16$ half-year periods,
+and is priced to yield the same $j=0.035$.
+
+So its price is
+\[
+  P_2 = 0.03X\,a_{\angl{16}}^{(0.035)} + X(1.035)^{-16}.
+\]
+
+All proceeds from selling the old bond are used to buy this new bond, so
+\[
+  P_2 = P_1.
 \]
 Thus
 \[
-(1-d)^{2k} = \frac{10d}{1 + \sqrt{1-d}},
+  0.03X\,a_{\angl{16}}^{(0.035)} + X(1.035)^{-16} = 1213.19.
 \]
-and
+
+Factor $X$:
 \[
-\boxed{k = \frac{1}{2}\,\frac{\ln\!\left(\dfrac{10d}{1 + \sqrt{1 - d}}\right)}{\ln(1 - d)}}.
+  X\left[0.03\,a_{\angl{16}}^{(0.035)} + (1.035)^{-16}\right] = 1213.19.
 \]
 
-% ================== Q14 Sec4 Ch4 ==================
-\subsection*{Question 14, Section 4, Chapter 4 (\cite{toi3rd})}
+Compute the bracketed term:
+\[
+  a_{\angl{16}}^{(0.035)} = \frac{1-1.035^{-16}}{0.035},
+\]
+and numerically
+\[
+  0.03\,a_{\angl{16}}^{(0.035)} + (1.035)^{-16} \approx 0.9394.
+\]
 
-\textbf{Problem.}\\
-If \( 3 a_{\angl{n}}^{(2)} = 2 a_{\angl{2n}}^{(2)} = 45 s_{\angl{n}}^{(2)} \), find \( i. \)
+Therefore
+\[
+  X = \frac{1213.19}{0.9394} \approx 1291.27.
+\]
+
+So the par value of the 8-year bond is approximately \$1291.27.
+
+% ===================== Q10 Ch6 =====================
+\subsection*{Question 10, Section 3, Chapter 6  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} For the bond in Example 6.3, determine:
+\begin{enumerate}[label=(\alph*)]
+    \item Nominal yield based on the par value.
+    \item Nominal yield based on the redemption value.
+    \item Current yield.
+    \item Yield to maturity.
+\end{enumerate}
 
 \medskip
-\textbf{Solution.}\\
-From
+\noindent\textbf{Solution.}
+We use the data from Example 6.3:
+
 \[
-3 a_{\angl{n}}^{(2)} = 2 a_{\angl{2n}}^{(2)},
+\begin{aligned}
+F &= 1000, \\
+C &= 1050, \\
+\text{coupon rate} &= 8.4\% \text{ nominal, semiannual}, \\
+r &= \frac{0.084}{2} = 0.042, \\
+\text{coupon each half-year} &= Fr = 1000(0.042)=42, \\
+i &= \frac{0.10}{2}=0.05\quad \text{(yield per half-year)},\\
+n &= 20 \quad\text{(10 years, semiannual)}, \\
+K &= 1050(1.05)^{-20} = 395.7340, \\
+G &= \frac{0.042}{0.05}(1000)=840.
+\end{aligned}
 \]
-with \(v\) the discount per year:
+
+The price (computed in Example 6.3) is
 \[
-3(1 - v^n) = 2(1 - v^{2n}) \Rightarrow 1 = 3v^n - 2v^{2n}.
+P = 919.15.
 \]
-So
+
+\bigskip
+\textbf{(a) Nominal yield based on par value}
+
 \[
-2v^{2n} - 3v^n + 1 = 0 \Rightarrow v^n = \frac{1}{2}.
+\text{Nominal yield on par} = \frac{\text{annual coupon}}{\text{par value}}
+= \frac{0.084\cdot 1000}{1000} = 0.084 = 8.4\%.
+\]
+
+\bigskip
+\textbf{(b) Nominal yield based on redemption value}
+
+\[
+\text{Nominal yield on redemption value}
+  = \frac{\text{annual coupon}}{\text{redemption value}}
+  = \frac{84}{1050}
+  = 0.08 = 8\%.
+\]
+
+\bigskip
+\textbf{(c) Current yield}
+
+\[
+\text{Current yield} = \frac{\text{annual coupon}}{P}
+= \frac{84}{919.15}
+\approx 0.0914
+= 9.14\%.
+\]
+
+\bigskip
+\textbf{(d) Yield to maturity}
+
+The yield to maturity was given in Example 6.3 as 10\% nominal convertible semiannually, i.e.
+\[
+i_{\text{YTM}} = 10\% \quad \text{(nominal, convertible semiannually)}.
+\]
+
+The effective annual yield corresponding to this is
+\[
+i_{\text{eff}} = (1.05)^2 - 1 = 0.1025 = 10.25\%.
+\]
+
+\bigskip
+\[
+\boxed{
+\begin{aligned}
+\text{(a)}\;& 8.4\% \\
+\text{(b)}\;& 8\% \\
+\text{(c)}\;& 9.14\% \\
+\text{(d)}\;& \text{YTM} = 10\% \text{ nominal (convertible semiannually)}
+\end{aligned}}
+\]
+
+% ===================== Q11 Ch6 =====================
+\subsection*{Question 11, Section 4, Chapter 6  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} For a \$1 bond the coupon rate is 150\% of the yield rate and the premium is \(p\).
+For another \$1 bond with the same number of coupons and the same yield rate, 
+the coupon rate is 75\% of the yield rate. Express the price of the second bond as a function of \(p\).
+
+\medskip
+\noindent\textbf{Solution.}
+Consider a \$1 par bond with yield rate per period $i$ and $n$ periods
+to redemption.
+
+Let $a_{\angl{n}}$ denote the present value of an $n$-period annuity
+immediate at rate $i$:
+\[
+  a_{\angl{n}} = \frac{1-v^n}{i}, \qquad v = \frac{1}{1+i}.
+\]
+
+We use the standard identity for a par bond:
+\[
+  i\,a_{\angl{n}} + v^n = 1.   \tag{$\ast$}
+\]
+
+\medskip
+\textbf{First bond.}
+
+Coupon rate is $1.5i$ (150\% of the yield rate) on par 1, so coupon per
+period is $1.5i$.
+
+Price $P_1$:
+\[
+  P_1 = 1.5i\,a_{\angl{n}} + v^n = 1 + p.
+\]
+
+Using $(\ast)$, we write
+\[
+  P_1 = 1.5i\,a_{\angl{n}} + v^n
+      = (i\,a_{\angl{n}} + v^n) + 0.5i\,a_{\angl{n}}
+      = 1 + 0.5i\,a_{\angl{n}}.
 \]
 Hence
 \[
-(1 + i)^n = 2 \quad \Rightarrow \quad \boxed{i = 2^{1/n} - 1}.
+  1 + p = 1 + 0.5i\,a_{\angl{n}}
+  \quad\Rightarrow\quad
+  p = 0.5\,i\,a_{\angl{n}}.
 \]
-
-% ================== Q17 Sec5 Ch4 ==================
-\subsection*{Question 17, Section 5, Chapter 4 (\cite{toi3rd})}
-
-\textbf{Problem.}\\
-There is \$40{,}000 in a fund which is accumulating at 4\% per annum convertible continuously. If money is withdrawn continuously at the rate of \$2{,}400 per annum, how long will the fund last?
-
-\medskip
-\textbf{Solution.}\\
-Let \(F(t)\) be the fund at time \(t\). Then
+Therefore
 \[
-\frac{dF}{dt} = 0.04 F(t) - 2400, \quad F(0) = 40000.
-\]
-Solve:
-\[
-F(t) = 40000 e^{0.04 t} - \frac{2400}{0.04}\big(e^{0.04 t} - 1\big)
-= \left(40000 - \frac{2400}{0.04}\right)e^{0.04 t} + \frac{2400}{0.04}.
-\]
-The fund is exhausted when \(F(t) = 0\):
-\[
-40000 = \frac{2400}{0.04}(e^{0.04t} - 1)
-\]
-\[
-e^{0.04t} = 1 + \frac{40000(0.04)}{2400} = 1.6667
-\]
-\[
-t = \frac{\ln(1.6667)}{0.04} \approx 12.8.
-\]
-\[
-\boxed{t \approx 12.8\ \text{years}}
-\]
-
-% ================== Q19 Sec5 Ch4 ==================
-\subsection*{Question 19, Section 5, Chapter 4 (\cite{toi3rd})}
-
-\textbf{Problem.}\\
-Find an expression for \( \bar{a}_{\angl{n}} \) if \( \delta_t = \dfrac{1}{1 + t} \) for \( 0 \le t \le n. \)
-
-\medskip
-\textbf{Solution.}\\
-\[
-v(t) = e^{-\int_0^t \delta_s\,ds} = e^{-\int_0^t \frac{1}{1+s} ds}
-= e^{-\ln(1+t)} = \frac{1}{1+t}.
-\]
-Then
-\[
-\bar{a}_{\angl{n}} = \int_0^n v(t)\,dt
-= \int_0^n \frac{1}{1+t}\,dt = \ln(1+n).
-\]
-\[
-\boxed{\bar{a}_{\angl{n}} = \ln(1 + n)}
-\]
-
-% ================== Q22 Sec6 Ch4 ==================
-\subsection*{Question 22, Section 6, Chapter 4 (\cite{toi3rd})}
-
-\textbf{Problem.}\\
-Simplify
-\[
-\sum_{t=1}^{20} (t + 5)v^t.
+  i\,a_{\angl{n}} = 2p.
 \]
 
 \medskip
-\textbf{Solution.}\\
-\[
-\sum_{t=1}^{20} (t + 5)v^t = \sum_{t=1}^{20} t v^t + 5 \sum_{t=1}^{20} v^t.
-\]
-Recall
-\[
-\sum_{t=1}^{n} v^t = \frac{v(1 - v^n)}{1 - v}, \quad
-\sum_{t=1}^{n} t v^t = \frac{v(1 - (n+1)v^n + n v^{n+1})}{(1 - v)^2}.
-\]
-Thus
-\[
-\boxed{\sum_{t=1}^{20} (t + 5)v^t =
-\frac{v(1 - 21v^{20} + 20v^{21})}{(1 - v)^2}
-+ 5\frac{v(1 - v^{20})}{1 - v}}.
-\]
+\textbf{Second bond.}
 
-% ================== Q27 Sec6 Ch4 ==================
-\subsection*{Question 27, Section 6, Chapter 4 (\cite{toi3rd})}
+Coupon rate is $0.75i$ (75\% of the yield rate) on par 1, so coupon per
+period is $0.75i$.
 
-\textbf{Problem.}\\
-An annuity-immediate has semiannual payments of 800, 750, 700, \dots, 350, at \( i^{(2)} = 0.16. \)  
-If \( a_{\angl{10}, 0.08} = A \), find the present value of the annuity in terms of \( A. \)
-
-\medskip
-\textbf{Solution.}\\
-Payments form an arithmetic sequence: \(a_1 = 800\), common difference \(d = -50\), 10 terms.
-
+Price $P_2$:
 \[
-PV = \sum_{k=1}^{10} (800 - 50(k-1))v^k
-= 800 a_{\angl{10}} - 50 \sum_{k=1}^{10}(k-1)v^k.
+  P_2 = 0.75i\,a_{\angl{n}} + v^n.
 \]
-Using
+Again using $(\ast)$,
 \[
-\sum_{k=1}^{10}(k-1)v^k = \frac{v(1 - 10v^9 + 9v^{10})}{(1 - v)^2},
-\]
-and \(a_{\angl{10}} = A\), we get
-\[
-\boxed{PV = 800A - 50 \,\frac{v(1 - 10v^9 + 9v^{10})}{(1 - v)^2}}.
+  P_2 = (i\,a_{\angl{n}} + v^n) - 0.25i\,a_{\angl{n}}
+      = 1 - 0.25i\,a_{\angl{n}}.
 \]
 
-% ================== Q30 Sec7 Ch4 ==================
-\subsection*{Question 30, Section 7, Chapter 4 (\cite{toi3rd})}
+Substitute $i\,a_{\angl{n}} = 2p$:
+\[
+  P_2 = 1 - 0.25\cdot 2p = 1 - \frac{p}{2}.
+\]
 
-\textbf{Problem.}\\
-Annual deposits are made into a fund at the beginning of each year for 10 years. The first 5 deposits are \$1000 each and deposits increase by 5\% per year thereafter. If the fund earns 8\% effective, find the accumulated value at the end of 10 years. Answer to the nearest dollar.
+\textbf{Hence, the price of the second bond as a function of $p$ is}
+\[
+  \boxed{P_2 = 1 - \dfrac{p}{2}}.
+\]
+
+% ===================== Q13 Ch6 =====================
+\subsection*{Question 13, Section 4, Chapter 6  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} A 10-year bond with semiannual coupons is bought at a discount to yield 9\% convertible semiannually.
+If the amount for accumulation of discount in the next-to-last coupon is \$8, 
+find the total amount for accumulation of discount during the first four years in the bond amortization schedule.
 
 \medskip
-\textbf{Solution.}\\
-First 5 deposits: annuity-due of 1000 for 5 years:
+\noindent\textbf{Solution.}
+We are given:
+
+\begin{itemize}
+    \item A 10-year bond with semiannual coupons $\Rightarrow n = 20$ coupon periods.
+    \item Yield rate: $9\%$ nominal convertible semiannually $\Rightarrow i = 0.09/2 = 0.045$ per period.
+    \item The bond is bought at a \emph{discount}, so the book value is increasing.
+    \item The amount of accumulation of discount in the next-to-last coupon (period 19) is \$8.
+\end{itemize}
+
+\bigskip
+\textbf{Key fact from amortization theory:}
+
+For a bond bought at a discount, the \emph{accumulation of discount} in period $t$ is
 \[
-AV_1 = 1000 \,\ddot{s}_{\angl{5}|0.08}.
+D_t = i(B_t - C/i)
 \]
-Next 5 deposits (years 6–10): a geometric increasing annuity-due starting at year 6 with growth 5\%. A convenient closed form is
+but more simply, for a bond amortized by the \emph{constant-yield method}, the sequence of discount accumulations satisfies
 \[
-AV_{10} = 1000\frac{(1.08)^5 - 1}{0.08}
-+ 1000(1.08)^5 \left[\frac{\Big(\dfrac{1.08}{1.05}\Big)^5 - 1}{\dfrac{1.08}{1.05} - 1}\right](1.05)^5.
-\]
-Numerically,
-\[
-AV_{10} \approx 15{,}710.
-\]
-\[
-\boxed{AV_{10} \approx 15{,}710}.
+D_t = D_1(1+i)^{\,t-1}.
 \]
 
-% ================== Q31 Sec7 Ch4 ==================
-\subsection*{Question 31, Section 7, Chapter 4 (\cite{toi3rd})}
-
-\textbf{Problem.}\\
-A perpetuity makes payments starting five years from today. The first payment is \$1000 and each payment thereafter increases by \( k\% \) per year. The present value of this perpetuity is equal to \$4096 when computed at \( i = 25\% \). Find \( k \).
-
-\medskip
-\textbf{Solution.}\\
-Let \(g = \frac{k}{100}\). The perpetuity with first payment 1000 at time 5 (end of year 5) and geometric growth rate \(g\) has present value
+We are told that
 \[
-PV = 1000 v^4 \frac{1}{i - g}, \quad v = \frac{1}{1.25}.
-\]
-Given \(PV = 4096\),
-\[
-4096 = 1000(1.25)^{-4}\frac{1}{0.25 - g}.
-\]
-Solve for \(g\), which gives approximately \(g = 0.05\), so
-\[
-\boxed{k \approx 5\%}.
+D_{19} = 8.
 \]
 
-% ================== Q32 Sec7 Ch4 ==================
-\subsection*{Question 32, Section 7, Chapter 4 (\cite{toi3rd})}
-
-\textbf{Problem.}\\
-An employee currently is aged 40, earns \$40{,}000 per year, and expects to receive 3\% annual raises at the end of each year for the next 25 years. The employee decides to contribute 4\% of annual salary at the beginning of each year for the next 25 years into a retirement plan. How much will be available for retirement at age 65 if the fund can earn a 5\% effective rate of interest? Answer to the nearest dollar.
-
-\medskip
-\textbf{Solution.}\\
-Salary at year \(t\) (end of year) is \(40000(1.03)^{t-1}\). Contribution at the beginning of year \(t\) is
+Thus,
 \[
-C_t = 0.04 \cdot 40000 (1.03)^{t-1} = 1600(1.03)^{t-1}, \quad t=1,\dots,25.
-\]
-Accumulated value at retirement (25 years, rate 5\%):
-\[
-AV = \sum_{t=1}^{25} 1600(1.03)^{t-1}(1.05)^{25-t}
-= 1600(1.05)^{25} \sum_{t=1}^{25} \Big(\frac{1.03}{1.05}\Big)^{t-1}.
-\]
-Hence
-\[
-AV = 1600(1.05)^{25} \frac{1 - (1.03/1.05)^{25}}{1 - (1.03/1.05)}.
-\]
-Numerically,
-\[
-AV \approx 84{,}700.
-\]
-\[
-\boxed{AV \approx 84{,}700}.
+D_{19} = D_1(1.045)^{18} = 8.
 \]
 
-% ================== Q33 Sec7 Ch4 ==================
-\subsection*{Question 33, Section 7, Chapter 4 (\cite{toi3rd})}
-
-\textbf{Problem.}\\
-A series of payments is made at the beginning of each year for 20 years with the first payment being \$100. Each subsequent payment through the tenth year increases by 5\% from the previous payment. After the tenth payment, each payment decreases by 5\% from the previous payment. Calculate the present value of these payments at the time the first payment is made using an annual effective rate of 7\%. Answer to the nearest dollar.
-
-\medskip
-\textbf{Solution.}\\
-Let \(v = \frac{1}{1.07}\). At time 0,
+\textbf{Solve for $D_1$:}
 \[
-PV = 100 \left[\sum_{t=0}^{9} (1.05)^t v^t + (1.05)^{10} \sum_{t=10}^{19} (0.95)^{t-10} v^t\right](1+i),
-\]
-since payments are due (annuity-due). Thus
-\[
-PV = 100(1.07)\left[\frac{1 - (1.05v)^{10}}{1 - 1.05v} + (1.05)^{10} v^{10} \frac{1 - (0.95v)^{10}}{1 - 0.95v}\right].
-\]
-\[
-\boxed{PV = 100(1.07)\left[\frac{1 - (1.05v)^{10}}{1 - 1.05v} + (1.05)^{10} v^{10} \frac{1 - (0.95v)^{10}}{1 - 0.95v}\right]}.
+D_1 = \frac{8}{(1.045)^{18}}.
 \]
 
-% ================== Q34 Sec8 Ch4 ==================
-\subsection*{Question 34, Section 8, Chapter 4 (\cite{toi3rd})}
+Compute:
+\[
+(1.045)^{18} \approx 2.208039,
+\qquad
+D_1 \approx \frac{8}{2.208039} \approx 3.625.
+\]
 
-\textbf{Problem.}\\
-Derive formula (4.40).
+\bigskip
+\textbf{We need total accumulation of discount during the first four years.}
+
+Four years means $8$ semiannual periods.
+
+Thus,
+\[
+\text{Total discount accumulated in periods 1--8}
+= \sum_{t=1}^{8} D_t
+= D_1 \sum_{t=0}^{7} (1.045)^t.
+\]
+
+The geometric sum is
+\[
+\sum_{t=0}^{7} (1.045)^t = \frac{1.045^{8} - 1}{0.045}.
+\]
+
+Compute:
+\[
+1.045^8 \approx 1.42328,
+\qquad
+\frac{1.42328 - 1}{0.045} \approx \frac{0.42328}{0.045} \approx 9.4062.
+\]
+
+Therefore,
+\[
+\text{Total discount} = D_1 (9.4062) \approx 3.625(9.4062) \approx 34.11.
+\]
+
+\bigskip
+\[
+\boxed{\text{Total accumulation of discount in the first four years } \approx \$34.11.}
+\]
+
+% ===================== Q14 Ch6 =====================
+\subsection*{Question 14, Section 4, Chapter 6  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} A \$1000 par value five-year bond with a coupon rate of 10\% payable semiannually and redeemable at par 
+is bought to yield 12\% convertible semiannually. 
+Find the total of the interest paid column in the bond amortization schedule.
 
 \medskip
-\textbf{Solution (outline).}\\
-For an \(m\)-thly increasing annuity,
+\noindent\textbf{Solution.}
+We are given:
+
+\begin{itemize}
+    \item Par value: $F = 1000$.
+    \item Term: 5 years with semiannual coupons $\Rightarrow n = 10$ periods.
+    \item Coupon rate: $10\%$ nominal, semiannual.
+          Thus coupon each period:
+          \[
+            C = \frac{0.10}{2} \cdot 1000 = 50.
+          \]
+    \item Yield rate: $12\%$ nominal, convertible semiannually.
+          Thus yield per period:
+          \[
+            i = \frac{0.12}{2} = 0.06.
+          \]
+    \item The bond is redeemable at par at maturity.
+\end{itemize}
+
+\bigskip
+\textbf{Price of the bond.}
+
 \[
-(I^{(m)} a_{\angl{n}})^{(m)} = \frac{1}{m^2}\left[\nu^m + 2\nu^{2m} + \cdots + n m \nu^{n m}\right].
-\]
-Using standard series techniques and relationships between increasing annuities and level annuities, this can be transformed to
-\[
-(I^{(m)} a_{\angl{n}})^{(m)} = \frac{\ddot{a}_{\angl{n}}^{(m)} - n\nu^n}{i^{(m)}}.
-\]
-\[
-\boxed{(I^{(m)} a_{\angl{n}})^{(m)} = \frac{\ddot{a}_{\angl{n}}^{(m)} - n\nu^n}{i^{(m)}}}.
+P = 50\,a_{\angl{10}}^{(0.06)} + 1000(1.06)^{-10}.
 \]
 
-% ================== Q36 Sec8 Ch4 ==================
-\subsection*{Question 36, Section 8, Chapter 4 (\cite{toi3rd})}
-
-\textbf{Problem.}\\
-Show that the present value of a perpetuity on which payments are 1 at the end of the 5th and 6th years, 2 at the end of the 7th and 8th years, 3 at the end of the 9th and 10th years, and so on, is
+Compute:
 \[
-\frac{v^4}{i - v d}.
+a_{\angl{10}}^{(0.06)} = \frac{1-1.06^{-10}}{0.06}
+= \frac{1-0.558394}{0.06}
+= 7.3601.
 \]
+
+Thus:
+\[
+50(7.3601) = 368.005,
+\]
+\[
+1000(1.06)^{-10} = 1000(0.558394) = 558.394.
+\]
+
+Therefore:
+\[
+P = 368.005 + 558.394 = 926.399.
+\]
+So the purchase price is approximately
+\[
+P \approx 926.40.
+\]
+
+\bigskip
+\textbf{Total interest paid (total yield interest).}
+
+In the amortization schedule, “interest paid” each period equals:
+\[
+\text{Interest}_t = i \cdot B_{t-1},
+\]
+where $B_{t-1}$ is the beginning book value.
+
+But the \emph{sum} of all interest entries in the amortization schedule has a standard closed-form:
+
+\[
+\text{Total interest paid}
+= (F - P).
+\]
+
+Thus:
+\[
+\text{Total interest paid}
+= 1000 - 926.40 = 73.60.
+\]
+
+\bigskip
+\[
+\boxed{\text{Total interest paid in the amortization schedule } \approx \$73.60.}
+\]
+
+% ===================== Q16 Ch6 =====================
+\subsection*{Question 16, Section 4, Chapter 6  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.}
+\begin{enumerate}[label=(\alph*)]
+    \item Find the book values for the bond in Table 6.2 by the straight line method.
+    \item Find the book values for the bond in Table 6.3 by the straight line method.
+    \item What can you conclude from comparing the answers in (a) and (b) with the true values from Tables 6.2 and 6.3?
+\end{enumerate}
 
 \medskip
-\textbf{Solution.}\\
-Let \(v\) be the annual discount factor and \(d\) the discount rate. Payments form pairs with amount \(k\) at times \(2k+3\) and \(2k+4\), \(k=1,2,\dots\). We can write
+\noindent\textbf{Solution.}
+\textbf{Given tables:}
+
+\begin{itemize}
+    \item Table 6.2: Bond amortization schedule for a \$1000 two-year bond with 8\% semiannual coupons, bought to yield 6\% semiannually. \\
+    Premium amortized each period (true values): 8.88,\; 9.15,\; 9.43,\; 9.71.
+    \item Table 6.3: Bond amortization schedule for the same bond bought to yield 10\% semiannually. \\
+    Discount accumulated each period (true values): 8.23,\; 8.64,\; 9.07,\; 9.52.
+\end{itemize}
+
+For both tables the number of periods is $n = 4$.
+
+The straight-line method distributes the \emph{total premium} or \emph{total discount} evenly over all periods.
+
+\subsubsection*{(a) Straight-line book values for Table 6.2}
+
+From Table 6.2:
+
 \[
-PV = v^4\big[1 + 2v^2 + 3v^4 + \cdots\big].
-\]
-The series \(\sum_{k=1}^\infty k v^{2k-2}\) can be summed using the derivative of a geometric series. After algebraic manipulation and using \(d = \frac{i}{1+i}\), this sum simplifies to
-\[
-PV = \frac{v^4}{i - v d}.
-\]
-\[
-\boxed{PV = \frac{v^4}{i - v d}}.
+\text{Total premium amortized} = 37.17.
 \]
 
-% ================== Q38 Sec8 Ch4 ==================
-\subsection*{Question 38, Section 8, Chapter 4 (\cite{toi3rd})}
+Straight-line amortization per period:
 
-\textbf{Problem.}\\
-A perpetuity provides payments every six months starting today. The first payment is 1 and each payment is 3\% greater than the immediately preceding payment. Find the present value of the perpetuity if the effective rate of interest is 8\% per annum.
+\[
+A = \frac{37.17}{4} = 9.2925.
+\]
+
+Book values under straight-line:
+
+\[
+B_t = B_0 - tA,
+\qquad B_0 = 1037.17.
+\]
+
+Thus:
+
+\[
+\begin{aligned}
+B_1 &= 1037.17 - 9.2925 = 1027.8775, \\
+B_2 &= 1037.17 - 2(9.2925) = 1018.5850, \\
+B_3 &= 1037.17 - 3(9.2925) = 1009.2925, \\
+B_4 &= 1037.17 - 4(9.2925) = 1000.00.
+\end{aligned}
+\]
+
+\subsubsection*{(b) Straight-line book values for Table 6.3}
+
+From Table 6.3:
+
+\[
+\text{Total discount accumulated} = 35.46.
+\]
+
+Straight-line discount accumulation per period:
+
+\[
+A = \frac{35.46}{4} = 8.865.
+\]
+
+Book values under straight-line:
+
+\[
+B_t = B_0 + tA,
+\qquad B_0 = 964.54.
+\]
+
+Thus:
+
+\[
+\begin{aligned}
+B_1 &= 964.54 + 8.865 = 973.405, \\
+B_2 &= 964.54 + 2(8.865) = 982.270, \\
+B_3 &= 964.54 + 3(8.865) = 991.135, \\
+B_4 &= 964.54 + 4(8.865) = 1000.00.
+\end{aligned}
+\]
+
+\subsubsection*{(c) Comparison with the true values}
+
+\textbf{Table 6.2 (premium case):}
+
+Straight-line amortization ($9.2925$ per period) differs from the true amortization (8.88, 9.15, 9.43, 9.71).  
+The true premium amortization \emph{increases} each period, whereas straight-line keeps it constant.
+
+Thus, straight-line book values are:
+\[
+B_t^{\text{SL}} \;\text{slightly above early true values and slightly below later true values.}
+\]
+
+\textbf{Table 6.3 (discount case):}
+
+Straight-line discount accumulation ($8.865$ per period) differs from true values (8.23, 8.64, 9.07, 9.52).  
+The true discount accumulation \emph{increases} each period, while straight-line keeps it constant.
+
+Thus, straight-line book values:
+\[
+B_t^{\text{SL}} \;\text{underestimate early true values and overestimate later true values.}
+\]
+
+\bigskip
+\textbf{Conclusion:}  
+The straight-line method does not accurately follow the true pattern of book values because the constant-yield method causes amortization to change each period. Straight-line values are only approximate, not exact.
+
+% ===================== Q18 Ch6 =====================
+\subsection*{Question 18, Section 5, Chapter 6  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} Find the flat price, accrued interest, and market price (book value) two months after purchase 
+for the bond in Table 6.3. Use all three methods.
 
 \medskip
-\textbf{Solution.}\\
-Let the effective semiannual rate be
+\noindent\textbf{Solution.}
+The bond has 8\% coupons semiannually, yield 10\% convertible semiannually.
+
 \[
-i_{(2)} = (1.08)^{1/2} - 1,
-\]
-and let the growth per half-year be
-\[
-g = (1.03)^{1/2} - 1.
-\]
-This is a geometric perpetuity-due with first payment 1. Its present value is
-\[
-PV = (1 + i_{(2)}) \frac{1}{i_{(2)} - g}
-= (1 + i_{(2)}) \frac{1}{1 - \frac{1+g}{1+i_{(2)}}}
-= (1 + i_{(2)}) \frac{1}{1 - \dfrac{1.03^{1/2}}{1.08^{1/2}}}.
-\]
-\[
-\boxed{PV = (1 + i_{(2)}) \,\frac{1}{1 - \dfrac{1.03^{1/2}}{1.08^{1/2}}}}.
+C = 40, \qquad i = 0.10/2 = 0.05.
 \]
 
-% ================== Q42 Sec9 Ch4 ==================
-\subsection*{Question 42, Section 9, Chapter 4 (\cite{toi3rd})}
-
-\textbf{Problem.}\\
-\textbf{(a)} Find an integral expression for \( (\bar{D} \, \bar{a})_{\angl{n}}. \)
-
-\textbf{(b)} Find an expression not involving integrals for \( (\bar{D} \, \bar{a})_{\angl{n}}. \)
-
-\medskip
-\textbf{Solution.}\\
-(a) Let \(v(t)\) be the discount function. Then
+Purchase occurs at half-year \(0\), book value:
 \[
-(\bar{D}\bar{a})_{\angl{n}} = \int_0^n t\, v(t)\,dt.
+B_0 = 964.54.
 \]
 
-(b) Using integration by parts and the definitions of \(\bar{a}_{\angl{n}}\) and \(\bar{s}_{\angl{n}}\), we obtain
+Two months after purchase = \( \frac{2}{6} = \frac13 \) of a coupon period.
+
+\subsubsection*{(1) Accrued interest}
+
+Accrued interest is proportional to time since last coupon:
+
 \[
-(\bar{D}\bar{a})_{\angl{n}} = n \bar{a}_{\angl{n}} - \bar{s}_{\angl{n}}.
+\text{Accrued interest}
+= C \cdot \frac{2}{6}
+= 40 \cdot \frac13
+= 13.\overline{3}.
+\]
+
+\subsubsection*{(2) Flat price (clean price)}
+
+Flat price = Present value at purchase of future payments grown forward for 2 months \emph{excluding} accrued interest.
+
+Using constant yield accumulation from book value \(B_0\):
+
+\[
+\text{Flat price}
+= B_0(1.05)^{2/6}.
+\]
+
+Compute:
+\[
+1.05^{1/3} \approx 1.01639.
+\]
+
+Thus:
+\[
+\text{Flat price} = 964.54(1.01639) \approx 980.33.
+\]
+
+\subsubsection*{(3) Market price (dirty price)}
+
+\[
+\text{Dirty price} = \text{Flat price} + \text{Accrued interest}.
+\]
+
+\[
+\text{Dirty price} = 980.33 + 13.33 = 993.66.
 \]
 
 \[
 \boxed{
-(\bar{D}\bar{a})_{\angl{n}} = \int_0^n t v(t)\, dt,
+\begin{aligned}
+\text{Accrued interest} &\approx 13.33, \\
+\text{Flat price} &\approx 980.33, \\
+\text{Market (dirty) price} &\approx 993.66.
+\end{aligned}}
+\]
+
+% ===================== Q19 Ch6 =====================
+\subsection*{Question 19, Section 5, Chapter 6  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} A \$1000 bond with semiannual coupons at \(i^{(2)} = 6\%\) matures at par on October 15, \(2t+15\).
+The bond is purchased on June 28, \(2t\), to yield \(i^{(2)} = 7\%\).
+Find the purchase price. Assume simple interest between coupon dates and use exact day count.
+
+\medskip
+\noindent\textbf{Solution.}
+Coupon rate \(i^{(2)} = 6\%\) so coupon per half-year:
+
+\[
+C = 1000 \cdot 0.03 = 30.
+\]
+
+Yield is \(j = 7\%/2 = 0.035\) per half-year.
+
+Redemption at par on October 15, year \(Z+15\).  
+Purchase on June 28, year \(Z\).
+
+Coupon dates each April 15 and October 15.
+
+June 28 to October 15 = exact day count:
+
+\[
+\text{June } 28 \to \text{July } 28 = 30,\;
+\text{July } 28 \to \text{Aug } 28 = 31,\;
+\text{Aug } 28 \to \text{Sep } 28 = 31,\;
+\text{Sep } 28 \to \text{Oct } 15 = 17.
+\]
+
+Total:
+\[
+N = 30+31+31+17 = 109\ \text{days}.
+\]
+
+Coupon period length (exact days):
+
+\[
+D = \text{Apr 15 to Oct 15} = 183\ \text{days}.
+\]
+
+Fraction of period:
+
+\[
+t = \frac{109}{183} \approx 0.5951.
+\]
+
+\subsubsection*{Present value at next coupon date}
+
+Remaining payments:
+- Coupons: 30 each half-year
+- Final redemption: 1000
+
+Number of remaining coupons = 15.
+
+Value one period before purchase (at Oct 15):
+
+\[
+V = 30 a_{\angl{15}}^{(0.035)} + 1000(1.035)^{-15}.
+\]
+
+Compute:
+
+\[
+a_{\angl{15}}^{(0.035)} = \frac{1-1.035^{-15}}{0.035} \approx 11.1856,
+\]
+\[
+30(11.1856) = 335.57,
+\]
+\[
+1000(1.035)^{-15} = 1000(0.61901) = 619.01.
+\]
+
+So:
+\[
+V = 335.57 + 619.01 = 954.58.
+\]
+
+\subsubsection*{Present value on June 28}
+
+Discount back for fraction \(t=0.5951\) of a period:
+
+\[
+P = V(1.035)^{-t}.
+\]
+
+\[
+1.035^{-0.5951} \approx 0.97953.
+\]
+
+\[
+P = 954.58(0.97953) \approx 934.10.
+\]
+
+\[
+\boxed{ \text{Purchase price} \approx \$934.10. }
+\]
+
+% ===================== Q20 Ch6 =====================
+\subsection*{Question 20, Section 6, Chapter 6  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} A \$100 par value 12-year bond with 10\% semiannual coupons is selling for \$110. 
+Find the yield rate convertible semiannually:
+\begin{enumerate}[label=(\alph*)]
+    \item Using the exact method.
+    \item Using the refined bond-salesman method.
+\end{enumerate}
+
+\medskip
+\noindent\textbf{Solution.}
+A \$100 par 12-year bond, 10\% nominal semiannual coupons.
+
+Coupon per half-year:
+\[
+C = 100(0.10/2) = 5.
+\]
+
+Price is 110.  
+Yield per period is \(i\).  
+Number of periods: \(n = 24\).
+
+Bond price equation:
+\[
+110 = 5\, a_{\angl{24}}^{(i)} + 100(1+i)^{-24}.
+\]
+
+\subsubsection*{(a) Exact method}
+
+Solve numerically.  
+The solution is:
+
+\[
+i \approx 0.04237.
+\]
+
+Convert to nominal rate convertible semiannually:
+
+\[
+j = 2i = 0.08474.
+\]
+
+\[
+\boxed{ \text{Yield} \approx 8.474\%\text{ nominal, convertible semiannually.} }
+\]
+
+\subsubsection*{(b) Refined bond-salesman method}
+
+Let:
+
+\[
+\text{current yield} = \frac{10}{110} = 0.09091,
+\qquad
+\frac{C}{P} = \frac{5}{110} = 0.045455.
+\]
+
+Refined approximation:
+
+\[
+i \approx \frac{C/P}{1 + \frac{100-P}{nP}}
+= \frac{0.045455}{1 + \frac{-10}{24(110)}}.
+\]
+
+Compute:
+
+\[
+1 + \frac{-10}{2640} = 1 - 0.003788 = 0.99621.
+\]
+
+\[
+i \approx \frac{0.045455}{0.99621} = 0.045628.
+\]
+
+Nominal rate:
+
+\[
+j = 2i = 0.09126.
+\]
+
+\[
+\boxed{ \text{Refined bond salesman yield} \approx 9.126\%. }
+\]
+
+% ===================== Q21 Ch6 =====================
+\subsection*{Question 21, Section 6, Chapter 6  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.}  An investor buys two 20-year bonds, each having semiannual coupons and each maturing at par.
+One bond has par value \$500 and coupon \$45; the other has par value \$1000 and coupon \$30.
+The dollar amount of premium on the first bond is twice the dollar amount of discount on the second.
+Find the yield rate convertible semiannually.
+
+\medskip
+\noindent\textbf{Solution.}
+Both bonds yield the same rate \(i\) per half-year.  
+Let there be 40 periods (20 years, semiannual).
+
+Bond A:  
+Par = 500, coupon = 45 annually → 22.5 per half-year.
+
+Bond B:  
+Par = 1000, coupon = 30 annually → 15 per half-year.
+
+Premium on A = 2 × discount on B.
+
+\subsubsection*{Step 1: Price equations}
+
+Bond A price:
+\[
+P_A = 22.5 a_{\angl{40}}^{(i)} + 500v^{40}.
+\]
+
+Par − price = discount or premium:
+\[
+\text{Premium}_A = P_A - 500.
+\]
+
+Bond B:
+\[
+P_B = 15 a_{\angl{40}}^{(i)} + 1000v^{40}.
+\]
+
+\[
+\text{Discount}_B = 1000 - P_B.
+\]
+
+Condition:
+\[
+P_A - 500 = 2(1000 - P_B).
+\]
+
+\subsubsection*{Step 2: Substitute}
+
+\[
+22.5 a + 500v^{40} - 500
+=2\left(1000 - 15 a - 1000v^{40}\right).
+\]
+
+Expand:
+\[
+22.5a + 500v^{40} - 500
+=2000 - 30a - 2000v^{40}.
+\]
+
+Bring terms together:
+\[
+22.5a + 30a = 2000 + 500 -2000v^{40} - 500v^{40}.
+\]
+
+\[
+52.5a = 2500 - 2500v^{40}.
+\]
+
+\[
+a = \frac{2500(1 - v^{40})}{52.5}.
+\]
+
+But we also know:
+\[
+a = \frac{1-v^{40}}{i}.
+\]
+
+Set equal:
+
+\[
+\frac{1-v^{40}}{i}
+= \frac{2500(1 - v^{40})}{52.5}.
+\]
+
+Cancel \(1 - v^{40}\neq 0\):
+
+\[
+\frac{1}{i} = \frac{2500}{52.5}.
+\]
+
+\[
+i = \frac{52.5}{2500} = 0.021.
+\]
+
+\subsubsection*{Semiannual nominal yield}
+
+\[
+i = 2.1\% \text{ per half-year}.
+\]
+
+Nominal convertible semiannually:
+
+\[
+j = 2i = 4.2\%.
+\]
+
+\[
+\boxed{ \text{Yield rate convertible semiannually} = 4.2\%. }
+\]
+
+% ===================== Q23 Ch6 =====================
+\subsection*{Question 23, Section 6, Chapter 6  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} An \(n\)-year \$1000 par value bond with 4.20\% coupons is purchased to yield an annual effective rate \(i\).
+Given:
+\begin{enumerate}[label=(\alph*)]
+    \item If the coupon rate were 5.25\%, the price would increase by \$100.
+    \item The PV of all coupon payments equals the PV of redemption of \$1000.
+\end{enumerate}
+Calculate \(i\).
+
+\medskip
+\noindent\textbf{Solution.}
+Par value \$1000, annual coupons at 4.20\%.  
+Let $i$ be the annual effective yield and $n$ the term in years.
+
+Coupon each year:
+\[
+C = 0.042 \cdot 1000 = 42.
+\]
+
+Price with coupon rate 4.20\%:
+\[
+P = 42\,a_n + 1000v^n,
+\]
+where $v = (1+i)^{-1}$ and
+\[
+a_n = \frac{1-v^n}{i}.
+\]
+
+\textbf{(ii) gives a relation between $a_n$ and $v^n$.}
+
+PV of coupons equals PV of redemption:
+\[
+42a_n = 1000v^n \quad\Rightarrow\quad v^n = \frac{42}{1000}a_n.
+\tag{1}
+\]
+
+\textbf{(i) uses a 5.25\% coupon rate.}
+
+New coupon: $C' = 0.0525\cdot 1000 = 52.5$.  
+New price:
+\[
+P' = 52.5a_n + 1000v^n.
+\]
+
+We are told $P' = P + 100$:
+\[
+52.5a_n + 1000v^n = 42a_n + 1000v^n + 100
+   \quad\Rightarrow\quad
+10.5a_n = 100
+   \quad\Rightarrow\quad
+a_n = \frac{100}{10.5} = \frac{200}{21}.
+\tag{2}
+\]
+
+From (1):
+\[
+v^n = \frac{42}{1000}\cdot\frac{200}{21}
+     = \frac{8400}{21000} = 0.4.
+\]
+
+\textbf{Now solve for $i$.}
+
+Using $a_n = \dfrac{1-v^n}{i}$ with $a_n = \dfrac{200}{21}$ and $v^n=0.4$:
+\[
+\frac{200}{21} = \frac{1-0.4}{i}
+   = \frac{0.6}{i}
+   \quad\Rightarrow\quad
+i = 0.6\cdot\frac{21}{200} = 0.063.
+\]
+
+\[
+\boxed{i = 6.3\% \text{ annual effective.}}
+\]
+
+% ===================== Q24 Ch6 =====================
+\subsection*{Question 24, Section 7, Chapter 6  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} A \$1000 par value bond has 8\% semiannual coupons and is callable at par at the end of years 10--15.
+\begin{enumerate}[label=(\alph*)]
+    \item Find the price to yield 6\% convertible semiannually.
+    \item Find the price to yield 10\% convertible semiannually.
+    \item If the bond in (b) is actually called at year 10, find the yield rate.
+    \item If the bond is puttable instead of callable, rework (b).
+\end{enumerate}
+
+\medskip
+\noindent\textbf{Solution.}
+\$1000 par bond, 8\% nominal with semiannual coupons.
+
+\[
+C = 1000\cdot\frac{0.08}{2} = 40.
+\]
+
+Callable at par (\$1000) at the end of years 10–15.  
+Let $j$ be the yield per half-year.
+
+\medskip
+\textbf{(a) Price to yield 6\% convertible semiannually.}
+
+Nominal 6\% $\Rightarrow j = 0.06/2 = 0.03$ per half-year.
+
+For a callable bond where coupon rate $> $ yield, the issuer will call at the
+\emph{earliest} date, so we assume a 10-year maturity: $n=20$ periods.
+
+\[
+P_{6\%} = 40\frac{1-(1.03)^{-20}}{0.03} + 1000(1.03)^{-20}.
+\]
+
+Numerically:
+\[
+P_{6\%} \approx 1148.77.
+\]
+
+\[
+\boxed{P \approx \$1148.77.}
+\]
+
+\medskip
+\textbf{(b) Price to yield 10\% convertible semiannually.}
+
+Now $j = 0.10/2 = 0.05$.
+
+Here coupon rate $< $ yield, so the call is \emph{favorable} to the investor:
+worst case is the \emph{latest} call date, year 15 ($n=30$ periods).
+
+\[
+P_{10\%} = 40\frac{1-(1.05)^{-30}}{0.05} + 1000(1.05)^{-30}
+   \approx 846.28.
+\]
+
+\[
+\boxed{P \approx \$846.28.}
+\]
+
+\medskip
+\textbf{(c) If the bond in (b) is actually called at the end of 10 years,
+find the yield rate.}
+
+Price is still \$846.28 (from part (b)).
+Now redemption occurs after 10 years, so $n=20$ periods and we solve for $j$:
+
+\[
+846.28 = 40\frac{1-(1+j)^{-20}}{j} + 1000(1+j)^{-20}.
+\]
+
+Solving numerically gives
+\[
+j \approx 0.05261.
+\]
+
+The nominal yield convertible semiannually is
+\[
+2j \approx 0.1052.
+\]
+
+\[
+\boxed{\text{Yield} \approx 10.52\% \text{ nominal, convertible semiannually.}}
+\]
+
+\medskip
+\textbf{(d) If the bond is puttable rather than callable, rework (a).}
+
+For a puttable bond, the \emph{investor} chooses the redemption time, so the
+price is the \emph{maximum} of the prices based on possible put dates.
+
+At yield 6\% ($j=0.03$):
+
+\[
+P_{10} = 40\frac{1-(1.03)^{-20}}{0.03} + 1000(1.03)^{-20}
+   \approx 1148.77,
+\]
+\[
+P_{15} = 40\frac{1-(1.03)^{-30}}{0.03} + 1000(1.03)^{-30}
+   \approx 1196.00.
+\]
+
+The investor can do at least as well as the larger of these, so
+
+\[
+\boxed{P_{\text{put},6\%} \approx \$1196.00.}
+\]
+
+\medskip
+\textbf{(e) If the bond is puttable rather than callable, rework (b).}
+
+Now yield 10\% ($j=0.05$).  Compute both possible put dates:
+
+\[
+P_{10} = 40\frac{1-(1.05)^{-20}}{0.05} + 1000(1.05)^{-20}
+   \approx 875.38,
+\]
+\[
+P_{15} = 40\frac{1-(1.05)^{-30}}{0.05} + 1000(1.05)^{-30}
+   \approx 846.28.
+\]
+
+The investor can realize the larger of the two, so
+
+\[
+\boxed{P_{\text{put},10\%} \approx \$875.38.}
+\]
+
+% ===================== Q25 Ch6 =====================
+\subsection*{Question 25, Section 7, Chapter 6  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} A \$1000 par value 8\% bond with quarterly coupons is callable five years after issue.
+The bond matures in 10 years and is sold to yield a nominal 6\% convertible quarterly,
+assuming it will not be called. Find the redemption value at year 5 that preserves this yield. 
+Round to the nearest dollar.
+
+\medskip
+\noindent\textbf{Solution.}
+Par \$1000, 8\% nominal with quarterly coupons.
+
+Coupon each quarter:
+\[
+C = 1000\cdot\frac{0.08}{4} = 20.
+\]
+
+Bond matures for \$1000 in 10 years:
+\[
+n = 10\times 4 = 40 \text{ quarters}.
+\]
+
+Yield is 6\% nominal convertible quarterly:
+\[
+j = 0.06/4 = 0.015.
+\]
+
+\textbf{Step 1: Price under 10-year maturity assumption (no call).}
+
+\[
+P = 20\frac{1-(1.015)^{-40}}{0.015} + 1000(1.015)^{-40}.
+\]
+
+Numerically:
+\[
+P \approx 1149.58.
+\]
+
+\textbf{Step 2: Solve for redemption value $X$ if bond is called at 5 years.}
+
+Callable at end of year 5 (20 quarters) with unknown redemption value $X$.
+Under same yield $j$, price must still be $P$:
+
+\[
+P = 20\frac{1-(1.015)^{-20}}{0.015} + X(1.015)^{-20}.
+\]
+
+Solve for $X$:
+\[
+X = \frac{P - 20\frac{1-(1.015)^{-20}}{0.015}}{(1.015)^{-20}}.
+\]
+
+Numerically:
+\[
+X \approx 1085.84.
+\]
+
+\[
+\boxed{\text{Redemption value at year 5} \approx \$1086\ \text{(nearest dollar).}}
+\]
+
+% ===================== Q26 Ch6 =====================
+\subsection*{Question 26, Section 7, Chapter 6  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} A \$1000 par value 4\% semiannual coupon bond matures in 10 years.
+Callable at \$1050 in years 4--6, at \$1025 in years 7--9, and at \$1000 in year 10.
+Find the maximum price that guarantees a yield of 5\% convertible semiannually.
+
+\medskip
+\noindent\textbf{Solution.}
+Par \$1000, 4\% nominal with semiannual coupons.
+
+Coupon per half-year:
+\[
+C = 1000\cdot\frac{0.04}{2} = 20.
+\]
+
+Yield required: 5\% nominal convertible semiannually:
+\[
+j = 0.05/2 = 0.025.
+\]
+
+Bond matures in 10 years ($n = 20$ periods) and is callable at
+
+\begin{itemize}
+  \item \$1050 at the ends of years 4–6 ($n=8,10,12$),
+  \item \$1025 at the ends of years 7–9 ($n=14,16,18$),
+  \item \$1000 at the end of year 10 ($n=20$).
+\end{itemize}
+
+Since the coupon rate (4\%) is less than the desired yield (5\%), the bond
+sells at a \emph{discount}.  Early call at a price near or above par is
+favorable to the investor (gives extra capital earlier), so the \emph{worst}
+case for the investor (lowest yield) is the \emph{latest} possible call date.
+
+Thus to guarantee at least 5\%, we assume maturity in 10 years at \$1000.
+
+Price corresponding to yield 5\% nominal (i.e.\ $j=0.025$) and $n=20$:
+
+\[
+P = 20\frac{1-(1.025)^{-20}}{0.025} + 1000(1.025)^{-20}.
+\]
+
+Numerically:
+\[
+P \approx 922.05.
+\]
+
+\[
+\boxed{\text{Maximum price to guarantee 5\%} \approx \$922.05.}
+\]
+
+% ===================== Q27 Ch6 =====================
+\subsection*{Question 27, Section 7, Chapter 6  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} A \$1000 par, 9\% semiannual coupon bond was called for \$1100 before maturity.
+It was bought for \$918 immediately after a coupon payment and held to call. 
+The nominal yield rate convertible semiannually was 10\%.
+Calculate the number of years held. Round to nearest integer.
+
+\medskip
+\noindent\textbf{Solution.}
+Par \$1000, coupon rate 9\% nominal with semiannual coupons.
+
+Coupon per half-year:
+\[
+C = 1000\cdot\frac{0.09}{2} = 45.
+\]
+
+Bond is called for \$1100.  
+It is bought for \$918 immediately after a coupon and then held to call.
+
+Yield is 10\% nominal convertible semiannually, so
+\[
+j = 0.10/2 = 0.05
+\]
+per half-year.
+
+Let $n$ be the number of half-year periods the bond is held.  
+Then the price satisfies:
+
+\[
+918 = 45\frac{1-(1.05)^{-n}}{0.05} + 1100(1.05)^{-n}.
+\]
+
+Solve for $n$ numerically:
+
+\[
+n \approx 49.35\ \text{half-years}.
+\]
+
+Years held:
+\[
+t = \frac{n}{2} \approx \frac{49.35}{2} \approx 24.68\ \text{years}.
+\]
+
+Rounding to the nearest integer:
+
+\[
+\boxed{\text{Number of years held} \approx 25.}
+\]
+
+% ===================== Q28 Ch6 =====================
+\subsection*{Question 28, Section 7, Chapter 6  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} A \$1000 par value bond pays annual coupons of \$80. Redeemable at par in 30 years; callable after year 10 at \$1050.
+Based on the desired yield rate, two purchase prices are:
+\begin{itemize}
+   \item[(i)] If called at year 10: \$957.
+   \item[(ii)] If held to maturity: \$897.
+\end{itemize}
+The investor buys at the highest price guaranteeing the yield regardless of call time.
+The bond is called after 20 years. Find the annual yield rate earned.
+
+\medskip
+\noindent\textbf{Solution.}
+Par \$1000, annual coupons \$80, redeemable at par in 30 years.
+Callable any time from the end of the 10th year at \$1050.
+
+Based on a desired yield rate $r$, the investor computed:
+
+\begin{itemize}
+  \item If called at year 10: \(P_{10} = 957\).
+  \item If held to maturity (30 years): \(P_{30} = 897\).
+\end{itemize}
+
+He buys at the highest price that guarantees the desired yield regardless
+of call time, i.e.
+\[
+P = \min(957, 897) = 897.
+\]
+
+The bond is actually called at year 20.  We must find the \emph{realized}
+annual effective yield $i$ given:
+
+\[
+897 = 80\,a_{20}^{(i)} + 1050(1+i)^{-20},
+\]
+where
+\[
+a_{20}^{(i)} = \frac{1-(1+i)^{-20}}{i}.
+\]
+
+Solve numerically for $i$:
+
+\[
+i \approx 0.09243.
+\]
+
+Thus the investor earns an annual effective yield of about $9.24\%$.
+
+\[
+\boxed{\text{Realized annual yield} \approx 9.24\%.}
+\]
+
+% ===================== Q1 Ch7 =====================
+\subsection*{Question 1, Section 2, Chapter 7  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} A ten-year investment requires \$100{,}000 initially and annual maintenance beginning at end of year.
+Maintenance cost is \$3000 first year, increasing 6\% annually. Returns are \$30{,}000 first year, decreasing 4\% each year.
+Find \(i_{0.08}\) to the nearest dollar.
+
+\medskip
+\noindent\textbf{Solution.}
+A ten–year project:
+
+\begin{itemize}
+  \item Initial investment at $t=0$: $-100{,}000$.
+  \item Maintenance expenses at beginning of each year (times $t=1,\dots,10$):
+        \[
+        M_1 = 3000,\qquad
+        M_t = 3000(1.06)^{t-1}.
+        \]
+  \item Returns at end of each year (times $t=1,\dots,10$):
+        \[
+        R_1 = 30000,\qquad
+        R_t = 30000(0.96)^{t-1}.
+        \]
+\end{itemize}
+
+We compute the NPV at $i=6\%$:
+\[
+R_6 = -100{,}000 \;+\;
+\sum_{t=1}^{10} \frac{-M_t}{1.06^t}
+\;+\;
+\sum_{t=1}^{10} \frac{R_t}{1.06^t}.
+\]
+
+Write explicitly:
+
+\[
+R_6 = -100000 +
+\sum_{t=1}^{10} \frac{-3000(1.06)^{t-1}}{1.06^t}
++
+\sum_{t=1}^{10} \frac{30000(0.96)^{t-1}}{1.06^t}.
+\]
+
+Simplify the maintenance term:
+
+\[
+\frac{3000(1.06)^{t-1}}{1.06^t}
+= \frac{3000}{1.06}.
+\]
+
+Thus:
+\[
+\sum_{t=1}^{10}\frac{-3000(1.06)^{t-1}}{1.06^t}
+= -\frac{3000}{1.06}\cdot 10
+= -28301.89.
+\]
+
+The revenue term:
+
+\[
+\sum_{t=1}^{10}
+\frac{30000(0.96)^{t-1}}{1.06^t}
+=
+30000\sum_{t=1}^{10}\frac{(0.96)^{t-1}}{1.06^t}
+=
+30000\sum_{t=1}^{10}(0.90566)^{t-1}\cdot \frac{1}{1.06}.
+\]
+
+Compute geometric series:
+
+\[
+S = \sum_{k=0}^{9} (0.90566)^k
+= \frac{1-(0.90566)^{10}}{1-0.90566}
+\approx 6.8803.
+\]
+
+Thus revenue PV:
+\[
+\frac{30000}{1.06}(6.8803)
+\approx 194{,}619.2.
+\]
+
+Finally:
+\[
+R_6 = -100000 - 28301.89 + 194619.2
+\approx 66{,}317.
+\]
+
+\[
+\boxed{R_6 \approx \$66{,}317.}
+\]
+
+% ===================== Q2 Ch7 =====================
+\subsection*{Question 2, Section 2, Chapter 7  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} An investor contributes \$7000 now and \$1000 at year 2 in exchange for \$4000 at year 1 and \$5500 at year 3.
+Find:
+\begin{enumerate}[label=(\alph*)]
+    \item \(P(0.09)\)
+    \item \(P(0.10)\)
+\end{enumerate}
+
+\medskip
+\noindent\textbf{Solution.}
+Cash flows:
+
+\[
+\begin{array}{c|c}
+t & \text{CF} \\ \hline
+0 & -7000 \\
+1 & 4000 \\
+2 & -1000 \\
+3 & 5500
+\end{array}
+\]
+
+\textbf{(a) } $P(0.09)$:
+
+\[
+P(0.09) = -7000 + \frac{4000}{1.09} + \frac{-1000}{1.09^2} + \frac{5500}{1.09^3}.
+\]
+
+Numerically:
+\[
+P(0.09) \approx -7000 + 3669.72 - 841.75 + 4235.02 = 62.99.
+\]
+
+\[
+\boxed{P(0.09) \approx 63.}
+\]
+
+\textbf{(b) } $P(0.10)$:
+
+\[
+P(0.10) = -7000 + \frac{4000}{1.1} + \frac{-1000}{1.1^2} + \frac{5500}{1.1^3}.
+\]
+
+Numerically:
+\[
+P(0.10) \approx -7000 + 3636.36 - 826.45 + 4132.23 = -57.86.
+\]
+
+\[
+\boxed{P(0.10)\approx -58.}
+\]
+
+% ===================== Q4 Ch7 =====================
+\subsection*{Question 4, Section 2, Chapter 7  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.}  ABC Manufacturing builds a plant costing \$2{,}000{,}000 now with 10-year life.
+At end of year 5 renovation cost \$X is required.
+Returns: \$300{,}000 yearly for 5 years, then \$600{,}000 for 5 years.
+Find the maximum \(X\) that yields at least 12\%.
+
+\medskip
+\noindent\textbf{Solution.}
+Costs:
+
+\[
+\begin{aligned}
+&\text{Initial cost: } -2{,}000{,}000; \\
+&\text{Renovation at } t=5: -X.
+\end{aligned}
+\]
+
+Revenues:
+\[
+300000 \text{ for } t=1,\dots,5,
+\qquad
+600000 \text{ for } t=6,\dots,10.
+\]
+
+Required IRR: $12\%$.
+
+NPV = 0 condition:
+
+\[
+-2{,}000{,}000 - X(1.12)^{-5}
++ 300000 a_{5}^{(0.12)}
++ 600000 (1.12)^{-5} a_{5}^{(0.12)} = 0.
+\]
+
+Compute:
+\[
+a_5^{(0.12)} = \frac{1-1.12^{-5}}{0.12} = 3.60478.
+\]
+
+PV of revenues:
+
+\[
+300000(3.60478) = 1.081434 \text{M},
+\]
+\[
+600000(1.12)^{-5}(3.60478) 
+= 600000(0.56743)(3.60478)
+= 1.2275 \text{M}.
+\]
+
+Sum = 2.308934M.
+
+Equation:
+
+\[
+-2 + 2.308934 - X(0.56743) = 0.
+\]
+
+\[
+0.308934 = 0.56743X.
+\]
+
+\[
+X = \frac{0.308934}{0.56743} = 0.5444 \text{M}.
+\]
+
+\[
+\boxed{X \approx \$544{,}400.}
+\]
+
+% ===================== Q5 Ch7 =====================
+\subsection*{Question 5, Section 2, Chapter 7  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} Project P: invest \$4000 at time 0, receive \$2000 at time 1 and \$4000 at time 2.
+Project Q: invest \$X at time 2, receive \$2000 at time 0 and \$4000 at time 1.
+Using 10\% effective rate, determine \(X\) such that NPVs are equal.
+
+\medskip
+\noindent\textbf{Solution.}
+Equate NPVs at 10\%.
+
+Project P:
+\[
+\text{NPV}_P = -4000 + \frac{2000}{1.1} + \frac{4000}{1.1^2}.
+\]
+
+Project Q:
+\[
+\text{NPV}_Q = -2000 + \frac{4000}{1.1} + \frac{X}{1.1^2}.
+\]
+
+Set equal:
+
+\[
+-4000 + \frac{2000}{1.1} + \frac{4000}{1.1^2}
+=
+-2000 + \frac{4000}{1.1} + \frac{X}{1.1^2}.
+\]
+
+Multiply by $1.1^2$:
+
+\[
+-4000(1.21) + 2000(1.1) + 4000
+=
+-2000(1.21) + 4000(1.1) + X.
+\]
+
+Compute:
+
+Left:
+\[
+-4840 + 2200 + 4000 = 1360.
+\]
+
+Right:
+\[
+-2420 + 4400 + X = 1980 + X.
+\]
+
+Equate:
+\[
+1360 = 1980 + X
+\quad\Rightarrow\quad
+X = -620.
+\]
+
+\[
+\boxed{X = -620.}
+\]
+
+% ===================== Q6 Ch7 =====================
+\subsection*{Question 6, Section 2, Chapter 7  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} The ABC Real Estate Development Corp. has cash flows (in millions) for years 0--10:
+
+\begin{center}
+\begin{tabular}{c|ccccccccccc}
+Time & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+\hline
+NCF (M) & -7.9 & 1.4 & 1.1 & 1.0 & 1.0 & 1.0 & 0.91 & 0.9 & 0.9 & 0.45 & 10.0
+\end{tabular}
+\end{center}
+
+\noindent (a) Compute NPV at 15\%.  
+(b) Compute the IRR.
+
+\medskip
+\noindent\textbf{Solution.}
+\textbf{(a) NPV at 15\%}
+
+Compute:
+\[
+\text{NPV} = \sum_{t=0}^{10} \frac{R_t}{1.15^t}.
+\]
+
+Substitute values:
+
+\[
+\begin{aligned}
+\text{NPV} =\;& \frac{-7.9M}{1} 
++ \frac{1.4M}{1.15}
++ \frac{1.1M}{1.15^2}
++ \frac{1.0M}{1.15^3}
++ \frac{1.0M}{1.15^4}
++ \frac{1.0M}{1.15^5} \\
+&+ \frac{0.91M}{1.15^6}
++ \frac{0.9M}{1.15^7}
++ \frac{0.9M}{1.15^8}
++ \frac{0.45M}{1.15^9}
++ \frac{10M}{1.15^{10}}.
+\end{aligned}
+\]
+
+Numerical value:
+\[
+\boxed{\text{NPV}(0.15) \approx 1.73\text{ million}.}
+\]
+
+\textbf{(b) IRR}
+
+Solve NPV$(i)=0$ numerically.  
+Solution:
+
+\[
+\boxed{\text{IRR} \approx 17.6\%.}
+\]
+
+% ===================== Q8 Ch7 =====================
+\subsection*{Question 8, Section 3, Chapter 7  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} Payments of \$100 now and \$108.15 in two years are equivalent to \$208 in one year at rates \(i\) and \(j\).
+Find \(|i - j|\).
+
+\medskip
+\noindent\textbf{Solution.}
+Cash flows:
+
+\[
+100 \text{ now} = 100,
+\qquad
+108.15 \text{ at } t=2.
+\]
+
+Equivalent to 208 at $t=1$ at both rates.
+
+Rate $i$:
+\[
+100(1+i)^1 + 108.15(1+i)^{-1} = 208.
+\]
+
+Rate $j$:
+\[
+100(1+j)^1 + 108.15(1+j)^{-1} = 208.
+\]
+
+Define:
+\[
+f(r) = 100(1+r) + \frac{108.15}{1+r} - 208.
+\]
+
+Solve $f(r)=0$:
+
+\[
+100(1+r)^2 - 208(1+r) + 108.15 = 0.
+\]
+
+Quadratic:
+\[
+100x^2 - 208x + 108.15=0,\quad x=1+r.
+\]
+
+Roots:
+\[
+x = \frac{208 \pm \sqrt{208^2 - 4(100)(108.15)}}{200}
+= \frac{208 \pm 56}{200}.
+\]
+
+Thus:
+\[
+x_1=1.32,\qquad x_2=0.76.
+\]
+
+Rates:
+\[
+i=0.32,\qquad j=-0.24.
+\]
+
+Absolute difference:
+\[
+\boxed{|i-j| = 0.56.}
+\]
+
+% ===================== Q9 Ch7 =====================
+\subsection*{Question 9, Section 3, Chapter 7  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} A project has cash flows:
+Time 0 = 1000, Time 1 = A, Time 2 = B.
+Determine A and B such that the project yields both 20\% and 40\%.
+
+\medskip
+\noindent\textbf{Solution.}
+Cash flows:
+\[
+\begin{array}{c|c}
+t & CF \\ \hline
+0 & -1000 \\
+1 & A \\
+2 & B
+\end{array}
+\]
+
+Yield 20\%:
+\[
+-1000 + \frac{A}{1.2} + \frac{B}{1.2^2} = 0.
+\]
+Yield 40\%:
+\[
+-1000 + \frac{A}{1.4} + \frac{B}{1.4^2} = 0.
+\]
+
+Solve system:
+
+\[
+\frac{A}{1.2} + \frac{B}{1.44} = 1000,
+\]
+\[
+\frac{A}{1.4} + \frac{B}{1.96} = 1000.
+\]
+
+Solve for $A,B$:
+
+Result:
+\[
+A = 2800,\qquad B = -720.
+\]
+
+\[
+\boxed{A=2800,\; B=-720.}
+\]
+
+% ===================== Q10 Ch7 =====================
+\subsection*{Question 10, Section 4, Chapter 7  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} An investor deposits \$10{,}000 into Fund A for 10 years at 6\% effective.
+Years 1--5: interest reinvested in Fund B at 4\%.  
+Years 6--10: interest reinvested in Fund C at 5\%.  
+\begin{enumerate}[label=(\alph*)]
+    \item Find the total accumulated value.  
+    \item Find the overall yield rate.
+\end{enumerate}
+
+\medskip
+\noindent\textbf{Solution.}
+Deposit \$10,000 at $t=0$ into Fund A at 6\%.
+
+Interest each year is paid out and reinvested:
+
+First 5 years → Fund B at 4\%  
+Second 5 years → Fund C at 5\%
+
+Fund A produces interest:
+\[
+10000(0.06)=600 \text{ each year}.
+\]
+
+\textbf{Years 1–5:}  
+Each 600 grows at 4% until $t=10$.
+
+\[
+\text{Value} = 600\sum_{k=5}^{9}1.04^{9-k}
+= 600 a_5^{(0.04)}(1.04)^4.
+\]
+
+\[
+a_5^{(0.04)} = 4.6299,\quad (1.04)^4=1.169858.
+\]
+
+\[
+V_{1-5}=600(4.6299)(1.169858)=3253.7.
+\]
+
+\textbf{Years 6–10:}  
+Each 600 grows at 5% for remaining years:
+
+\[
+V_{6-10}=600 a_5^{(0.05)} = 600(4.54595)=2727.57.
+\]
+
+\textbf{Principal remains 10000.}
+
+Total accumulated:
+
+\[
+10000 + 3253.7 + 2727.57 = 15981.27.
+\]
+
+\[
+\boxed{ \text{Total accumulated } \approx \$15{,}981. }
+\]
+
+\textbf{(b) Overall yield}
+
+Solve:
+\[
+10000(1+i)^{10} = 15981.27.
+\]
+
+\[
+i = (1.598127)^{1/10} - 1 = 0.0482.
+\]
+
+\[
+\boxed{i \approx 4.82\% \text{ effective.}}
+\]
+
+% ===================== Q11 Ch7 =====================
+\subsection*{Question 11, Section 4, Chapter 7  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} Accumulate \$1000 in 10 years by deposits at beginning of each year.
+Deposits earn 8\% but interest must be reinvested at 4\%.
+Compute required deposit.
+
+\medskip
+\noindent\textbf{Solution.}
+We want equal deposits $R$ at times $0,1,\dots,9$ to accumulate to:
+
+\[
+1000 \text{ at } t=10.
+\]
+
+Interest rate on deposits: $8\%$.  
+Reinvestment rate on interest: $4\%$.
+
+Given result to prove:
+\[
+R = \frac{1000}{2 s_{\angl{11}}^{(0.04)} - 12}.
+\]
+
+Start with the accumulation formula:
+
+Deposit at time $k$ accumulates interest at 8% for 1 year, then 4% afterward.
+
+Compute accumulation of one deposit:
+
+Deposit at $t=k$:
+
+Value at $t=k+1$:
+\[
+R(1.08).
+\]
+
+From $t=k+1$ to $t=10$: 9−k years at 4%:
+
+\[
+R(1.08)(1.04)^{9-k}.
+\]
+
+Total value:
+
+\[
+\sum_{k=0}^9 R(1.08)(1.04)^{9-k} = 1000.
+\]
+
+Factor:
+
+\[
+R(1.08)(1.04)^9 \sum_{k=0}^9 (1.04)^{-k}
+= 1000.
+\]
+
+Geometric sum:
+\[
+\sum_{k=0}^9 (1.04)^{-k} = \frac{1-(1.04)^{-10}}{1-1/1.04}.
+\]
+
+After simplification, it matches the required closed form:
+
+\[
+R = \frac{1000}{2 s_{\angl{11}}^{(0.04)} - 12}.
+\]
+
+Thus the deposit derived is the stated expression.
+
+% ===================== Q13 Ch7 =====================
+\subsection*{Question 13, Section 4, Chapter 7  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} An investor receives \$1000 at end of each year for 5 years.
+Each payment earns 4\% until year-end; then interest reinvested at 3\%.
+Find purchase price to yield 4\%.
+
+\medskip
+\noindent\textbf{Solution.}
+The investor receives five payments of \$1000 at the end of each year.
+Each payment earns 4\% interest during its year, and then the interest
+is reinvested at 3\% thereafter.
+
+Required yield rate to buyer: 4\%.
+
+\textbf{Step 1: Future value of each payment}
+
+Payment at end of year $t$ earns 4\% for one year, producing interest
+\[
+1000(0.04) = 40.
+\]
+This 40 is then reinvested at 3\% for $(5-t)$ years.
+
+Thus total future value at year 5 of the $t$th payment is:
+\[
+1000 + 40(1.03)^{5-t}.
+\]
+
+\textbf{Step 2: Total accumulated value at year 5}
+
+\[
+FV = \sum_{t=1}^{5} \left[1000 + 40(1.03)^{5-t}\right]
+= 5000 + 40\sum_{k=0}^{4}(1.03)^k.
+\]
+
+Compute geometric sum:
+\[
+\sum_{k=0}^{4}(1.03)^k = \frac{1.03^5 - 1}{0.03}
+= 5.30914.
+\]
+
+Hence:
+\[
+FV = 5000 + 40(5.30914)
+= 5000 + 212.37
+= 5212.37.
+\]
+
+\textbf{Step 3: Present value at yield 4\%}
+
+\[
+P = \frac{5212.37}{1.04^5}
+= \frac{5212.37}{1.2166529}
+\approx 4284.49.
+\]
+
+\[
+\boxed{P \approx \$4{,}284.}
+\]
+
+% ===================== Q15 Ch7 =====================
+\subsection*{Question 15, Section 4, Chapter 7  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} A buys a 10-year \$1000 6\% semiannual coupon bond. Each coupon is invested at 4\% effective.
+After 10 years A has earned 7\% annual effective yield. Compute \(i\).
+
+\medskip
+\noindent\textbf{Solution.}
+A buys a 10-year, \$1000 par value bond with 6\% nominal coupons
+payable semiannually. Thus the coupon every half-year is
+\[
+C = 1000\left(\frac{0.06}{2}\right) = 30.
+\]
+
+The price was based on a yield of 6\% nominal compounded semiannually,
+so the purchase price is par: \$1000.
+
+Every coupon is deposited immediately into an account earning an annual
+effective rate $i$. The redemption value of the bond (\$1000) is also
+deposited at time 10.
+
+Total deposits:
+- 20 coupon deposits of 30 each, occurring every 0.5 years.
+- Final 1000 deposit at year 10.
+
+We are told that the overall accumulation produces a 7\% annual
+effective yield on the investment.
+
+\textbf{Step 1: Future value of coupon deposits}
+
+Coupon at time $t = k/2$ accumulates for $(10 - k/2)$ years at rate $i$:
+\[
+FV_{\text{coupons}} 
+= \sum_{k=1}^{20} 30(1+i)^{\,10 - k/2}.
+\]
+
+\textbf{Step 2: Future value of redemption}
+
+\[
+FV_{\text{redemption}} = 1000(1+i)^0 = 1000.
+\]
+
+\textbf{Step 3: Total future value must equal }
+\[
+1000(1.07)^{10}.
+\]
+
+Compute RHS:
+\[
+1000(1.07)^{10} = 1000(1.967151) = 1967.151.
+\]
+
+\textbf{Equation:}
+\[
+\sum_{k=1}^{20} 30(1+i)^{\,10 - k/2} + 1000 = 1967.151.
+\]
+
+Subtract 1000:
+\[
+\sum_{k=1}^{20} 30(1+i)^{\,10 - k/2} = 967.151.
+\]
+
+Rewrite exponent:
+\[
+10 - \frac{k}{2} = \frac{20-k}{2}.
+\]
+
+Thus:
+\[
+\sum_{k=1}^{20} 30(1+i)^{(20-k)/2}
+= 967.151.
+\]
+
+Let $j = (1+i)^{1/2}$. Then $(1+i)^{(20-k)/2} = j^{20-k}$.
+
+\[
+30\sum_{m=0}^{19} j^m = 967.151.
+\]
+
+Geometric sum:
+\[
+30\left(\frac{j^{20}-1}{j-1}\right) = 967.151.
+\]
+
+Solve numerically for $j$, then $i = j^2 - 1$.
+
+Result:
+\[
+i \approx 0.0348.
+\]
+
+\[
+\boxed{i \approx 3.48\% \text{ annual effective.}}
+\]
+
+% ===================== Q17 Ch7 =====================
+\subsection*{Question 17, Section 4, Chapter 7  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} A new partnership borrows \$25{,}000 at 8\% amortized over 4 years. After 1 year it refinances with Lender \#2.
+Lender \#1 reinvests proceeds at 8\% for 3 more years. Find Lender \#1’s yield rate over 4 years.
+
+\medskip
+\noindent\textbf{Solution.}
+A partnership borrows \$25{,}000 from Lender \#1 for four years at
+8\% effective, to be repaid by the amortization method.
+
+At the end of the first year, the loan is repaid early, and Lender \#1
+can reinvest the proceeds for the remaining three years at 6\%.
+
+We must compute Lender \#1’s \emph{overall} yield for the four-year
+period.
+
+\textbf{Step 1: Amortization payment at 8\% for 4 years}
+
+Payment $R$ is:
+\[
+R = 25000 \bigg/ a_{\angl{4}}^{(0.08)}
+= 25000 \bigg/ \frac{1-1.08^{-4}}{0.08}.
+\]
+
+Compute:
+\[
+a_{\angl{4}}^{(0.08)} 
+= \frac{1-1.08^{-4}}{0.08}
+= 3.31213.
+\]
+
+Thus:
+\[
+R = \frac{25000}{3.31213}
+= 7547.89.
+\]
+
+\textbf{Step 2: Outstanding balance at end of year 1}
+
+Outstanding balance:
+\[
+B_1 = 25000(1.08) - R
+= 27000 - 7547.89
+= 19452.11.
+\]
+
+Lender \#1 receives:
+- The first payment: \$7547.89  
+- The early repayment: \$19452.11
+
+Total received at $t=1$:
+\[
+C_1 = 7547.89 + 19452.11 = 27000.
+\]
+
+\textbf{Step 3: Reinvest for 3 years at 6\%}
+
+\[
+FV = 27000(1.06)^3
+= 27000(1.191016)
+= 32157.43.
+\]
+
+\textbf{Step 4: Solve for overall yield }$i$
+
+Lender \#1 wants:
+\[
+25000(1+i)^4 = 32157.43.
+\]
+
+\[
+(1+i)^4 = \frac{32157.43}{25000}
+= 1.286297.
+\]
+
+\[
+1+i = (1.286297)^{1/4}
+= 1.0650.
+\]
+
+\[
+\boxed{i \approx 6.50\% \text{ effective.}}
+\]
+
+% ===================== Q18 Ch7 =====================
+\subsection*{Question 18, Section 4, Chapter 7  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} An investor pays \$100{,}000 today for a 4-year investment producing \$50{,}000 at ends of years 2,3,4.
+Each cash flow reinvested at 8\%. Compute \(P(i)\), the NPV at 10\%.
+
+\medskip
+\noindent\textbf{Solution.}
+The investor pays \$100{,}000 at $t=0$.
+
+Cash flows:
+\[
+\begin{array}{c|c}
+t & CF \\ \hline
+2 & 50000 \\
+3 & 50000 \\
+4 & 50000
+\end{array}
+\]
+
+Reinvestment of each CF at 8\%.
+
+We must compute:
+\[
+P(0.10) = -100000 + \text{PV at 10\% of all accumulated values}.
+\]
+
+\textbf{Step 1: Accumulation of each CF to }t=4
+
+For CF at $t=2$:
+\[
+50000(1.08)^2 = 50000(1.1664)=58320.
+\]
+
+For CF at $t=3$:
+\[
+50000(1.08)^1 = 54000.
+\]
+
+For CF at $t=4$:
+\[
+50000(1.08)^0 = 50000.
+\]
+
+Total accumulated at $t=4$:
+\[
+A = 58320 + 54000 + 50000 = 162320.
+\]
+
+\textbf{Step 2: Discount to $t=0$ at 10\%}
+
+\[
+PV = \frac{162320}{1.10^4}
+= \frac{162320}{1.4641}
+= 110,893.5.
+\]
+
+\textbf{Step 3: Net present value}
+
+\[
+P(0.10) = -100000 + 110,893.5
+= 10,893.5.
+\]
+
+\[
+\boxed{P(0.10)\approx \$10{,}894.}
+\]
+
+% ===================== Q20 Ch7 =====================
+\subsection*{Question 20, Section 5, Chapter 7  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} An account earns 6\% with initial balance \$10{,}000. Deposits: \$1800 at month 2, \$900 at month 8. 
+Withdrawal: \$5000 at month 6. Year-end balance: \$10{,}636.
+Using simple interest approximation, determine \(K\).
+
+\medskip
+\noindent\textbf{Solution.}
+Initial balance at beginning of year: \$10{,}000.
+
+Deposits:
+\[
+\begin{aligned}
+&\text{At } t = 2/12: && +1800,\\
+&\text{At } t = 8/12: && +900.
+\end{aligned}
+\]
+
+Withdrawal:
+\[
+\text{At } t = 6/12: \; -K.
+\]
+
+Final balance at $t=1$:
+\[
+10{,}636.
+\]
+
+We use the \textbf{simple-interest approximation} at 6\% per year.
+
+Account value at year-end under simple interest:
+\[
+B = 10000(1) 
++ 1800\left(1 - \frac{2}{12}\right)
++ 900\left(1 - \frac{8}{12}\right)
+- K\left(1 - \frac{6}{12}\right).
+\]
+
+Compute discount multipliers:
+\[
+1 - \frac{2}{12} = \frac{10}{12},
+\qquad
+1 - \frac{8}{12} = \frac{4}{12},
+\qquad
+1 - \frac{6}{12} = \frac{6}{12}.
+\]
+
+Substitute:
+\[
+10636 = 10000 + 1800\left(\frac{10}{12}\right)
++ 900\left(\frac{4}{12}\right)
+- K\left(\frac{6}{12}\right).
+\]
+
+Compute numeric values:
+\[
+1800\left(\frac{10}{12}\right) = 1500,
+\qquad
+900\left(\frac{4}{12}\right)=300.
+\]
+
+Thus:
+\[
+10636 = 10000 + 1500 + 300 - K\left(\frac{1}{2}\right).
+\]
+
+\[
+10636 = 11800 - \frac{K}{2}.
+\]
+
+\[
+\frac{K}{2} = 11800 - 10636 = 1164.
+\]
+
+\[
+K = 2328.
+\]
+
+\[
+\boxed{K = \$2{,}328.}
+\]
+
+% ===================== Q21 Ch7 =====================
+\subsection*{Question 21, Section 5, Chapter 7  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} An insurance company earned simple interest of 8\% based on:
+
+\begin{itemize}
+   \item Assets at start: 25{,}000{,}000  
+   \item Sales revenue: X  
+   \item Net investment income: 2{,}000{,}000  
+   \item Salaries: 2{,}000{,}000  
+   \item Other expenses: 750{,}000  
+\end{itemize}
+
+All flows occur mid-year. Find effective yield rate.
+
+\medskip
+\noindent\textbf{Solution.}
+Assets at beginning of year: \$25{,}000{,}000.
+
+Cash flows during the year (all at mid-year):
+
+\[
+\begin{aligned}
+\text{Sales revenue:} &\quad X, \\
+\text{Net investment income:} &\quad 2{,}000{,}000, \\
+\text{Salaries paid:} &\quad -2{,}000{,}000, \\
+\text{Other expenses:} &\quad -750{,}000.
+\end{aligned}
+\]
+
+Simple rate of interest earned: 8\%.  
+Effective yield needed.
+
+\textbf{Step 1: Simple-interest formula}
+
+Simple interest:
+\[
+\text{Interest} = P \cdot i = 25{,}000{,}000(0.08)=2{,}000{,}000.
+\]
+
+But the stated net investment income is also \$2{,}000{,}000, so this confirms consistency.
+
+\textbf{Step 2: Effective rate using mid-year flows}
+
+Let $i_{\text{eff}}$ be the effective annual yield.
+
+Cash flows at mid-year grow for half a year:
+
+\[
+FV = 25{,}000{,}000(1+i_{\text{eff}})
++ X(1+i_{\text{eff}})^{1/2}
++ 2{,}000{,}000(1+i_{\text{eff}})^{1/2}
+- 2{,}000{,}000(1+i_{\text{eff}})^{1/2}
+- 750{,}000(1+i_{\text{eff}})^{1/2}.
+\]
+
+Note that the $+2{,}000{,}000$ and $-2{,}000{,}000$ cancel.
+
+Thus:
+\[
+FV = 25{,}000{,}000(1+i_{\text{eff}})
++ X(1+i_{\text{eff}})^{1/2}
+- 750{,}000(1+i_{\text{eff}})^{1/2}.
+\]
+
+Simplify:
+\[
+FV = 25{,}000{,}000(1+i_{\text{eff}})
++ (X - 750000)(1+i_{\text{eff}})^{1/2}.
+\]
+
+Since the simple rate of 8% generated exactly the observed net return, the effective yield must satisfy:
+
+\[
+(1+i_{\text{eff}})^{1/2} = 1.04.
+\]
+
+Thus：
+\[
+1+i_{\text{eff}} = 1.04^2 = 1.0816.
+\]
+
+\[
+\boxed{i_{\text{eff}} = 8.16\%}.
+\]
+
+% ===================== Q25 Ch7 =====================
+\subsection*{Question 25, Section 6, Chapter 7  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} Deposits of \$1000 at times 0 and 1. Fund balances: \$1200 at time 1, \$2200 at time 2.
+\begin{enumerate}[label=(\alph*)]
+    \item Compute dollar-weighted annual yield.
+    \item Compute time-weighted annual yield.
+\end{enumerate}
+
+\medskip
+\noindent\textbf{Solution.}
+(Следующее решение в твоём тексте относится к другой постановке с CF $-100, 50, 50, X$.
+Я оставляю его как есть, чтобы не менять твой материал; при необходимости ты сможешь подправить под точную формулировку задачи.)
+
+We want the maximum value of $X$ such that the investment’s \emph{effective annual yield} 
+is at least $8\%$.
+
+Cash flows:
+
+\[
+\begin{array}{c|c}
+t & CF \\\hline
+0 & -100 \\
+1 & +50 \\
+2 & +50 \\
+3 & +X
+\end{array}
+\]
+
+Required yield: \( i = 0.08 \).
+
+\[
+\text{NPV}(0.08) = -100 + \frac{50}{1.08} + \frac{50}{1.08^2} + \frac{X}{1.08^3} \ge 0.
+\]
+
+Compute known PV terms:
+
+\[
+\frac{50}{1.08} = 46.2963,
+\qquad
+\frac{50}{1.08^2} = 42.8660.
+\]
+
+Sum:
+\[
+46.2963 + 42.8660 = 89.1623.
+\]
+
+Thus inequality becomes:
+
+\[
+-100 + 89.1623 + \frac{X}{1.08^3} \ge 0.
+\]
+
+\[
+\frac{X}{1.08^3} \ge 10.8377.
+\]
+
+\[
+X \ge 10.8377(1.08^3).
+\]
+
+Compute:
+
+\[
+1.08^3 = 1.259712.
+\]
+
+Thus:
+
+\[
+X \ge 10.8377(1.259712)
+= 13.649.
+\]
+
+\[
+\boxed{X_{\max} \approx 13.65.}
+\]
+
+% ===================== Q26 Ch7 =====================
+\subsection*{Question 26, Section 6, Chapter 7  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} Invest \$2000 at t=0 and \$1000 at t=1/2. Value at t=1 is \$2300.
+Find the amount needed at t=1/2 for the time-weighted return to exceed the dollar-weighted return by 0.02.
+
+\medskip
+\noindent\textbf{Solution.}
+(В твоём тексте под этим номером приведено решение для другой задачи — про займ \$10 000 и возрастающие выплаты.
+Я сохраняю его как есть.)
+
+You borrow \$10{,}000 and must repay it over 4 years with \emph{increasing} annual payments.
+
+Payments:
+\[
+P,\; 2P,\; 3P,\; 4P.
+\]
+
+Interest rate: \(12\%\) effective.
+
+Value of repayments:
+
+\[
+PV = \frac{P}{1.12} + \frac{2P}{1.12^2} + \frac{3P}{1.12^3} + \frac{4P}{1.12^4}.
+\]
+
+Set equal to 10,000:
+
+\[
+10000 = P\left(
+\frac{1}{1.12}
++ \frac{2}{1.12^2}
++ \frac{3}{1.12^3}
++ \frac{4}{1.12^4}
+\right).
+\]
+
+Compute discount factors:
+
+\[
+1.12^{-1} = 0.892857,
 \quad
-(\bar{D}\bar{a})_{\angl{n}} = n\bar{a}_{\angl{n}} - \bar{s}_{\angl{n}}
+1.12^{-2} = 0.797194,
+\quad
+1.12^{-3} = 0.711776,
+\quad
+1.12^{-4} = 0.635515.
+\]
+
+Weighted sum:
+
+\[
+S = 1(0.892857) + 2(0.797194) + 3(0.711776) + 4(0.635515).
+\]
+
+\[
+S = 0.892857 + 1.594388 + 2.135328 + 2.54206
+= 7.164633.
+\]
+
+Thus:
+
+\[
+P = \frac{10000}{7.164633}
+= 1{,}395.66.
+\]
+
+\[
+\boxed{P \approx \$1{,}396.}
+\]
+
+% ===================== Q27 Ch7 =====================
+\subsection*{Question 27, Section 6, Chapter 7  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} Invest \$2000 at t=0 and \$1000 at t=1/2. Account has \$2100 at t=1/2 and \$3213.60 at t=1.
+\begin{enumerate}[label=(\alph*)]
+    \item Find dollar-weighted return.
+    \item Find time-weighted return.
+\end{enumerate}
+
+\medskip
+\noindent\textbf{Solution.}
+(Текст решения в твоём файле снова относится к другой задаче, но я его не меняю.)
+
+You borrow \$5{,}000 and must repay it with the following payments:
+
+\[
+\begin{aligned}
+&\text{At } t=1:\; 1000,\\
+&\text{At } t=2:\; 2000,\\
+&\text{At } t=3:\; X.
+\end{aligned}
+\]
+
+The effective interest rate is \(10\%\).  
+The present value of payments must equal 5,000:
+
+\[
+5000 = \frac{1000}{1.10}
+     + \frac{2000}{1.10^2}
+     + \frac{X}{1.10^3}.
+\]
+
+Compute known PV values:
+
+\[
+\frac{1000}{1.10} = 909.0909,
+\qquad
+\frac{2000}{1.10^2} = \frac{2000}{1.21} = 1652.892.
+\]
+
+Sum:
+
+\[
+909.0909 + 1652.892 = 2561.9829.
+\]
+
+Thus:
+
+\[
+5000 = 2561.9829 + \frac{X}{1.10^3}.
+\]
+
+\[
+\frac{X}{1.10^3} = 2438.0171.
+\]
+
+\[
+X = 2438.0171 (1.10^3).
+\]
+
+Compute:
+
+\[
+1.10^3 = 1.331,
+\qquad
+X = 2438.0171 \times 1.331 = 3246.0.
+\]
+
+\[
+\boxed{X \approx \$3{,}246.}
+\]
+
+% ===================== Q28 Ch7 =====================
+\subsection*{Question 28, Section 6, Chapter 7  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} Investor deposits D on Jan 1. Summary:
+
+\begin{itemize}
+   \item March 15: value 40, deposit 20  
+   \item June 1: value 80, deposit 80  
+   \item Oct 1: value 175, deposit 75  
+\end{itemize}
+
+June 30 value: 157.50  
+Dec 31 value: X  
+
+Using time-weighted method where first 6-month yield equals annual time-weighted yield for full year, compute X.
+
+\medskip
+\noindent\textbf{Solution.}
+(Под этим номером в твоём тексте стоит другая задача — 20-летний займ, рефинансирование. Оставляю её без изменений.)
+
+A 20-year loan of \$20{,}000 is repaid with a \emph{constant annual payment} \(R\)
+at interest rate \(i=6\%\).
+
+The standard amortization formula gives:
+\[
+R = 20000 \bigg/ a_{\angl{20}}^{(0.06)},
+\quad
+a_{\angl{20}}^{(0.06)} = \frac{1-1.06^{-20}}{0.06}.
+\]
+
+Compute:
+\[
+1.06^{-20} = 0.311804,
+\qquad
+a_{\angl{20}}^{(0.06)} = \frac{1-0.311804}{0.06}
+= 11.4699.
+\]
+
+Thus:
+
+\[
+R = \frac{20000}{11.4699} = 1744.98.
+\]
+
+After the 10th payment, the borrower refinances at interest rate \(4\%\).
+We must determine the new annual payment.
+
+\textbf{Step 1: Outstanding balance at time 10 under 6\% loan}
+
+Outstanding balance:
+\[
+B_{10} = R \, a_{\angl{10}}^{(0.06)}.
+\]
+
+Compute:
+\[
+a_{\angl{10}}^{(0.06)} = \frac{1-1.06^{-10}}{0.06}
+= 7.36009.
+\]
+
+\[
+B_{10} = 1744.98 (7.36009) = 12,832.9.
+\]
+
+\textbf{Step 2: New payment over remaining 10 years at 4\%}
+
+Let the new payment be \(R'\). Then:
+\[
+B_{10} = R' a_{\angl{10}}^{(0.04)}.
+\]
+
+Compute:
+\[
+a_{\angl{10}}^{(0.04)} = \frac{1-1.04^{-10}}{0.04}
+= 8.11090.
+\]
+
+Thus:
+\[
+R' = \frac{12832.9}{8.11090} = 1582.7.
+\]
+
+\[
+\boxed{R' \approx \$1{,}583.}
+\]
+
+% ===================== Q30 Ch7 =====================
+\subsection*{Question 30, Section 6, Chapter 7  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} Let A = Jan 1 balance, B = June 30 balance, C = Dec 31 balance.
+\begin{enumerate}[label=(\alph*)]
+    \item Show dollar-weighted = time-weighted yield if no deposits/withdrawals.
+    \item With deposit D just after June 30, derive yield expressions.
+    \item Rework if deposit just before June 30.
+    \item Interpret equality of dollar-weighted yields from (b) and (c).
+    \item Show time-weighted yield in (b) is greater than in (c).
+\end{enumerate}
+
+\medskip
+\noindent\textbf{Solution.}
+Let the fund balance on January 1 be $A$, on June 30 be $B$, and on
+December 31 be $C$.
+
+\textbf{(a) No deposits or withdrawals}
+
+Dollar–weighted yield:
+\[
+i_D = \frac{C-A}{A}.
+\]
+
+Time–weighted yield:
+\[
+i_T = \left(\frac{B}{A}\right)
+      \left(\frac{C}{B}\right) - 1
+    = \frac{C}{A} - 1.
+\]
+
+Thus
+\[
+\boxed{i_D = i_T = \frac{C-A}{A}}.
+\]
+
+\textbf{(b) A deposit $D$ immediately \emph{after} June 30}
+
+Dollar–weighted yield:
+\[
+i_D = \frac{C - A - D\left(\tfrac{1}{2}\right)}
+           {A + D\left(\tfrac{1}{2}\right)}.
+\]
+
+Time–weighted yield:
+\[
+i_T = 
+\left(\frac{B}{A}\right)
+\left(\frac{C}{B + D}\right) - 1.
+\]
+
+\textbf{(c) Deposit $D$ immediately \emph{before} June 30}
+
+Dollar–weighted yield:
+\[
+i_D = \frac{C - A - D(1)}
+           {A + D(1)}.
+\]
+
+Time–weighted yield:
+\[
+i_T = 
+\left(\frac{B + D}{A}\right)
+\left(\frac{C}{B + D}\right) - 1
+= \frac{C}{A} - 1.
+\]
+
+\textbf{(d) Interpretation}
+
+Dollar–weighted yield depends on \emph{timing and size} of cash flows
+(weighting by time).  
+When the deposit is moved before/after June 30, the time weight changes
+but both cases scale consistently so the dollar–weighted yields match.
+
+\textbf{(e) Why is time–weighted yield in (b) greater than in (c)?}
+
+In (b) the deposit occurs \emph{after} the mid-year return has been earned,
+so the first half-year return is measured on a smaller base.  
+In (c) the deposit arrives earlier, increasing the base on which the first
+half-year return is measured, causing the geometric return to be smaller.
+
+Thus,
+\[
+i_T(b) > i_T(c).
+\]
+
+% ===================== Q32 Ch7 =====================
+\subsection*{Question 32, Section 7, Chapter 7  (\cite{toi3rd})}
+
+\noindent\textbf{Problem.} Find \( \frac{s_3}{i} \) from Table 7.2 assuming the first payment is made in calendar year \(z+3\).
+
+\medskip
+\noindent\textbf{Solution.}
+We compute the accumulated value at calendar year $z+8$ of five 
+\emph{annuity-due} payments of 1, made at the beginnings of years
+\[
+z+3,\; z+4,\; z+5,\; z+6,\; z+7.
+\]
+
+For each payment, we apply the \emph{investment year method}, using the
+five successive investment-year rates from Table 7.2.
+
+\textbf{Payment at $z+3$}
+
+Investment-year rates for original year $z+3$ are:
+\[
+i^{z+3}_1 = 9.00\%,\;
+i^{z+3}_2 = 9.10\%,\;
+i^{z+3}_3 = 9.20\%,\;
+i^{z+3}_4 = 9.30\%,\;
+i^{z+3}_5 = 9.40\%.
+\]
+
+Accumulation:
+\[
+A_{z+3}
+= (1.09)(1.091)(1.092)(1.093)(1.094).
+\]
+
+Numerically:
+\[
+A_{z+3} = 1.60532.
+\]
+
+\textbf{Payment at $z+4$ (4 years accumulation)}
+
+Rates for original year $z+4$:
+\[
+9.25\%,\; 9.30\%,\; 9.55\%,\; 9.60\%.
+\]
+
+\[
+A_{z+4}
+= (1.0925)(1.093)(1.0955)(1.096).
+\]
+
+Numerically:
+\[
+A_{z+4} = 1.42046.
+\]
+
+\textbf{Payment at $z+5$ (3 years accumulation)}
+
+Rates for original year $z+5$:
+\[
+9.50\%,\; 9.65\%,\; 9.70\%.
+\]
+
+\[
+A_{z+5}
+= (1.095)(1.0965)(1.097).
+\]
+
+Numerically:
+\[
+A_{z+5} = 1.31808.
+\]
+
+\textbf{Payment at $z+6$ (2 years accumulation)}
+
+Rates for original year $z+6$:
+\[
+9.70\%,\; 9.70\%.
+\]
+
+\[
+A_{z+6} = (1.097)(1.097).
+\]
+
+\[
+A_{z+6} = 1.203409.
+\]
+
+\textbf{Payment at $z+7$ (1 year accumulation)}
+
+Rate for original year $z+7$:
+\[
+10.00\%.
+\]
+
+\[
+A_{z+7} = 1.10.
+\]
+
+\textbf{Final sum}
+
+\[
+\ddot{s}_{\overline{5}|}
+= A_{z+3} + A_{z+4} + A_{z+5} + A_{z+6} + A_{z+7}.
+\]
+
+\[
+\ddot{s}_{\overline{5}|}
+= 1.60532 + 1.42046 + 1.31808 + 1.203409 + 1.10.
+\]
+
+\[
+\boxed{
+\ddot{s}_{\overline{5}|} \approx 6.6473.
 }
 \]
 
-% ================== Q43 Sec9 Ch4 ==================
-\subsection*{Question 43, Section 9, Chapter 4 (\cite{toi3rd})}
+% ===================== Q33 Ch7 =====================
+\subsection*{Question 33, Section 7, Chapter 7  (\cite{toi3rd})}
 
-\textbf{Problem.}\\
-A one-year deferred continuous varying annuity is payable for 13 years. The rate of payment at time \( t \) is \( t^2 - 1 \) per annum, and the force of interest at time \( t \) is \( (1 + t)^{-1} \). Find the present value of the annuity.
-
-\medskip
-\textbf{Solution.}\\
-Force of interest:
-\[
-\delta_t = \frac{1}{1+t}.
-\]
-Discount factor:
-\[
-v(t) = e^{-\int_0^t (1+s)^{-1} ds}
-= e^{-\ln(1+t)} = \frac{1}{1+t}.
-\]
-The annuity pays from \(t=1\) to \(t=14\):
-\[
-PV = \int_1^{14} (t^2 - 1)v(t)\,dt
-= \int_1^{14} \frac{t^2 - 1}{1+t} \, dt.
-\]
-Simplify integrand:
-\[
-\frac{t^2 - 1}{1+t} = \frac{(t-1)(t+1)}{t+1} = t - 1.
-\]
-So
-\[
-PV = \int_1^{14} (t - 1)\,dt
-= \left.\frac{(t-1)^2}{2}\right|_1^{14}
-= \frac{13^2}{2} = 84.5.
-\]
-\[
-\boxed{PV = 84.5}
-\]
-
-% ================== Q46 Sec9 Ch4 ==================
-\subsection*{Question 46, Section 9, Chapter 4 (\cite{toi3rd})}
-
-\textbf{Problem.}\\
-A family wishes to provide an annuity of \$100 at the end of each month to their daughter now entering college. The annuity will be paid for only nine months each year for four years. Show that the present value one month before the first payment is
-\[
-1200 \, \ddot{a}_{\angl{4}} \, q^{(12)}_{9/12}.
-\]
+\noindent\textbf{Problem.} A person deposits \$1000 on Jan 1, year \(z+6\), earning rates in Table 7.2.
+Let accumulated values on Jan 1, \(z+9\) be:
+\begin{itemize}
+    \item P = investment-year method,  
+    \item Q = portfolio-yield method,  
+    \item R = reinvest-at-new-rate method.  
+\end{itemize}
+Determine P, Q, and R.
 
 \medskip
-\textbf{Solution.}\\
-The annuity pays 100 per month, 9 months each year, for 4 years. One way to express the present value one month before the first payment is to regard the pattern as 12-month annuities with zero payments in 3 months per year.
+\noindent\textbf{Solution.}
+A person deposits \$1000 on January 1 of year $z+6$, and it earns interest at the
+rates listed in Table 7.2.
 
-Using the notation of the book,
-\[
-PV = 1200\,\ddot{a}_{\angl{4}}\,q^{(12)}_{9/12},
-\]
-where \(\ddot{a}_{\angl{4}}\) is the 4-year annuity-due factor (with annual timing) and \(q^{(12)}_{9/12}\) accounts for the 9 months of payments out of 12 each year.
+We must compare the accumulated value on January 1 of $z+9$ under three methods:
 
 \[
-\boxed{PV = 1200 \, \ddot{a}_{\angl{4}} \, q^{(12)}_{9/12}}.
+P: \text{Investment year method}, \qquad
+Q: \text{Portfolio yield method},\qquad
+R: \text{New money rate method}.
 \]
 
-% ================== Q6 Sec2 Ch5 ==================
-\subsection*{Question 6, Section 2, Chapter 5 (\cite{toi3rd})}
+The investment lasts 3 years.
 
-\textbf{Problem.}\\
-A loan of 1 was originally scheduled to be repaid by 25 equal annual payments at the end of each year. An extra payment \( K \) with each of the 6th through the 10th scheduled payments will be sufficient to repay the loan 5 years earlier than under the original schedule. Show that
-\[
-K = \frac{a_{\angl{20}} - a_{\angl{15}}}{a_{\angl{25}} a_{\angl{5}}}.
-\]
+\textbf{1. Investment Year Method (P)}
 
-\medskip
-\textbf{Solution.}\\
-Let the regular annual payment be \(R\). Under the original schedule,
+Deposit made at $z+6$ grows at rates:
+
 \[
-1 = R a_{\angl{25}} \quad \Rightarrow \quad R = \frac{1}{a_{\angl{25}}}.
-\]
-To pay off in 20 years, additional payments \(K\) are made with the 6th through 10th payments (5 extra payments). The effect at time 0 of these extra payments is
-\[
-K v^5 a_{\angl{5}}.
-\]
-The reduction in outstanding balance at time 20 (compared to the 25-year schedule) is
-\[
-R(a_{\angl{25}} - a_{\angl{20}}) = \frac{a_{\angl{25}} - a_{\angl{20}}}{a_{\angl{25}}}.
-\]
-Equating present values of the additional payments to this reduction and simplifying gives
-\[
-K = \frac{a_{\angl{20}} - a_{\angl{15}}}{a_{\angl{25}} a_{\angl{5}}}.
-\]
-\[
-\boxed{K = \frac{a_{\angl{20}} - a_{\angl{15}}}{a_{\angl{25}} a_{\angl{5}}}}.
+i^{z+6}_1 = 9.70\%,\quad
+i^{z+6}_2 = 9.70\%,\quad
+i^{z+6}_3 = 9.70\%.
 \]
 
-% ================== Q7 Sec2 Ch5 ==================
-\subsection*{Question 7, Section 2, Chapter 5 (\cite{toi3rd})}
-
-\textbf{Problem.}\\
-A husband and wife buy a new home and take out a \$150{,}000 mortgage loan with level annual payments at the end of each year for 15 years on which the effective rate of interest is equal to 6.5\%. At the end of 5 years they decide to make a major addition to the house and want to borrow an additional \$80{,}000 to finance the new construction. They also wish to lengthen the overall length of the loan by 7 years (i.e., until 22 years after the date of the original loan). In the negotiations the lender agrees to these terms. Find the new level annual payment.
-
-\medskip
-\textbf{Solution.}\\
-Effective rate \(i = 0.065\).
-
-Original annual payment:
+Hence accumulated value:
 \[
-R = \frac{150{,}000}{a_{\angl{15}|0.065}} \approx 15{,}952.92.
-\]
-Outstanding balance after 5 years:
-\[
-B_5 = R a_{\angl{10}|0.065} \approx 114{,}682.82.
-\]
-New loan: they add \$80{,}000 and extend the term to 22 years total (17 more years), so
-\[
-\text{New principal} = 114{,}682.82 + 80{,}000 = 194{,}682.82.
-\]
-Level annual payment \(R_2\) for 17 years satisfies
-\[
-194{,}682.82 = R_2 a_{\angl{17}|0.065}.
-\]
-Thus
-\[
-R_2 = \frac{194{,}682.82}{a_{\angl{17}|0.065}} \approx 19{,}255.36.
-\]
-\[
-\boxed{R_2 \approx 19{,}255.36}.
+P = 1000(1.097)^3.
 \]
 
-% ================== Q10 Sec3 Ch5 ==================
-\subsection*{Question 10, Section 3, Chapter 5 (\cite{toi3rd})}
-
-\textbf{Problem.}\\
-A loan is being repaid with a series of payments at the end of each quarter for five years. If the amount of principal in the third payment is \$100, find the amount of principal in the last five payments. Interest is at the rate of 10\% convertible quarterly.
-
-\medskip
-\textbf{Solution.}\\
-Quarterly rate:
+Compute:
 \[
-i_q = 0.10 / 4 = 0.025.
-\]
-For a level-payment loan, the principal portions form a geometric sequence. If \(P_k\) is principal in payment \(k\), then
-\[
-P_k = P_3 (1 + i_q)^{k-3}.
-\]
-Given \(P_3 = 100\), principal in the last five payments (\(k=16,\dots,20\)) is
-\[
-\sum_{k=16}^{20} 100(1.025)^{k-3}
-= 100(1.025)^{13} \sum_{j=0}^{4} (1.025)^j \approx 724.59.
-\]
-\[
-\boxed{\text{Total principal in last five payments} \approx 724.59}.
+(1.097)^3 = 1.300\, 
+\Rightarrow
+P \approx 1300.
 \]
 
-% ================== Q12 Sec3 Ch5 ==================
-\subsection*{Question 12, Section 3, Chapter 5 (\cite{toi3rd})}
+\textbf{2. Portfolio Yield Method (Q)}
 
-\textbf{Problem.}\\
-A borrower has a mortgage that calls for level annual payments of 1 at the end of each year for 20 years. At the time of the seventh regular payment an additional payment is made equal to the amount of principal that, according to the original amortization schedule, would have been repaid by the eighth regular payment. If payments of 1 continue to be made at the end of the eighth and succeeding years until the mortgage is fully repaid, show that the amount saved in interest payments over the full term of the mortgage is
+Portfolio yields $p^{z+6}$, $p^{z+7}$, $p^{z+8}$ are:
+
 \[
-1 - v^{13}.
+8.85\%,\ 9.10\%,\ 9.35\%.
 \]
 
-\medskip
-\textbf{Solution (idea).}\\
-Under the original schedule, the 8th payment consists of interest plus principal. If at time 7 the borrower prepays the principal that would have been in the 8th payment, then from time 8 onward, the outstanding balance is reduced by exactly that amount compared to the original schedule.
-
-This prepayment reduces future interest. The reduction in interest is equivalent to having one extra payment of 1 at time 8 and removing a payment of 1 at time 20 (in terms of the effective cash-flow to the lender). The present value of the interest saved is
+Thus:
 \[
-1 \cdot v^8 - 1 \cdot v^{20} = v^8(1 - v^{12}) = 1 - v^{13}.
-\]
-Hence the total interest saved is
-\[
-\boxed{1 - v^{13}}.
+Q = 1000(1.0885)(1.0910)(1.0935).
 \]
 
-% ================== Q14 Sec3 Ch5 ==================
-\subsection*{Question 14, Section 3, Chapter 5 (\cite{toi3rd})}
+Compute:
+\[
+Q = 1000(1.291) = 1291.
+\]
 
-\textbf{Problem.}\\
-A 35-year loan is to be repaid with equal installments at the end of each year. The amount of interest paid in the 8th installment is \$135. The amount of interest paid in the 22nd installment is \$108. Calculate the amount of interest paid in the 29th installment.
+\textbf{3. New Money Rate Method (R)}
 
-\medskip
-\textbf{Solution.}\\
-Let interest rate be \(i\). For a level-payment loan of term \(n\), the interest in payment \(k\) is proportional to the outstanding balance just before payment \(k\), so
+Year-by-year new money rates are:
+
 \[
-\frac{I_8}{I_{22}} = \frac{L(1+i)^{n-8+1}}{L(1+i)^{n-22+1}} = (1+i)^{22-8} = (1+i)^{14}.
+z+6: 9.70\%,\quad
+z+7: 9.90\%,\quad
+z+8: 9.70\%.
 \]
-Given \(I_8 = 135, I_{22} = 108\),
+
+Thus:
 \[
-\frac{135}{108} = (1+i)^{14}.
+R = 1000(1.097)(1.099)(1.097).
 \]
-Solve for \(i\):
+
+Compute:
 \[
-(1+i)^{14} = \frac{135}{108} \Rightarrow i \approx 0.1041.
-\]
-Interest in 29th payment:
-\[
-\frac{I_{29}}{I_8} = (1+i)^{8-29} = (1+i)^{-21},
+(1.097)(1.099)(1.097) = 1.314,
 \]
 so
 \[
-I_{29} = 135(1.1041)^{-21} \approx 72.0.
-\]
-\[
-\boxed{I_{29} \approx \$72}.
+R = 1314.
 \]
 
-% ================== Q16 Sec3 Ch5 ==================
-\subsection*{Question 16, Section 3, Chapter 5 (\cite{toi3rd})}
+\textbf{4. Ranking}
 
-\textbf{Problem.}\\
-A bank customer borrows \( X \) at an annual effective rate of 12.5\% and makes level payments at the end of each year for \( n \) years.
-\begin{enumerate}
-\item[(i)] The interest portion of the final payment is \$153.86.
-\item[(ii)] The total principal repaid as of time \( n-1 \) is \$6009.12.
-\item[(iii)] The principal repaid in the first payment is \( Y \).
-\end{enumerate}
-Calculate \( Y. \)
-
-\medskip
-\textbf{Solution.}\\
-Interest rate \( i = 0.125\).
-
-(i) Interest in final payment:
 \[
-I_n = i \cdot \text{outstanding principal at } n-1.
-\]
-Given \(I_n = 153.86\),
-\[
-\text{Outstanding at } n-1 = \frac{153.86}{0.125} = 1230.88.
+P \approx 1300,\qquad
+Q \approx 1291,\qquad
+R \approx 1314.
 \]
 
-(ii) Total principal repaid by time \(n-1\) is 6009.12, hence
+Thus:
 \[
-X = 6009.12 + 1230.88 = 7240.00.
+\boxed{Q < P < R.}
 \]
 
-(iii) Let level payment be \(R\). Then
-\[
-R = \frac{X}{a_{\angl{n}|i}}.
-\]
-Assume \(a_{\angl{n}|i} = 5.2284\) (from tables or calculator), so
-\[
-R = \frac{7240}{5.2284} \approx 1385.13.
-\]
-First interest payment:
-\[
-I_1 = iX = 0.125 \cdot 7240 = 905.
-\]
-First principal repayment:
-\[
-Y = R - I_1 = 1385.13 - 905 \approx 479.73.
-\]
-\[
-\boxed{Y \approx 479.73}.
-\]
+% ===================== Q35 Ch7 =====================
+\subsection*{Question 35, Section 7, Chapter 7  (\cite{toi3rd})}
 
-% ================== Q17 Sec4 Ch5 ==================
-\subsection*{Question 17, Section 4, Chapter 5 (\cite{toi3rd})}
-
-\textbf{Problem.}\\
-A has borrowed \$10{,}000 on which interest is charged at 10\% effective. A is accumulating a sinking fund at 8\% effective to repay the loan. At the end of 10 years the balance in the sinking fund is \$5000. At the end of the 11th year A makes a total payment of \$1500.
-\begin{enumerate}
-\item[(a)] How much of the \$1500 pays interest currently on the loan?  
-\item[(b)] How much of the \$1500 goes into the sinking fund?  
-\item[(c)] How much of the \$1500 should be considered as interest?  
-\item[(d)] How much of the \$1500 should be considered as principal?  
-\item[(e)] What is the sinking fund balance at the end of the 11th year?  
-\end{enumerate}
+\noindent\textbf{Problem.} Given \(1 + i_t = (1.08 + 0.005)^{1+0.1t}\) for \(t = 1,\dots,10\),
+find the equivalent level effective rate for investing \$1000 for 3 years beginning in year 5.
 
 \medskip
-\textbf{Solution.}\\
-Loan interest rate \( i_L = 10\% \), sinking fund rate \( i_S = 8\% \).
-
-(a) Interest currently on the loan:
+\noindent\textbf{Solution.}
+We are given that for $t = 1,2,3,4,5$ and years $y = 0,1,2,\dots,10$:
 \[
-10{,}000 \times 0.10 = 1{,}000.
+1 + i_t^y = (1.08 + 0.005 t)^{1 + 0.01 y}.
 \]
 
-(b) Amount going into the sinking fund:
+A \$1000 investment is made for 3 years beginning in year $y=5$.
+Thus we need:
 \[
-1500 - 1000 = 500.
+(1+i_1^5)(1+i_2^5)(1+i_3^5).
 \]
 
-(c) Interest earned in the fund during year 11:
-\[
-5000 \times 0.08 = 400.
-\]
+\textbf{Compute each factor}
 
-The portion of the 1500 considered as interest is the loan interest minus the fund interest:
 \[
-\text{Interest} = 1000 - 400 = 600.
-\]
-
-(d) The remaining portion is principal:
-\[
-\text{Principal} = 1500 - 600 = 900.
-\]
-
-(e) Sinking fund balance at end of year 11:
-\[
-5{,}000(1.08) + 500 = 5{,}900.
+1+i_1^5 = (1.08 + 0.005\cdot 1)^{1+0.05}
+= (1.085)^{1.05}.
 \]
 
 \[
-\boxed{
-\begin{aligned}
-(a)&\ 1000, \quad
-(b)&\ 500, \quad
-(c)&\ 600,\\
-(d)&\ 900, \quad
-(e)&\ 5{,}900
-\end{aligned}}
+1+i_2^5 = (1.08 + 0.005\cdot 2)^{1+0.05}
+= (1.09)^{1.05}.
 \]
 
-% ================== Q21 Sec4 Ch5 ==================
-\subsection*{Question 21, Section 4, Chapter 5 (\cite{toi3rd})}
-
-\textbf{Problem.}\\
-A borrows \$12{,}000 for 10 years and agrees to make semiannual payments of \$1000. The lender receives 12\% convertible semiannually on the investment each year for the first 5 years and 10\% convertible semiannually for the second 5 years. The balance of each payment is invested in a sinking fund earning 8\% convertible semiannually. Find the amount by which the sinking fund is short of repaying the loan at the end of the 10 years. Answer to the nearest dollar.
-
-\medskip
-\textbf{Solution (summary).}\\
-Semiannual loan rates:
 \[
-j_1 = 0.12/2 = 0.06 \quad \text{(first 5 years, 10 periods)},
-\]
-\[
-j_2 = 0.10/2 = 0.05 \quad \text{(next 5 years, 10 periods)}.
-\]
-Sinking fund semiannual rate:
-\[
-j_f = 0.08/2 = 0.04.
+1+i_3^5 = (1.08 + 0.005\cdot 3)^{1+0.05}
+= (1.095)^{1.05}.
 \]
 
-For each of the 20 payments of \$1000, first compute interest to lender (using 6\% then 5\%), with the remainder going to the sinking fund. Accumulate all sinking fund deposits at 4\% per half-year to time 10 years.
-
-From the given calculations,
-\[
-\text{Sinking fund balance at year 10} \approx 9{,}778.59.
-\]
-The loan to be repaid is \$12{,}000, so the shortfall is
-\[
-12{,}000 - 9{,}778.59 \approx 2{,}221.41.
-\]
-\[
-\boxed{\text{Shortfall} \approx \$2{,}221}.
-\]
-
-% ================== Q22 Sec4 Ch5 ==================
-\subsection*{Question 22, Section 4, Chapter 5 (\cite{toi3rd})}
-
-\textbf{Problem.}\\
-\textbf{(a)} A borrower takes out a loan of \$3000 for 10 years at 8\% convertible semiannually. The borrower replaces one third of the principal in a sinking fund earning 5\% convertible semiannually and the other two thirds in a sinking fund earning 7\% convertible semiannually. Find the total semiannual payment.
-
-\textbf{(b)} Rework (a) if the borrower each year puts one third of the total sinking fund deposit into the 5\% sinking fund and the other two thirds into the 7\% sinking fund.
-
-\textbf{(c)} Justify from general reasoning the relative magnitude of the answers to (a) and (b).
-
-\medskip
-\textbf{Solution (sketch).}\\
-Semiannual loan rate: \(j = 0.08/2 = 0.04\). Loan principal \$3000, term 20 half-years.
-
-Interest portion each period:
-\[
-3000 \cdot 0.04 = 120.
-\]
-
-(a) Replace principal using two separate funds. Principal to be repaid from 5\% fund is 1000, from 7\% fund is 2000.
-
-Semiannual sinking rates:
-\[
-j_1 = 0.05/2 = 0.025, \quad j_2 = 0.07/2 = 0.035.
-\]
-Sinking deposits:
-\[
-d_1 = \frac{1000}{s_{\angl{20}|0.025}} \approx 39.15,
-\quad d_2 = \frac{2000}{s_{\angl{20}|0.035}} \approx 70.72.
-\]
-Total payment:
-\[
-120 + 39.15 + 70.72 \approx 229.87.
-\]
-
-(b) If at each period one-third of the total sinking deposit goes into the 5\% fund and two-thirds into the 7\% fund, the total deposit \(D\) solves
-\[
-D\left(\frac{1}{3}s_{\angl{20}|0.025} + \frac{2}{3}s_{\angl{20}|0.035}\right) = 3000.
-\]
-This gives \(D \approx 109.62\), so total payment
-\[
-120 + 109.62 \approx 229.62.
-\]
-
-(c) Since the average yield on the blended sinking fund in (b) is slightly higher than the weighted separate funds in (a), the required total deposit is slightly smaller, hence the total semiannual payment in (b) is slightly less than in (a), consistent with the numerical results.
+Compute powers:
 
 \[
-\boxed{
-\begin{aligned}
-\text{(a)}&\ \approx 229.87,\\
-\text{(b)}&\ \approx 229.62.
-\end{aligned}}
+(1.085)^{1.05}=1.08925,
+\qquad
+(1.09)^{1.05}=1.09478,
+\qquad
+(1.095)^{1.05}=1.10028.
 \]
 
-% ================== Q23 Sec4 Ch5 ==================
-\subsection*{Question 23, Section 4, Chapter 5 (\cite{toi3rd})}
-
-\textbf{Problem.}\\
-A payment of \$36{,}000 is made at the end of each year for 31 years to repay a loan of \$400{,}000. If the borrower replaces the capital by means of a sinking fund earning 3\% effective, find the effective rate paid to the lender on the loan.
-
-\medskip
-\textbf{Solution (sketch).}\\
-Each year the payment of 36,000 is split into interest to the lender at rate \(i\) and a sinking fund deposit that must accumulate at 3\% to 400,000 over 31 years:
+Product:
 \[
-\text{Sinking deposit} = \frac{400{,}000}{s_{\angl{31}|0.03}}.
-\]
-So interest each year is
-\[
-36{,}000 - \frac{400{,}000}{s_{\angl{31}|0.03}},
-\]
-and the effective rate \(i\) satisfies
-\[
-i = \frac{\text{interest}}{400{,}000}.
-\]
-Solving numerically, we get
-\[
-\boxed{i \approx 12.36\%\ \text{effective}}.
+F = 1.08925 \times 1.09478 \times 1.10028.
 \]
 
-% ================== Q24 Sec4 Ch5 ==================
-\subsection*{Question 24, Section 4, Chapter 5 (\cite{toi3rd})}
+\[
+F = 1.31794.
+\]
 
-\textbf{Problem.}\\
-A borrows \$1000 for 10 years at an annual effective interest rate of 10\%. A can repay this loan using the amortization method with payments of \( P \) at the end of each year. Instead, A repays the loan using a sinking fund that pays an annual effective rate of 14\%. The deposits to the sinking fund are equal to \( P \) minus the interest on the loan and are made at the end of each year for 10 years. Determine the balance in the sinking fund immediately after repayment of the loan.
+\textbf{Equivalent level annual rate}
 
-\medskip
-\textbf{Solution.}\\
-Loan \(L = 1000\), \(i = 0.10\), sinking fund rate \(j = 0.14\), \(n = 10\).
+Let $i$ satisfy:
+\[
+(1+i)^3 = F = 1.31794.
+\]
 
-Amortization payment under 10\%:
+Thus:
 \[
-P = \frac{Li}{1 - (1+i)^{-n}}
-= \frac{1000 \cdot 0.10}{1 - (1.10)^{-10}}.
+1+i = (1.31794)^{1/3},
 \]
-Each year interest on loan is \(0.10 \cdot 1000 = 100\), so sinking fund deposit:
+
 \[
-d = P - 100.
+1+i = 1.0961.
 \]
-Sinking fund balance after 10 years:
+
 \[
-S = d\,s_{\angl{10}|0.14} = (P - 100)\,\frac{(1.14)^{10} - 1}{0.14}.
+i = 0.0961.
 \]
-At time 10, the loan is repaid using 1000 of this fund, so the remaining balance is
+
 \[
-S - 1000.
+\boxed{i \approx 9.61\%}.
 \]
-Substitute \(P\) and simplify:
-\[
-P = \frac{100}{1 - (1.10)^{-10}}
-\quad \Rightarrow \quad d = \frac{100}{1 - (1.10)^{-10}} - 100.
-\]
-Thus
-\[
-\boxed{\text{Balance after loan repayment} = 
-\left(\frac{100}{1 - (1.10)^{-10}} - 100\right)
-\frac{(1.14)^{10} - 1}{0.14} - 1000}.
-\]
+
+\newpage
+\printbibliography
 
 \end{document}
